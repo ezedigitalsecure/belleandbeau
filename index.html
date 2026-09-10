@@ -174,14 +174,44 @@
   </main>
   <footer id="contact"><div class="footer-top"><div><img class="footer-logo" src="assets/belle-beau-logo-footer-white.png" alt="Belle &amp; Beau"><p class="footer-blurb">An inclusive body contouring and aesthetics studio offering personalised practitioner-led care for women and men.</p></div><div class="footer-col"><h4>Studio</h4><a href="#pricing">Treatments &amp; Pricing</a><a href="#body-contouring">Body contouring</a><a href="#owner">Meet the owner</a><a href="#reviews">Leave a review</a><a href="#book" data-book>Book an appointment</a></div><div class="footer-col"><h4>Contact</h4><a href="mailto:hello@belleandbeauaesthetic.com">hello@belleandbeauaesthetic.com</a><a href="mailto:bookings@belleandbeauaesthetic.com">bookings@belleandbeauaesthetic.com</a></div><div class="footer-col"><h4>Follow</h4><a class="instagram-link" href="https://www.instagram.com/belleandbeauaesthetic/" target="_blank" rel="noopener noreferrer" aria-label="Follow Belle and Beau Aesthetic on Instagram"><span class="instagram-icon" aria-hidden="true"></span></a></div></div><div class="footer-bottom"><span>© 2026 Belle &amp; Beau Aesthetics</span><span>Website by Sentia Tech</span></div></footer>
   <aside class="cookie-banner" id="cookieBanner" aria-label="Analytics preferences"><p>We use optional analytics to understand how visitors use the Belle &amp; Beau website and improve the experience.</p><div class="cookie-actions"><button class="btn necessary" type="button" data-analytics="decline">Necessary only</button><button class="btn" type="button" data-analytics="accept">Accept analytics</button></div></aside>
-  <script>
-              ;const sectionObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){const section=entry.target;const name=section.id||section.getAttribute('aria-label')||section.classList[0]||'section';if(!seen.has(name)){seen.add(name);trackEvent('section_view',{section_name:name})}}}),{threshold:.45});document.querySelectorAll('main section,footer').forEach(section=>sectionObserver.observe(section))};
-    const loadAnalytics=()=>{if(analyticsLoaded)return;analyticsLoaded=true;const script=document.createElement('script');script.async=true;script.src=`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;document.head.appendChild(script);gtag('js',new Date());gtag('config',GA_ID,{anonymize_ip:true});startSectionTracking()};
-    const cookieBanner=document.querySelector('#cookieBanner'),analyticsChoice=localStorage.getItem('belleBeauAnalytics');
-    if(analyticsChoice==='accepted')loadAnalytics();else if(!analyticsChoice)cookieBanner.classList.add('show');
-    document.querySelectorAll('[data-analytics]').forEach(button=>button.addEventListener('click',()=>{const accepted=button.dataset.analytics==='accept';localStorage.setItem('belleBeauAnalytics',accepted?'accepted':'declined');cookieBanner.classList.remove('show');if(accepted)loadAnalytics()}));
-   const bookingURL='https://fresha.com/book-now/bodybydesignboutique-kdicsuav/all-offer?share=true&pld=1441096';
-    const bookingLinks={};
+  
+ <script>
+    // ✅ Smooth reveal animations
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('on');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ✅ Mobile menu
+    const menuButton = document.querySelector('.menu'),
+          mobileNav = document.querySelector('#mobileNav');
+    const closeMenu = () => {
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Open navigation');
+      mobileNav.classList.remove('open');
+      mobileNav.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('lock');
+    };
+    const openMenu = () => {
+      menuButton.setAttribute('aria-expanded', 'true');
+      menuButton.setAttribute('aria-label', 'Close navigation');
+      mobileNav.classList.add('open');
+      mobileNav.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('lock');
+    };
+    menuButton.addEventListener('click', () =>
+      menuButton.getAttribute('aria-expanded') === 'true' ? closeMenu() : openMenu()
+    );
+    mobileNav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+    // ✅ CALENDAR LINKS — NO POP-UPS!
+    const bookingLinks = {
       '1 Area':'https://calendar.app.google/A2PzziFX8BzAGVEy7',
       '2 Areas':'https://calendar.app.google/vrN4hsQZN2kSBEvM8',
       '3 Areas':'https://calendar.app.google/DBeF12E2YXx11yon8',
@@ -217,26 +247,64 @@
       'Vitamin B12 — First Appointment':'https://calendar.app.google/TtrHNedrZzArnE9k7',
       'Vitamin B12 — Top-Up Appointment':'https://calendar.app.google/ebTvAKkaj4Wd55X16'
     };
-    const serviceLinks={'Targeted Sculpting':bookingLinks['Custom Area Sculpt'],'RF Facial':bookingLinks['RF Facial'],'Polynucleotides':bookingLinks['Polynucleotides · Eye Area'],'Skin Boosters':bookingLinks['Skin Boosters'],'Anti-Wrinkle':bookingLinks['1 Area'],'Vitamin B12':bookingLinks['Vitamin B12 — First Appointment'],'Holistic Add-Ons':bookingLinks['Manual Lymphatic Drainage (MLD)']};
-    const menuButton=document.querySelector('.menu'),mobileNav=document.querySelector('#mobileNav');
-    const closeMenu=()=>{menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Open navigation');mobileNav.classList.remove('open');mobileNav.setAttribute('aria-hidden','true');document.body.classList.remove('lock')};
-    const openMenu=()=>{menuButton.setAttribute('aria-expanded','true');menuButton.setAttribute('aria-label','Close navigation');mobileNav.classList.add('open');mobileNav.setAttribute('aria-hidden','false');document.body.classList.add('lock')};
-    menuButton.addEventListener('click',()=>menuButton.getAttribute('aria-expanded')==='true'?closeMenu():openMenu());
-    mobileNav.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
-    document.querySelectorAll('.consult-card,.price-item:not(.anti-choice),.combined-card,.addon-list>div').forEach(card=>{const heading=card.querySelector('h4')?.textContent.trim()||card.querySelector('span')?.textContent.trim()||card.querySelector('strong')?.textContent.trim()||'Treatment consultation';card.classList.add('bookable-price');card.dataset.book='';card.dataset.choice=heading;card.dataset.bookingUrl=bookingLinks[heading]||bookingURL;card.tabIndex=0;card.setAttribute('role','link');card.setAttribute('aria-label',`Book a consultation for ${heading}`);const cue=document.createElement('span');cue.className='price-book';cue.textContent='Book a consultation';card.appendChild(cue)});
-    document.querySelectorAll('[data-book]').forEach(el=>{if(el.tagName==='A'){el.href=el.dataset.bookingUrl||bookingURL;el.target='_blank';el.rel='noopener noreferrer'}else{el.addEventListener('click',()=>window.open(el.dataset.bookingUrl||bookingURL,'_blank','noopener,noreferrer'))}});
-    document.querySelectorAll('.anti-choice').forEach(card=>{const select=card.querySelector('.anti-addon-select'),button=card.querySelector('.anti-book-btn'),heading=card.querySelector('h4').textContent.trim(),url=bookingLinks[heading]||bookingURL;button.disabled=true;['click','pointerdown','keydown'].forEach(type=>select.addEventListener(type,event=>event.stopPropagation()));select.addEventListener('change',()=>{const choice=select.value.trim();button.disabled=!choice;button.textContent=choice?`Book ${heading} · ${choice}`:'Choose an option to continue'});button.addEventListener('click',event=>{event.stopPropagation();if(button.disabled)return;trackEvent('anti_wrinkle_booking_click',{treatment_name:heading,selected_option:select.value});window.open(url,'_blank','noopener,noreferrer')})});
-    document.querySelectorAll('.bookable-price').forEach(card=>card.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open(card.dataset.bookingUrl||bookingURL,'_blank','noopener,noreferrer')}}));
-    document.querySelectorAll('[data-service]').forEach(el=>{const book=()=>window.open(serviceLinks[el.dataset.service]||bookingURL,'_blank','noopener,noreferrer');el.addEventListener('click',book);el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();book()}})});
-    document.querySelectorAll('[data-booking-key]').forEach(el=>{const url=bookingLinks[el.dataset.bookingKey]||bookingURL;if(el.tagName==='A'){el.href=url;el.target='_blank';el.rel='noopener noreferrer';return}el.tabIndex=0;el.setAttribute('role','link');const book=()=>window.open(url,'_blank','noopener,noreferrer');el.addEventListener('click',book);el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();book()}})});
-    document.addEventListener('click',event=>{const booking=event.target.closest('[data-book]'),treatment=event.target.closest('[data-service]'),instagram=event.target.closest('.instagram-link');if(booking)trackEvent('booking_click',{button_text:booking.dataset.choice||booking.textContent.trim()});if(treatment)trackEvent('treatment_click',{treatment_name:treatment.dataset.service});if(instagram)trackEvent('social_click',{social_network:'instagram'})});
-    const emailListForm=document.querySelector('#emailListForm'),emailListStatus=document.querySelector('#emailListStatus');
-    emailListForm.addEventListener('submit',async event=>{event.preventDefault();const submit=emailListForm.querySelector('[type="submit"]');submit.disabled=true;submit.textContent='Subscribing…';try{const response=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(emailListForm)).toString()});if(!response.ok)throw new Error('Submission failed');emailListForm.reset();emailListForm.style.display='none';emailListStatus.classList.add('show');trackEvent('email_signup')}catch(error){submit.disabled=false;submit.textContent='Subscribe';alert('We could not subscribe you just now. Please try again or email hello@belleandbeauaesthetic.com.');}});
+    const bookingURL = 'https://calendar.app.google/L7ENiwfreWVrskHP8';
 
-    const reviewForm=document.querySelector('#reviewForm'),reviewStatus=document.querySelector('#reviewStatus');
-    reviewForm.addEventListener('submit',async event=>{event.preventDefault();const submit=reviewForm.querySelector('[type="submit"]');submit.disabled=true;submit.textContent='Sending…';try{const response=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(reviewForm)).toString()});if(!response.ok)throw new Error('Submission failed');reviewForm.reset();reviewForm.style.display='none';reviewStatus.classList.add('show');trackEvent('review_submitted')}catch(error){submit.disabled=false;submit.textContent='Submit review for approval';alert('We could not send your review just now. Please try again or email hello@belleandbeauaesthetic.com.')}});
-    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
-    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('on');observer.unobserve(entry.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-  </script>
+    // ✅ Turn treatment cards into REAL LINKS — NEVER BLOCKED
+    document.querySelectorAll('.price-item:not(.anti-choice), .combined-card, .consult-card').forEach(card => {
+      const heading = card.querySelector('h4')?.textContent?.trim() || 'Book a consultation';
+      const url = bookingLinks[heading] || bookingURL;
+
+      // ✅ Wrap card in a proper <a> tag — browser treats it as NORMAL CLICK, never blocked
+      const link = document.createElement('a');
+      link.href = url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.style.textDecoration = 'none';
+      link.style.color = 'inherit';
+
+      // ✅ "Book a consultation" appears on hover
+      const bookLabel = document.createElement('span');
+      bookLabel.className = 'price-book';
+      bookLabel.textContent = 'Book a consultation';
+      card.appendChild(bookLabel);
+
+      // ✅ Wrap everything
+      card.parentNode.insertBefore(link, card);
+      link.appendChild(card);
+    });
+
+    // ✅ Anti-wrinkle cards — still opens cleanly
+    document.querySelectorAll('.anti-choice').forEach(card => {
+      const select = card.querySelector('.anti-addon-select');
+      const button = card.querySelector('.anti-book-btn');
+      const heading = card.querySelector('h4').textContent.trim();
+      const url = bookingLinks[heading] || bookingURL;
+      button.disabled = true;
+
+      select.addEventListener('change', () => {
+        const choice = select.value.trim();
+        button.disabled = !choice;
+        button.textContent = choice ? `Book ${heading} · ${choice}` : 'Choose an option to continue';
+      });
+
+      button.addEventListener('click', () => {
+        if (button.disabled) return;
+        window.open(url, '_blank', 'noopener,noreferrer');
+      });
+    });
+
+    // ✅ Top-level "Book" buttons
+    document.querySelectorAll('[data-book]').forEach(el => {
+      const heading = el.dataset.choice?.trim();
+      const url = bookingLinks[heading] || bookingURL;
+      if (el.tagName === 'A') {
+        el.href = url;
+        el.target = '_blank';
+        el.rel = 'noopener noreferrer';
+      } else {
+        el.addEventListener('click', () => window.open(url, '_blank', 'noopener,noreferrer'));
+      }
+    });
+ </script>
 </body>
 </html>
