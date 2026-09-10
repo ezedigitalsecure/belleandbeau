@@ -181,8 +181,8 @@
     const cookieBanner=document.querySelector('#cookieBanner'),analyticsChoice=localStorage.getItem('belleBeauAnalytics');
     if(analyticsChoice==='accepted')loadAnalytics();else if(!analyticsChoice)cookieBanner.classList.add('show');
     document.querySelectorAll('[data-analytics]').forEach(button=>button.addEventListener('click',()=>{const accepted=button.dataset.analytics==='accept';localStorage.setItem('belleBeauAnalytics',accepted?'accepted':'declined');cookieBanner.classList.remove('show');if(accepted)loadAnalytics()}));
-    const bookingURL='https://calendar.app.google/bm6ETyVkZKKLmrfKA';
-    const bookingLinks={
+   const bookingURL='https://fresha.com/book-now/bodybydesignboutique-kdicsuav/all-offer?share=true&pld=1441096';
+    const bookingLinks={};
       '1 Area':'https://calendar.app.google/A2PzziFX8BzAGVEy7',
       '2 Areas':'https://calendar.app.google/vrN4hsQZN2kSBEvM8',
       '3 Areas':'https://calendar.app.google/DBeF12E2YXx11yon8',
