@@ -258,7 +258,7 @@
     const bookingURL = 'https://calendar.app.google/L7ENiwfreWVrskHP8';
 
     // ✅ Turn treatment cards into REAL LINKS — NEVER BLOCKED
-    document.querySelectorAll('.price-item:not(.anti-choice), .combined-card, .consult-card').forEach(card => {
+    document.querySelectorAll('.price-item:not(.anti-choice):not(.exclude-from-booking), .combined-card, .consult-card').forEach(card => {
       const heading = card.querySelector('h4')?.textContent?.trim() || 'Book a consultation';
       const url = bookingLinks[heading] || bookingURL;
 
