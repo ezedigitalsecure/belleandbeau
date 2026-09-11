@@ -23,42 +23,51 @@
     .mobile-nav{display:none;position:fixed;inset:0;background:var(--paper);z-index:30;padding:145px 26px 45px;overflow:auto;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .3s ease,visibility .3s ease,transform .3s ease}.mobile-nav.open{opacity:1;visibility:visible;transform:none}.mobile-nav-inner{border-top:1px solid var(--line)}.mobile-nav a{display:flex;justify-content:space-between;align-items:center;padding:22px 0;border-bottom:1px solid var(--line);font-family:var(--serif);font-size:clamp(31px,10vw,48px);line-height:1;text-decoration:none}.mobile-nav a:after{content:"";width:11px;height:11px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg);margin-right:7px}.mobile-nav .mobile-book{margin-top:30px;background:var(--ink);color:#fff;border:1px solid var(--ink);padding:18px 20px;font-family:var(--sans);font-size:10px;letter-spacing:.17em;text-transform:uppercase;justify-content:center}.mobile-nav .mobile-book:after{display:none}
     .hero{min-height:calc(100vh - 129px);position:relative;display:flex;align-items:center;overflow:hidden;background:#e9dfd1}.
   /* ========== HERO — SIDE BY SIDE LAYOUT ========== */
+/* ========== HERO — FULL WIDTH IMAGE, COPY OVER LEFT AREA ========== */
 section.hero {
-  display: flex !important;
-  align-items: stretch !important;
-  min-height: 85vh !important;
-  width: 100% !important;
   position: relative !important;
+  width: 100% !important;
+  min-height: 90vh !important;
+  display: flex !important;
+  align-items: center !important;
+  overflow: hidden !important;
+  background: #e9dfd1;
 }
-
+.hero-media {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1 !important;
+}
+.hero-media img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: right center !important; /* Image stays right, shows person fully */
+  display: block !important;
+}
+.hero-media:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, 
+    rgba(247,241,232,.96) 0%, 
+    rgba(247,241,232,.88) 35%, 
+    rgba(247,241,232,.40) 55%, 
+    rgba(16,13,9,.06) 100%);
+  z-index: 2;
+}
 .hero-copy {
-  width: 50% !important;
+  position: relative !important;
+  z-index: 3 !important;
+  width: 52% !important; /* Copy sits on left blank/light area */
   padding: 4rem 7vw !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
 }
-
-.hero-media {
-  width: 50% !important;
-  position: relative !important;
-  min-height: 85vh !important;
-}
-
-.hero-media img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center 30% !important; /* ✅ SHIFTS IMAGE UP SO IT SHOWS THE PERSON */
-  display: block !important;
-}
-
-.hero-media:after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(247,241,232,.42) 0%, rgba(247,241,232,.08) 40%, rgba(16,13,9,.08) 100%);
-}
+/* ================================================================ */
 .eyebrow{
   font-size:10px;
   letter-spacing:.28em;
