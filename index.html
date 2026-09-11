@@ -145,7 +145,7 @@
 <div class="price-item exclude-from-booking">
   <h4>Book via Fresha</h4>
   <p>Instant confirmation · Open 24/7</p>
-  <a href="https://www.fresha.com/en-GB/a/belle-beau-formerlybodybydesign-calne-8-phelps-parade-awjddr4y" target="_blank" rel="noopener noreferrer">Open Fresha →</a>
+  <a href="https://www.fresha.com/en-GB/a/belle-beau-formerlybodybydesign-calne-8-phelps-parade-awjddr4y" target="_blank" rel="noopener noreferrer" data-no-link="true">Open Fresha →</a>
 </div>
       <details class="price-category"><summary><span class="price-index">03</span><h3>Anti-Wrinkle Treatments</h3><span class="price-toggle" aria-hidden="true"></span></summary><div class="price-content">
         <h4 class="anti-heading">Our Anti-Wrinkle treatments offers personalised assessments within your consultation.</h4>
@@ -258,7 +258,7 @@
     const bookingURL = 'https://calendar.app.google/L7ENiwfreWVrskHP8';
 
     // ✅ Turn treatment cards into REAL LINKS — NEVER BLOCKED
-   document.querySelectorAll('.price-item, .combined-card, .consult-card').forEach(card => {
+   document.querySelectorAll('.price-item:not(:has(a[data-no-link="true"])), .combined-card, .consult-card').forEach(card => {{
        // ✅ SKIP FRESHA — LEAVE LINK ALONE!
   if (card.querySelector('h4')?.textContent?.trim() === 'Book via Fresha') return;
      const heading = card.querySelector('h4')?.textContent?.trim() || 'Book a consultation';
