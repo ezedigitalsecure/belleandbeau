@@ -258,29 +258,24 @@
     const bookingURL = 'https://calendar.app.google/L7ENiwfreWVrskHP8';
 
     // ✅ Turn treatment cards into REAL LINKS — NEVER BLOCKED
-  document.querySelectorAll('.price-item, .combined-card, .consult-card').forEach(card => {
-    // ✅ SKIP FRESHA FIRST — BEFORE ANYTHING!
+document.querySelectorAll('.price-item, .combined-card, .consult-card').forEach(card => {
+  // ✅ SKIP FRESHA CARD FIRST — BEFORE ANYTHING!
   if (card.dataset.skip === "true") return;
-
   const heading = card.querySelector('h4')?.textContent?.trim() || '';
   const url = bookingLinks[heading] || bookingURL;
-
   const link = document.createElement('a');
   link.href = url;
   link.target = '_blank';
   link.rel = 'noopener noreferrer';
   link.style.textDecoration = 'none';
   link.style.color = 'inherit';
-
   const bookLabel = document.createElement('span');
   bookLabel.className = 'price-book';
   bookLabel.textContent = 'Book a consultation';
   card.appendChild(bookLabel);
-
   card.parentNode.insertBefore(link, card);
   link.appendChild(card);
 });
-
     // ✅ Anti-wrinkle cards — still opens cleanly
     document.querySelectorAll('.anti-choice').forEach(card => {
       const select = card.querySelector('.anti-addon-select');
