@@ -142,7 +142,7 @@
           <article class="price-item"><h4>Skin Boosters</h4><div class="price-meta"><strong>£150</strong><span>1 hr 5 mins</span></div><p>Deep-hydrating hyaluronic acid treatment to plump, smooth and revitalise dull or dehydrated skin.</p></article>
         </div>
       </div></details>
-<div class="price-item" data-fresha="true">
+<div class="price-item" data-skip="true">
   <h4>Book an Appointment</h4>
   <p>Instant confirmation · Open 24/7</p>
 </div>
@@ -258,12 +258,10 @@
 
     // ✅ Turn treatment cards into REAL LINKS — NEVER BLOCKED
   document.querySelectorAll('.price-item, .combined-card, .consult-card').forEach(card => {
+    // ✅ SKIP FRESHA FIRST — BEFORE ANYTHING!
+  if (card.dataset.skip === "true") return;
+
   const heading = card.querySelector('h4')?.textContent?.trim() || '';
-
-  // ✅ IF IT SAYS "BOOK VIA FRESHA" — STOP RIGHT HERE! DO NOT TOUCH!
-  if (heading === 'Book an Appointment') return;
-
-  // ✅ EVERYTHING ELSE = CALENDAR
   const url = bookingLinks[heading] || bookingURL;
 
   const link = document.createElement('a');
