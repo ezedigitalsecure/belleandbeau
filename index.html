@@ -22,40 +22,49 @@
     .logo{display:block;width:190px;height:82px;object-fit:contain;object-position:center}.book-link{border-bottom:1px solid;padding:10px 0}.menu{display:none;width:42px;height:42px;padding:10px;border:0;background:transparent;cursor:pointer;position:relative;z-index:32}.menu span{display:block;width:22px;height:1px;background:var(--ink);position:absolute;left:10px;transition:transform .3s ease,top .3s ease,opacity .2s ease}.menu span:nth-child(1){top:13px}.menu span:nth-child(2){top:20px}.menu span:nth-child(3){top:27px}.menu[aria-expanded="true"] span:nth-child(1){top:20px;transform:rotate(45deg)}.menu[aria-expanded="true"] span:nth-child(2){opacity:0}.menu[aria-expanded="true"] span:nth-child(3){top:20px;transform:rotate(-45deg)}
     .mobile-nav{display:none;position:fixed;inset:0;background:var(--paper);z-index:30;padding:145px 26px 45px;overflow:auto;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .3s ease,visibility .3s ease,transform .3s ease}.mobile-nav.open{opacity:1;visibility:visible;transform:none}.mobile-nav-inner{border-top:1px solid var(--line)}.mobile-nav a{display:flex;justify-content:space-between;align-items:center;padding:22px 0;border-bottom:1px solid var(--line);font-family:var(--serif);font-size:clamp(31px,10vw,48px);line-height:1;text-decoration:none}.mobile-nav a:after{content:"";width:11px;height:11px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg);margin-right:7px}.mobile-nav .mobile-book{margin-top:30px;background:var(--ink);color:#fff;border:1px solid var(--ink);padding:18px 20px;font-family:var(--sans);font-size:10px;letter-spacing:.17em;text-transform:uppercase;justify-content:center}.mobile-nav .mobile-book:after{display:none}
     .hero{min-height:calc(100vh - 129px);position:relative;display:flex;align-items:center;overflow:hidden;background:#e9dfd1}.
-   .hero-media {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
+  /* ========== HERO — SIDE BY SIDE LAYOUT ========== */
+section.hero {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: stretch !important;
+  min-height: 100vh !important;
+  width: 100% !important;
+  position: relative !important;
 }
+
+.hero-copy {
+  position: relative !important;
+  width: 50% !important;
+  padding: 4rem 7vw !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.hero-media {
+  position: relative !important;
+  width: 50% !important;
+  min-height: 100vh !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 .hero-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center right;
-  border: none;
-  box-shadow: none;
+  width: 100% !important;
+  height: 100vh !important;
+  object-fit: cover !important;
+  object-position: center right !important;
+  display: block !important;
 }
+
 .hero-media:after {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(90deg, rgba(247,241,232,.42) 0%, rgba(247,241,232,.08) 40%, rgba(16,13,9,.08) 100%);
-}
-.hero-copy {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  min-height: 100vh;
-  padding: 4rem 7vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-sizing: border-box;
+  z-index: 1;
 }
 .eyebrow{
   font-size:10px;
