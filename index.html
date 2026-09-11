@@ -257,23 +257,30 @@
     const bookingURL = 'https://calendar.app.google/L7ENiwfreWVrskHP8';
 
     // ✅ Turn treatment cards into REAL LINKS — NEVER BLOCKED
-document.querySelectorAll('.price-item, .combined-card, .consult-card').forEach(card => {
-  // ✅ SKIP FRESHA CARD FIRST — BEFORE ANYTHING!
-  if (card.dataset.skip === "true") return;
-  const heading = card.querySelector('h4')?.textContent?.trim() || '';
-  const url = bookingLinks[heading] || bookingURL;
+const FRESHA_URL = "https://www.fresha.com/en-GB/a/belle-beau-formerlybodybydesign-calne-8-phelps-parade-awjddr4y";
+
+document.querySelectorAll('.price-item').forEach(card => {
+  // Skip if already linked
+  if (card.getAttribute('data-processed') === "true") return;
+  
+  // Link EVERY card to Fresha
   const link = document.createElement('a');
-  link.href = url;
-  link.target = '_blank';
-  link.rel = 'noopener noreferrer';
-  link.style.textDecoration = 'none';
-  link.style.color = 'inherit';
+  link.href = FRESHA_URL;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.style.textDecoration = "none";
+  link.style.color = "inherit";
+  
+  // Add hover label
   const bookLabel = document.createElement('span');
-  bookLabel.className = 'price-book';
-  bookLabel.textContent = 'Book a consultation';
+  bookLabel.className = "price-book";
+  bookLabel.textContent = "Book a consultation";
   card.appendChild(bookLabel);
+  
+  // Wrap card
   card.parentNode.insertBefore(link, card);
   link.appendChild(card);
+  card.setAttribute('data-processed', "true");
 });
     // ✅ Anti-wrinkle cards — still opens cleanly
     document.querySelectorAll('.anti-choice').forEach(card => {
