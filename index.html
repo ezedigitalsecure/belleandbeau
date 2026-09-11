@@ -21,7 +21,7 @@
     .nav-links,.nav-actions{display:flex;align-items:center;gap:28px}.nav-actions{justify-content:flex-end}.nav a{text-decoration:none;font-size:11px;text-transform:uppercase;letter-spacing:.16em;font-weight:500}.nav a:hover{color:var(--bronze)}
     .logo{display:block;width:190px;height:82px;object-fit:contain;object-position:center}.book-link{border-bottom:1px solid;padding:10px 0}.menu{display:none;width:42px;height:42px;padding:10px;border:0;background:transparent;cursor:pointer;position:relative;z-index:32}.menu span{display:block;width:22px;height:1px;background:var(--ink);position:absolute;left:10px;transition:transform .3s ease,top .3s ease,opacity .2s ease}.menu span:nth-child(1){top:13px}.menu span:nth-child(2){top:20px}.menu span:nth-child(3){top:27px}.menu[aria-expanded="true"] span:nth-child(1){top:20px;transform:rotate(45deg)}.menu[aria-expanded="true"] span:nth-child(2){opacity:0}.menu[aria-expanded="true"] span:nth-child(3){top:20px;transform:rotate(-45deg)}
     .mobile-nav{display:none;position:fixed;inset:0;background:var(--paper);z-index:30;padding:145px 26px 45px;overflow:auto;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .3s ease,visibility .3s ease,transform .3s ease}.mobile-nav.open{opacity:1;visibility:visible;transform:none}.mobile-nav-inner{border-top:1px solid var(--line)}.mobile-nav a{display:flex;justify-content:space-between;align-items:center;padding:22px 0;border-bottom:1px solid var(--line);font-family:var(--serif);font-size:clamp(31px,10vw,48px);line-height:1;text-decoration:none}.mobile-nav a:after{content:"";width:11px;height:11px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg);margin-right:7px}.mobile-nav .mobile-book{margin-top:30px;background:var(--ink);color:#fff;border:1px solid var(--ink);padding:18px 20px;font-family:var(--sans);font-size:10px;letter-spacing:.17em;text-transform:uppercase;justify-content:center}.mobile-nav .mobile-book:after{display:none}
-    .hero{min-height:calc(100vh - 129px);position:relative;display:flex;align-items:center;overflow:hidden;background:#e9dfd1}.
+    .hero{min-height:calc(100vh - 129px);position:relative;display:flex;align-items:center;overflow:hidden;}
 
 .eyebrow{
   font-size:10px;
@@ -111,19 +111,20 @@
   <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" aria-hidden="true"><div class="mobile-nav-inner"><a href="#pricing">Treatments &amp; Pricing</a><a href="#body-contouring">Body contouring</a><a href="#owner">Meet the owner</a><a href="#reviews">Leave a review</a><a href="#contact">Contact</a><a class="mobile-book" href="#book" data-book>Book a consultation</a></div></nav>
   <main id="main">
     <section class="hero">
-    
-      <div class="hero-copy reveal">
-      <div class="eyebrow no-line">Body Contouring and Aesthetics Specialist</div>
-      <h1>Aesthetics that<em>evolve you.</em></h1>
-      <p>Beauty is not just skin deep. It shapes how you see yourself, how you show up, and how you feel in your own life.</p>
-      <p>We work with what is uniquely yours — with precision, restraint, and care — to help you feel more confident, more aligned, and more like the person you want to be.</p>
-      <p>We never alter your essence. We refine, respect, and reveal it. Every treatment is thoughtful, gentle, and built entirely around you.</p>
-      <div class="signature">The art of subtlety.</div>
-      <div class="actions"><a class="btn" href="#book" data-book>Book a consultation</a><a class="btn ghost" href="#body-contouring">Explore treatments</a></div>
-    </div>
-    <div class="hero-media"><img src="body-contouring-hero.jpg.png" alt="Body contouring treatment focus" fetchpriority="high" style="width:100%; height:100%; object-fit:cover; object-position:center;"></div>
-    <a class="scroll" href="#owner">Discover more</a>
-</section>
+      <div class="hero-media">
+        <img src="body-contouring-hero.jpg.png" alt="Body contouring treatment focus" fetchpriority="high" style="width:100vw; height:100%; object-fit:cover; object-position:center 38%; position:absolute; right:0; top:0; z-index:1;">
+      </div>
+      <div class="hero-copy reveal" style="position:relative; z-index:2;">
+        <div class="eyebrow no-line">Body Contouring and Aesthetics Specialist</div>
+        <h1>Aesthetics that<em>evolve you.</em></h1>
+        <p>Beauty is not just skin deep. It shapes how you see yourself, how you show up, and how you feel in your own life.</p>
+        <p>We work with what is uniquely yours — with precision, restraint, and care — to help you feel more confident, more aligned, and more like the person you want to be.</p>
+        <p>We never alter your essence. We refine, respect, and reveal it. Every treatment is thoughtful, gentle, and built entirely around you.</p>
+        <div class="signature">The art of subtlety.</div>
+        <div class="actions"><a class="btn" href="#book" data-book>Book a consultation</a><a class="btn ghost" href="#body-contouring">Explore treatments</a></div>
+      </div>
+      <a class="scroll" href="#owner">Discover more</a>
+    </section>
     <section class="story owner-story" id="owner"><div class="owner-portrait reveal"><img src="nicki-practitioner.jpeg" alt="Nicki, founder and lead practitioner at Belle and Beau Evolutionary Aesthetics" loading="lazy"></div><div class="owner-copy reveal"><div class="eyebrow">Nicki · Founder &amp; Lead Practitioner</div><h2>Precision, intuition and care.</h2><p>Nicki is a dedicated body contouring and aesthetics specialist, passionate about helping every client feel confident and comfortable in their own skin.</p><p>Qualified in a comprehensive range of non-invasive body sculpting, holistic therapies and advanced aesthetic injectables, she combines technical precision with a deeply intuitive, client-centred approach.</p><p>Since qualifying, Nicki has built a strong reputation for her eye for detail, gentle care and commitment to natural, balanced results. She has also trained numerous practitioners in her field, sharing her expertise to help others deliver safe, thoughtful treatments.</p><p>Believing that true confidence comes from feeling aligned inside and out, Nicki founded Belle &amp; Beau Evolutionary Aesthetics to offer inclusive, bespoke care for all bodies — men and women alike.</p><p>Every plan is built around your unique shape, goals and comfort, with time to listen, explain and create results that feel authentically you.</p></div></section>
     <div class="marquee"><div class="marquee-track"><span>Skin confidence</span><i></i><span>Quiet luxury</span><i></i><span>Beautifully considered</span><i></i><span>Always you</span><i></i><span>Skin confidence</span><i></i><span>Quiet luxury</span><i></i><span>Beautifully considered</span><i></i><span>Always you</span><i></i></div></div>
     
