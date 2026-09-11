@@ -24,6 +24,7 @@
     .hero{min-height:calc(100vh - 129px);position:relative;display:flex;align-items:center;overflow:hidden;background:#e9dfd1}.
   /* ========== HERO — SIDE BY SIDE LAYOUT ========== */
 /* ========== HERO — FULL WIDTH IMAGE, COPY OVER LEFT AREA ========== */
+/* ========== HERO — FULL WIDTH IMAGE, COPY OVER LEFT ========== */
 section.hero {
   position: relative !important;
   width: 100% !important;
@@ -31,7 +32,6 @@ section.hero {
   display: flex !important;
   align-items: center !important;
   overflow: hidden !important;
-  background: #e9dfd1;
 }
 .hero-media {
   position: absolute !important;
@@ -44,7 +44,7 @@ section.hero {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
-  object-position: right center !important; /* Image stays right, shows person fully */
+  object-position: top right !important;
   display: block !important;
 }
 .hero-media:after {
@@ -52,22 +52,19 @@ section.hero {
   position: absolute;
   inset: 0;
   background: linear-gradient(90deg, 
-    rgba(247,241,232,.96) 0%, 
-    rgba(247,241,232,.88) 35%, 
-    rgba(247,241,232,.40) 55%, 
-    rgba(16,13,9,.06) 100%);
+    rgba(255,250,240, 0.85) 0%, 
+    rgba(255,250,240, 0.55) 40%, 
+    rgba(255,250,240, 0.15) 70%,
+    rgba(255,250,240, 0.00) 100%);
   z-index: 2;
 }
 .hero-copy {
   position: relative !important;
   z-index: 3 !important;
-  width: 52% !important; /* Copy sits on left blank/light area */
-  padding: 4rem 7vw !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
+  width: 58% !important;
+  max-width: 680px !important;
+  padding: 4rem 6vw !important;
 }
-/* ================================================================ */
 .eyebrow{
   font-size:10px;
   letter-spacing:.28em;
