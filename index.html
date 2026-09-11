@@ -142,10 +142,9 @@
           <article class="price-item"><h4>Skin Boosters</h4><div class="price-meta"><strong>£150</strong><span>1 hr 5 mins</span></div><p>Deep-hydrating hyaluronic acid treatment to plump, smooth and revitalise dull or dehydrated skin.</p></article>
         </div>
       </div></details>
-<div class="price-item exclude-from-booking">
-  <h4>Book via Fresha</h4>
+<div class="price-item" data-fresha="true">
+  <h4>Book an Appointment</h4>
   <p>Instant confirmation · Open 24/7</p>
-  <a href="https://www.fresha.com/en-GB/a/belle-beau-formerlybodybydesign-calne-8-phelps-parade-awjddr4y" target="_blank" rel="noopener noreferrer" data-no-link="true">Open Fresha →</a>
 </div>
       <details class="price-category"><summary><span class="price-index">03</span><h3>Anti-Wrinkle Treatments</h3><span class="price-toggle" aria-hidden="true"></span></summary><div class="price-content">
         <h4 class="anti-heading">Our Anti-Wrinkle treatments offers personalised assessments within your consultation.</h4>
@@ -258,30 +257,30 @@
     const bookingURL = 'https://calendar.app.google/L7ENiwfreWVrskHP8';
 
     // ✅ Turn treatment cards into REAL LINKS — NEVER BLOCKED
-   document.querySelectorAll('.price-item, .combined-card, .consult-card').forEach(card => {
-       // ✅ SKIP FRESHA — LEAVE LINK ALONE!
-  if (card.querySelector('h4')?.textContent?.trim() === 'Book via Fresha') return;
-     const heading = card.querySelector('h4')?.textContent?.trim() || 'Book a consultation';
-      const url = bookingLinks[heading] || bookingURL;
+  document.querySelectorAll('.price-item, .combined-card, .consult-card').forEach(card => {
+  const heading = card.querySelector('h4')?.textContent?.trim() || '';
 
-      // ✅ Wrap card in a proper <a> tag — browser treats it as NORMAL CLICK, never blocked
-      const link = document.createElement('a');
-      link.href = url;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      link.style.textDecoration = 'none';
-      link.style.color = 'inherit';
+  // ✅ IF IT SAYS "BOOK VIA FRESHA" — STOP RIGHT HERE! DO NOT TOUCH!
+  if (heading === 'Book an Appointment') return;
 
-      // ✅ "Book a consultation" appears on hover
-      const bookLabel = document.createElement('span');
-      bookLabel.className = 'price-book';
-      bookLabel.textContent = 'Book a consultation';
-      card.appendChild(bookLabel);
+  // ✅ EVERYTHING ELSE = CALENDAR
+  const url = bookingLinks[heading] || bookingURL;
 
-      // ✅ Wrap everything
-      card.parentNode.insertBefore(link, card);
-      link.appendChild(card);
-    });
+  const link = document.createElement('a');
+  link.href = url;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.style.textDecoration = 'none';
+  link.style.color = 'inherit';
+
+  const bookLabel = document.createElement('span');
+  bookLabel.className = 'price-book';
+  bookLabel.textContent = 'Book a consultation';
+  card.appendChild(bookLabel);
+
+  card.parentNode.insertBefore(link, card);
+  link.appendChild(card);
+});
 
     // ✅ Anti-wrinkle cards — still opens cleanly
     document.querySelectorAll('.anti-choice').forEach(card => {
