@@ -258,7 +258,7 @@
     const bookingURL = 'https://calendar.app.google/L7ENiwfreWVrskHP8';
 
     // ✅ Turn treatment cards into REAL LINKS — NEVER BLOCKED
-   document.querySelectorAll('.price-item:not(:has(a[data-no-link="true"])), .combined-card, .consult-card').forEach(card => {{
+   document.querySelectorAll('.price-item, .combined-card, .consult-card').forEach(card => {
        // ✅ SKIP FRESHA — LEAVE LINK ALONE!
   if (card.querySelector('h4')?.textContent?.trim() === 'Book via Fresha') return;
      const heading = card.querySelector('h4')?.textContent?.trim() || 'Book a consultation';
