@@ -27,17 +27,20 @@
   width: 100% !important;
   min-height: 90vh !important;
   display: flex !important;
-  align-items: center !important;
+  align-items: stretch !important;
   overflow: hidden !important;
+  background: #f7f1e8;
 }
+
 .hero-media {
   position: absolute !important;
   top: 0 !important;
   right: 0 !important;
   height: 100% !important;
-  width: 55% !important;
+  width: 48% !important;
   z-index: 1 !important;
 }
+
 .hero-media img {
   width: 100% !important;
   height: 100% !important;
@@ -45,21 +48,27 @@
   object-position: center right !important;
   display: block !important;
 }
+
 .hero-media:after {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(90deg, 
-    rgba(255,250,240, 0.92) 0%, 
-    rgba(255,250,240, 0.65) 35%, 
-    rgba(255,250,240, 0.00) 100%);
+    rgba(247,241,232, 0.00) 0%, 
+    rgba(247,241,232, 0.00) 15%, 
+    rgba(247,241,232, 0.18) 35%, 
+    rgba(247,241,232, 0.96) 100%);
   z-index: 2;
 }
+
 .hero-copy {
   position: relative !important;
   z-index: 3 !important;
   width: 50% !important;
   padding: 4rem 6vw !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
 }
 .eyebrow{
   font-size:10px;
