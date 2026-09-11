@@ -25,39 +25,31 @@
   /* ========== HERO — SIDE BY SIDE LAYOUT ========== */
 section.hero {
   display: flex !important;
-  flex-direction: row !important;
   align-items: stretch !important;
-  min-height: 100vh !important;
+  min-height: 85vh !important;
   width: 100% !important;
   position: relative !important;
 }
 
 .hero-copy {
-  position: relative !important;
   width: 50% !important;
   padding: 4rem 7vw !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
-  flex-shrink: 0 !important;
 }
 
 .hero-media {
-  position: relative !important;
   width: 50% !important;
-  min-height: 100vh !important;
-  height: 100% !important;
-  flex-shrink: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  position: relative !important;
+  min-height: 85vh !important;
 }
 
 .hero-media img {
   width: 100% !important;
   height: 100% !important;
-  min-height: 800px !important;
   object-fit: cover !important;
-  object-position: center right !important;
+  object-position: center 30% !important; /* ✅ SHIFTS IMAGE UP SO IT SHOWS THE PERSON */
   display: block !important;
 }
 
@@ -66,7 +58,6 @@ section.hero {
   position: absolute;
   inset: 0;
   background: linear-gradient(90deg, rgba(247,241,232,.42) 0%, rgba(247,241,232,.08) 40%, rgba(16,13,9,.08) 100%);
-  z-index: 1;
 }
 .eyebrow{
   font-size:10px;
