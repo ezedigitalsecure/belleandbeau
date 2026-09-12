@@ -1,41 +1,164 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Boutique — Coming Soon | Belle & Beau</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Belle & Beau — Online Boutique Coming Soon. Handmade products to support our services, your bodies and clinics. Launching October 2026.">
+  <title>Belle & Beau | Online Boutique — Coming Soon</title>
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#c38e18">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Italiana&display=swap" rel="stylesheet">
   <style>
-    .nav { padding: 4px 4vw; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; background: rgba(250,248,244,.94); border-bottom: 1px solid var(--line, #E8E4DB); position: relative; z-index: 20; }
-    .nav-links, .nav-actions { display: flex; align-items: center; gap: 28px; }
-    .nav-actions { justify-content: flex-end; }
-    .nav a { text-decoration: none; font-size: 11px; text-transform: uppercase; letter-spacing: .16em; font-weight: 500; color: #1A1712; }
-    .nav a:hover { color: var(--bronze, #cda13d); }
-    .logo { display: block; width: auto; height: 42px; max-width: 180px; object-fit: contain; object-position: center; }
-    .book-link { border-bottom: 1px solid transparent; padding: 10px 0; }
+    :root{--ink:#100d09;--cream:#f3eee7;--paper:#faf8f4;--gold:#bd8616;--bronze:#806120;--line:rgba(16,13,9,.18);--serif:'Italiana',serif;--sans:'DM Sans',sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300}
+    a{color:inherit}button{font:inherit}.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;z-index:100;background:#fff;padding:12px}
+
+    /* Announcement Bar — matches main site */
+    .announcement{height:31px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+
+    /* Subscribe / Coming Soon Bar — EXACTLY like your image */
+    .email-list{background:#f5efe8;color:#4a3f35;padding:60px 24px;text-align:center;border-top:none;border-bottom:1px solid #e2d5c8}
+    .email-list h2{margin:0 0 14px;font-family:var(--serif);font-size:clamp(30px,4vw,46px);font-weight:400;line-height:1.1;color:#9a6f16}
+    .email-list>p{max-width:720px;margin:0 auto 32px;font-size:15px;line-height:1.7}
+    .email-list-form{display:flex;gap:12px;justify-content:center;max-width:580px;margin:0 auto}
+    .email-list-input{flex:1;min-width:0;padding:15px 18px;border:1px solid #d4c5b5;border-radius:0;background:#fff;color:#4a3f35;font:14px var(--sans);outline:none}
+    .email-list-input:focus{border-color:#9a6f16;box-shadow:0 0 0 1px #9a6f16}
+    .email-list-btn{padding:15px 30px;border:1px solid var(--gold);border-radius:0;background:var(--gold);color:#fff;font:600 10px var(--sans);letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:.25s}
+    .email-list-btn:hover,.email-list-btn:focus-visible{background:var(--ink);border-color:var(--ink)}
+    .email-list-status{display:none;max-width:580px;margin:22px auto 0;padding-top:20px;border-top:1px solid #d4c5b5}
+    .email-list-status.show{display:block}
+    .email-list-status h3{margin:0 0 8px;font-family:var(--serif);font-size:29px;font-weight:400;color:#9a6f16}
+    .email-list-status p{margin:0;font-size:13px;line-height:1.6}
+
+    /* Cream Nav Bar — consistent header */
+    .nav{height:42px;padding:0 4vw;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;background:rgba(250,248,244,.94);border-bottom:1px solid var(--line);position:relative;z-index:20}
+    .nav-links,.nav-actions{display:flex;align-items:center;gap:28px}
+    .nav-actions{justify-content:flex-end}
+    .nav a{text-decoration:none;font-size:11px;text-transform:uppercase;letter-spacing:.16em;font-weight:500}
+    .nav a:hover{color:var(--bronze)}
+    .logo{display:block;width:auto;height:42px;object-fit:contain;object-position:center;margin:0 auto;padding:0!important}
+    .book-link{border-bottom:none;padding:10px 0}
+
+    /* Footer consistent styling */
+    footer{background:var(--ink);color:var(--cream);padding:60px 6vw 30px;margin-top:80px}
+    .footer-top{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:60px}
+    .footer-logo{display:block;width:310px;max-width:100%;height:145px;object-fit:cover;object-position:center 50%;opacity:1}
+    .footer-blurb{max-width:320px;color:#a9a198;font-size:12px;line-height:1.8}
+    .footer-col h4{font-size:9px;text-transform:uppercase;letter-spacing:.2em;color:#cda13d;margin:0 0 24px}
+    .footer-col a,.footer-col p{display:block;text-decoration:none;color:#bbb3a9;font-size:12px;margin:0 0 13px}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.15);margin-top:40px;padding-top:20px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#746f68;text-align:center}
+    .honeypot{position:absolute;left:-9999px}
+
+    /* Responsive */
+    @media(max-width:640px){
+      .email-list{padding:40px 22px}
+      .email-list-form{flex-direction:column}
+      .email-list-input,.email-list-btn{width:100%}
+      .email-list h2{font-size:28px}
+      .footer-top{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <nav class="nav">
-    <a href="index.html" class="logo-link">
-      <img src="belle-beau-logo-new-transparent.png" alt="Belle & Beau" class="logo">
+  <!-- ✅ Announcement Bar (same as main site) -->
+  <div class="announcement">Consultations Normally £25 — Complimentary for a limited time · Personalised treatment plans</div>
+
+  <!-- ✅ SUBSCRIBE BAR — EXACTLY as you wanted for Boutique -->
+  <section class="email-list" id="email-list" aria-labelledby="email-list-title">
+    <h2 id="email-list-title">Online Boutique Coming Soon</h2>
+    <p>Please check back soon — we are crafting up some beautiful handmade products to support our services, your bodies and clinics.<br>Launching October 2026</p>
+    <form class='email-list-form' id='emailListForm' method='POST' name='email-list'>
+      <input type="hidden" name="form-name" value="email-list">
+      <p class="honeypot"><label>Leave this field empty <input name="website" tabindex="-1" autocomplete="off"></label></p>
+      <label class="skip" for="emailListAddress">Email address</label>
+      <input type="email" class="email-list-input" id="emailListAddress" name="email" placeholder="Enter your email address" autocomplete="email" required>
+      <button type="submit" class="email-list-btn">SUBSCRIBE</button>
+    </form>
+    <div class="email-list-status" id="emailListStatus" role="status">
+      <h3>Welcome to the list.</h3>
+      <p>Thank you for subscribing. Belle & Beau will keep you updated with considered news and offers.</p>
+    </div>
+  </section>
+
+  <!-- ✅ Cream Navigation Bar (consistent with main site) -->
+  <header class="nav">
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/#pricing">Treatments & Pricing</a>
+      <a href="/#body-contouring">Body Contouring</a>
+      <a href="/#owner">Meet the owner</a>
+    </nav>
+    <a href="/" aria-label="Belle and Beau home">
+      <img class="logo" src="belle-beau-logo-new-transparent.png" alt="Belle & Beau Evolutionary Aesthetics">
     </a>
-    <div class="nav-links">
-      <a href="treatments.html">Treatments</a>
-      <a href="about.html">About</a>
-      <a href="academycomingsoon.html">Academy</a>
-      <a href="boutiquecomingsoon.html">Boutique</a>
-    </div>
     <div class="nav-actions">
-      <a href="https://www.fresha.com/en-GB/a/belle-beau-formerlybodybydesign-calne-8-phelps-parade-awjddr4y" target="_blank" class="book-link">Book Consultation</a>
+      <a href="/#contact">Contact</a>
+      <a href="/#book" class="book-link">Book a consultation</a>
     </div>
-  </nav>
+  </header>
 
- <section class="email-list" id="email-list" aria-labelledby="email-list-title">   <h2 id="email-list-title">Online Boutique Coming Soon</h2>   <p>Please check back soon — we are crafting up some beautiful handmade products to support our services, your bodies and clinics.
+  <!-- ✅ Main Content Area -->
+  <main id="main" style="padding: 80px 6vw 120px; text-align: center; max-width: 800px; margin: 0 auto;">
+    <h1 style="font-family:var(--serif); font-size:clamp(42px,5vw,64px); font-weight:400; line-height:1.1; color:var(--bronze); margin:0 0 24px;">Something beautiful is coming…</h1>
+    <p style="font-size:16px; line-height:1.8; color:#5f5850;">We are carefully crafting a collection of handmade products designed to complement your treatments and support your self-care journey at home. From soothing botanicals to daily essentials, every item will be created with the same care, quality and intention as your treatments with us.</p>
+    <p style="font-size:16px; line-height:1.8; color:#5f5850; margin-top:20px;"><strong>Launching October 2026.</strong> Subscribe above to be the first to know — and receive early access to our opening collection.</p>
+  </main>
 
-Launching October 2026</p>   <form class='email-list-form' id='emailListForm' method='POST' name='email-list'>     <input type="hidden" name="form-name" value="email-list">     <p class="honeypot"><label>Leave this field empty <input name="website" tabindex="-1" autocomplete="off"></label></p>     <label class="skip" for="emailListAddress">Email address</label>     <input type="email" class="email-list-input" id="emailListAddress" name="email" placeholder="Enter your email address" autocomplete="email" required>     <button type="submit" class="email-list-btn">Subscribe</button>   </form>   <div class="email-list-status" id="emailListStatus" role="status">     <h3>Welcome to the list.</h3>     <p>Thank you for subscribing. Belle & Beau will keep you updated with considered news and offers.</p>   </div> </section>
+  <!-- ✅ Consistent Footer -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-col">
+        <h4>Belle & Beau</h4>
+        <p class="footer-blurb">Evolutionary Aesthetics — refined, personalised treatments designed around you.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="/#pricing">Treatments & Pricing</a>
+        <a href="/#body-contouring">Body Contouring</a>
+        <a href="/#owner">Meet the Owner</a>
+        <a href="/#book">Book Consultation</a>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <p>The Hideaway Beauty Calne LTD<br>8 Phelps Parade, Calne<br>SN11 0HA, United Kingdom</p>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="https://www.instagram.com/belleandbeauaesthetics/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Belle & Beau. All rights reserved.</span>
+    </div>
+  </footer>
 
-<script src="footer.js"></script>
+  <!-- ✅ Form Submit Handler (same as main site) -->
+  <script>
+    const form = document.getElementById('emailListForm');
+    const status = document.getElementById('emailListStatus');
+    if(form){
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(form))
+        }).then(() => {
+          form.style.display = 'none';
+          status.classList.add('show');
+        }).catch(() => {
+          form.style.display = 'none';
+          status.classList.add('show');
+        });
+      });
+    }
+  </script>
 </body>
 </html>
