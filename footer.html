@@ -7,14 +7,14 @@ footer{background:#000;color:#BFB9AD;padding:48px 4vw 24px;border-top:1px solid 
 .footer-col li{margin-bottom:8px}
 .footer-col a{color:#BFB9AD;font-size:13px;text-decoration:none;transition:.2s}
 .footer-col a:hover{color:#D4B16A}
-.footer-desc{font-size:12px;line-height:1.6;color:#777;margin-top:16px}
-.footer-logo-img{max-width:180px;height:auto}
-.footer-social{display:flex;gap:12px;margin-top:24px}
-.social-link{width:40px;height:40px;display:grid;place-items:center;border:1px solid #444;border-radius:50%;color:#AAA;text-decoration:none;transition:.25s}
-.social-link:hover{border-color:#D4B16A;color:#D4B16A}
+.footer-desc{font-size:12px;line-height:1.6;color:#888;margin-top:12px}
+.footer-logo-wrap{display:flex;flex-direction:column;gap:8px}
+.footer-logo-img{max-width:160px;height:auto;display:block}
+.footer-social{display:flex;gap:14px;margin-top:24px}
+.social-link{width:38px;height:38px;display:grid;place-items:center;border:1px solid #444;border-radius:50%;color:#AAA;text-decoration:none;transition:.25s}
+.social-link:hover{border-color:#D4B16A;color:#D4B16A;background:rgba(212,177,106,.08)}
 .social-icon{width:18px;height:18px}
-.footer-bottom{display:flex;justify-content:space-between;align-items:center;max-width:1280px;margin:30px auto 0;padding-top:20px;border-top:1px solid #222;font-size:11px;color:#888;flex-wrap:wrap;gap:8px}
-/* ========== EZE & SENTIA LINK STYLES ========== */
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;max-width:1280px;margin:30px auto 0;padding-top:20px;border-top:1px solid #222;font-size:11px;color:#777;flex-wrap:wrap;gap:8px}
 .footer-bottom a{color:#D4B16A;font-weight:700;text-decoration:underline;text-underline-offset:3px;transition:all .3s ease}
 .footer-bottom a:hover{color:#F0D48A;text-shadow:0 0 10px rgba(212,177,106,.8);text-decoration:underline}
 @media(max-width:900px){.footer-top{grid-template-columns:repeat(2,1fr)}}
@@ -23,10 +23,12 @@ footer{background:#000;color:#BFB9AD;padding:48px 4vw 24px;border-top:1px solid 
 
 <footer>
   <div class="footer-top">
-    <!-- WHITE BELLE & BEAU LOGO -->
+    <!-- WHITE BELLE & BEAU LOGO + TAGLINE -->
     <div class="footer-col">
-      <a href="index.html"><img src="belle-beau-logo-footer-white.png" alt="Belle & Beau" class="footer-logo-img"></a>
-      <p class="footer-desc">An inclusive body contouring and aesthetics studio offering personalised practitioner-led care.</p>
+      <div class="footer-logo-wrap">
+        <a href="index.html"><img src="belle-beau-logo-footer-white.png" alt="Belle & Beau" class="footer-logo-img"></a>
+        <p class="footer-desc">An inclusive body contouring and aesthetics studio offering personalised practitioner-led care.</p>
+      </div>
     </div>
     <!-- STUDIO -->
     <div class="footer-col">
@@ -68,10 +70,10 @@ footer{background:#000;color:#BFB9AD;padding:48px 4vw 24px;border-top:1px solid 
       </ul>
       <div class="footer-social">
         <a href="https://instagram.com/YOUR-HANDLE" target="_blank" class="social-link" aria-label="Instagram">
-          <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
         </a>
         <a href="https://facebook.com/YOUR-PAGE" target="_blank" class="social-link" aria-label="Facebook">
-          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z"/></svg>
         </a>
       </div>
     </div>
