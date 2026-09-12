@@ -21,7 +21,7 @@
     /* ✅ Black Announcement Bar */
     .announcement{height:31px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:.18em;text-transform:uppercase}
 
-    /* ✅ Subscribe Bar — exactly as you edited it */
+    /* ✅ Subscribe Bar */
     .email-list{background:#f5efe8;color:#4a3f35;padding:80px 24px;text-align:center;border-top:none;border-bottom:none}
     .email-list h2{margin:0 0 14px;font-family:var(--serif);font-size:clamp(30px,4vw,46px);font-weight:400;line-height:1.1;color:#9a6f16}
     .email-list>p{max-width:720px;margin:0 auto 32px;font-size:15px;line-height:1.7;color:#6b6055}
@@ -35,7 +35,7 @@
     .email-list-status h3{margin:0 0 8px;font-family:var(--serif);font-size:29px;font-weight:400;color:#9a6f16}
     .email-list-status p{margin:0;font-size:13px;line-height:1.6}
 
-    /* ✅ Footer styles — matches main site exactly so footer.js renders perfectly */
+    /* ✅ Footer styles — matches main site */
     footer{background:var(--ink);color:var(--cream);padding:60px 6vw 30px;margin-top:0}
     .footer-top{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:40px;max-width:1280px;margin:0 auto}
     .footer-col h4{font-size:9px;text-transform:uppercase;letter-spacing:.2em;color:#cda13d;margin:0 0 16px}
@@ -64,10 +64,12 @@
   <!-- ✅ Black Announcement Bar -->
   <div class="announcement">Coming October 2026</div>
 
-  <!-- ✅ Subscribe Bar — exactly as you wanted -->
+  <!-- ✅ Subscribe Bar — "Subscribe above" on new line -->
   <section class="email-list" id="email-list" aria-labelledby="email-list-title">
     <h2 id="email-list-title">Something beautiful is coming…</h2>
-    <p>We are carefully crafting a collection of handmade products designed to complement your treatments and support your self-care journey at home. From soothing botanicals to daily essentials, every item will be created with the same care, quality and intention as your treatments with us.<br>Launching October 2026. Subscribe above to be the first to know — and receive early access to our opening collection.</p>
+    <p>We are carefully crafting a collection of handmade products designed to complement your treatments and support your self-care journey at home. From soothing botanicals to daily essentials, every item will be created with the same care, quality and intention as your treatments with us.<br>
+    Launching October 2026.<br>
+    Subscribe above to be the first to know — and receive early access to our opening collection.</p>
     <form class='email-list-form' id='emailListForm' method='POST' name='email-list'>
       <input type="hidden" name="form-name" value="email-list">
       <p class="honeypot"><label>Leave this field empty <input name="website" tabindex="-1" autocomplete="off"></label></p>
@@ -81,7 +83,7 @@
     </div>
   </section>
 
-  <!-- ✅ FOOTER LOADED FROM footer.js — SAME AS EVERY OTHER PAGE ✅ -->
+  <!-- ✅ Footer from shared file — same on every page -->
   <script src="footer.js"></script>
 
   <!-- ✅ Form Submit Handler -->
