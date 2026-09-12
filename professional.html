@@ -17,14 +17,16 @@
     :root{--ink:#100d09;--cream:#f3eee7;--paper:#faf8f4;--gold:#bd8616;--bronze:#806120;--line:rgba(16,13,9,.18);--serif:'Italiana',serif;--sans:'DM Sans',sans-serif}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300}a{color:inherit;text-decoration:none}button{font:inherit}.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;z-index:100;background:#fff;padding:12px}
 
-    /* ✅ BLACK TOP NAV — EXACTLY LIKE YOUR HOMEPAGE */
+    /* ✅ BLACK TOP NAV — UNCHANGED */
     .top-nav{background:#000;color:#fff;padding:12px 4vw;display:flex;justify-content:space-between;align-items:center;font-size:11px;text-transform:uppercase;letter-spacing:.16em}
     .top-nav a{color:#fff;text-decoration:none}.top-nav a:hover{color:var(--gold)}
 
-    /* ✅ CREAM LOGO BAR — SAME AS YOUR HOMEPAGE */
-    .logo-bar{padding:4px 4vw;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;background:rgba(250,248,244,.94);border-bottom:1px solid var(--line);position:relative;z-index:20}
-    .logo{display:block;width:auto;height:42px;object-fit:contain;object-position:center;margin:0 auto;padding:0!important}
-    .logo-bar a:hover{opacity:.85}
+    /* ✅ CREAM BAR — FIXED HEIGHT SO LOGO FITS PERFECTLY */
+    .logo-bar{padding:0 4vw;height:52px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;background:rgba(250,248,244,.94);border-bottom:1px solid var(--line);position:relative;z-index:20}
+    
+    /* ✅ LOGO — 48px = ALMOST BAR HEIGHT → CLEARLY VISIBLE, NO STRETCHING THE BAR */
+    .logo{display:block;width:auto;height:48px;object-fit:contain;object-position:center;margin:0 auto;padding:0;transform:none}
+    .logo-bar a:hover{opacity:.92}
 
     section{padding:80px 6vw}
     .pro-hero{text-align:center;padding-bottom:40px}
@@ -41,7 +43,7 @@
     .pro-card p{font-size:13px;line-height:1.7;color:#5f5850;margin:0}
     .pro-card .card-note{font-size:11px;color:#8a8277;margin-top:12px;letter-spacing:.08em;text-transform:uppercase}
 
-    /* ✅ SUBSCRIBER BAR — MATCHES HOMEPAGE, UPDATED TEXT */
+    /* ✅ SUBSCRIBER BAR — UNCHANGED */
     .email-list{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:48px 4vw;text-align:center;margin:60px 0}
     .email-list h2{font-family:var(--serif);font-size:clamp(28px,3.4vw,38px);margin:0 0 10px}
     .email-list p{max-width:600px;margin:0 auto 24px;font-size:14px;line-height:1.65;color:#4a453d}
@@ -52,7 +54,7 @@
     .email-list button:hover{background:var(--gold);color:#fff}
     .honeypot,.skip{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:1px;width:1px;margin:-1px;padding:0;border:0}
 
-    /* ✅ BLACK CONTACT BAR — EXACTLY LIKE HOMEPAGE */
+    /* ✅ BLACK CONTACT BAR — UNCHANGED */
     .contact-bar{background:#000;color:#fff;padding:18px 4vw;text-align:center;font-size:12px;letter-spacing:.12em;text-transform:uppercase;border-top:1px solid rgba(255,255,255,.12)}
     .contact-bar a{color:var(--gold);text-decoration:none}.contact-bar a:hover{color:#fff}
 
@@ -82,7 +84,7 @@
     <div><a href="index.html">Return to Homepage</a></div>
   </nav>
 
-  <!-- ✅ CREAM LOGO BAR -->
+  <!-- ✅ CREAM BAR + LOGO — BOTH LOCKED TOGETHER PERFECTLY -->
   <header class="logo-bar">
     <div></div>
     <a href="index.html" aria-label="Belle &amp; Beau Home"><img class="logo" src="belle-beau-logo-new-transparent.png" alt="Belle &amp; Beau Evolutionary Aesthetics"></a>
@@ -95,7 +97,7 @@
       <h1>Professional Pathways.<em>Work in progress.</em></h1>
       <p>Everything we have learned — built, tested, and refined in a real studio — shared openly with those ready to raise standards, grow with confidence, and build thoughtfully.</p>
 
-      <!-- ✅ YOUR 4 BOXES — COMPLETELY UNCHANGED -->
+      <!-- ✅ YOUR 4 BOXES — UNCHANGED -->
       <div class="pro-cards">
         <div class="pro-card">
           <h3>Academy &amp; Training</h3>
@@ -120,7 +122,7 @@
       </div>
     </section>
 
-    <!-- ✅ SUBSCRIBER BAR — NEWLY ADDED, UPDATED TEXT -->
+    <!-- ✅ SUBSCRIBER BAR — UNCHANGED -->
     <section class="email-list" id="email-list">
       <h2>Stay Updated</h2>
       <p>Be the first to hear about new opportunities, exclusive promotions, upcoming events, and professional development pathways.</p>
@@ -134,12 +136,12 @@
     </section>
   </main>
 
-  <!-- ✅ BLACK CONTACT BAR -->
+  <!-- ✅ BLACK CONTACT BAR — UNCHANGED -->
   <div class="contact-bar">
     <span>Calne · Wiltshire · <a href="tel:+44XXXXXXXXX">Call Us</a> · <a href="mailto:hello@belleandbeauaesthetics.com">hello@belleandbeauaesthetics.com</a></span>
   </div>
 
-  <!-- ✅ FOOTER -->
+  <!-- ✅ FOOTER — UNCHANGED -->
   <footer>
     <div class="footer-bottom">
       <span>© 2026 Belle &amp; Beau Aesthetics</span>
