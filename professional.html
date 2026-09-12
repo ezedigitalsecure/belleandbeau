@@ -3,76 +3,87 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Belle & Beau Professional — Equipment, Business Solutions, Coaching & Leadership for Aesthetic Studios.">
-  <title>Belle & Beau | Professional</title>
+  <meta name="description" content="Belle &amp; Beau — Professional &amp; Practitioner Pathways">
+  <title>Belle &amp; Beau | Professional</title>
   <link rel="icon" href="assets/favicon.ico" sizes="any">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#c38e18">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&amp;family=Italiana&amp;display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#100d09;--cream:#f3eee7;--paper:#faf8f4;--gold:#bd8616;--bronze:#806120;--line:rgba(16,13,9,.18);--serif:'Italiana',serif;--sans:'DM Sans',sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300}a{color:inherit;text-decoration:none}button{font:inherit}.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;z-index:100;background:#fff;padding:12px}
+
+    /* EXACT SAME NAV AS YOUR HOMEPAGE */
+    .nav{height:55px;padding:0 4vw;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;background:rgba(250,248,244,.94);border-bottom:1px solid var(--line);position:relative;z-index:20}
+    .nav-links,.nav-actions{display:flex;align-items:center;gap:28px}.nav-actions{justify-content:flex-end}.nav a{text-decoration:none;font-size:11px;text-transform:uppercase;letter-spacing:.16em;font-weight:500}.nav a:hover{color:var(--bronze)}
+    .logo{display:block;width:auto;height:42px;object-fit:contain;object-position:center;margin:0 auto;padding:0!important}
+
+    section{padding:120px 6vw}
+    .pro-hero{text-align:center;min-height:60vh;display:flex;flex-direction:column;justify-content:center;padding-top:60px}
+    .eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;display:inline-flex;align-items:center;gap:13px}.eyebrow:before{content:"";width:34px;height:1px;background:currentColor}
+    h1{font-family:var(--serif);font-size:clamp(48px,6vw,78px);font-weight:400;line-height:.95;letter-spacing:-.04em;margin:24px 0 20px}
+    h1 em{color:var(--bronze);font-style:normal}
+    .pro-hero p{max-width:620px;margin:0 auto;line-height:1.75;font-size:15px;color:#3a352d}
+    .signature{font-family:var(--serif);font-size:29px;margin-top:30px;color:var(--bronze)}
+    .coming-soon-note{margin-top:60px;padding:32px 40px;background:var(--cream);border:1px solid var(--line);max-width:720px;margin-left:auto;margin-right:auto}
+    .coming-soon-note h2{font-family:var(--serif);font-size:clamp(32px,4vw,46px);margin:0 0 16px}
+    .btn{border:1px solid var(--ink);background:var(--ink);color:#fff;text-transform:uppercase;letter-spacing:.17em;font-size:10px;font-weight:600;padding:17px 23px;text-decoration:none;cursor:pointer;transition:.25s;display:inline-block;margin-top:24px}
+    .btn:hover{background:var(--gold);border-color:var(--gold)}
+
+    /* EXACT SAME FOOTER AS YOUR HOMEPAGE */
+    footer{background:var(--ink);color:var(--cream);padding:70px 6vw 30px;margin-top:60px}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.15);margin-top:60px;padding-top:24px;display:flex;justify-content:space-between;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#746f68}
+
+    @media(max-width:900px){
+      .nav{height:76px;grid-template-columns:auto 1fr auto}
+      .nav-links,.nav-actions{display:none}
+      section{padding:85px 22px}
+      .coming-soon-note{padding:28px 22px}
+      footer{padding:58px 24px 26px}
+      .footer-bottom{display:block;line-height:2}
+    }
+  </style>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
 
-<!-- YOUR EXISTING HEADER + NAV BAR STAYS EXACTLY THE SAME -->
-<!-- Copy your header/nav from index.html here -->
+  <!-- EXACT SAME CREAM NAV BAR AS YOUR HOMEPAGE -->
+  <header class="nav">
+    <div class="nav-links"></div>
+    <a href="index.html" aria-label="Belle &amp; Beau Home"><img class="logo" src="belle-beau-logo-new-transparent.png" alt="Belle &amp; Beau Evolutionary Aesthetics"></a>
+    <div class="nav-actions"><a href="index.html">Return Home</a></div>
+  </header>
 
-<main>
-<section class="professional-coming-soon">
-  <div class="professional-inner">
+  <main id="main">
+    <section class="pro-hero">
+      <div class="eyebrow">For Practitioners &amp; Studio Owners</div>
+      <h2 style="font-family:var(--serif);font-size:clamp(48px,6vw,78px);font-weight:400;line-height:.95;letter-spacing:-.04em;margin:24px 0 20px;">Professional Pathways.<em>Coming soon.</em></h2>
+      <p>Everything we have learned — built, tested, and refined in a real studio — shared openly with those ready to raise standards, grow with confidence, and build thoughtfully.</p>
+      <p style="margin-top:20px;">Practitioner training · Studio systems · Compliance &amp; standards · Business frameworks · Leadership guidance</p>
+      <div class="signature">The Belle &amp; Beau Way</div>
 
-    <div class="brand-mark">
-      <span class="amp">&amp;</span>
-    </div>
-
-    <h1>Belle &amp; Beau Professional</h1>
-    <p class="subheading">For Aesthetic Business Owners · Studio Operators · Industry Leaders</p>
-
-    <div class="intro-text">
-      <p>Everything you need to build a clinic that is <strong>clean, organised, compliant, and profitable</strong> — and to step into your power as the leader you were always meant to be.</p>
-    </div>
-
-    <div class="professional-cards">
-
-      <!-- CARD 1: EQUIPMENT -->
-      <div class="pro-card">
-        <h3>🛠️ Aesthetic Equipment</h3>
-        <p>Professional-grade machines and devices for your studio. Curated, tested, and recommended based on real-world use.</p>
-        <p class="pay-note">Pay in 3 interest-free with Clearpay &amp; Klarna</p>
+      <div class="coming-soon-note">
+        <h2>Work in progress</h2>
+        <p>This page is being built privately. When ready, it will contain our practitioner academy, training pathways, and resources for those working in the industry.</p>
+        <p style="margin-top:12px;font-style:italic;color:#635c50;">Check back soon — or join our mailing list on the homepage to be notified.</p>
+        <a href="index.html" class="btn">Return to homepage</a>
       </div>
+    </section>
+  </main>
 
-      <!-- CARD 2: EZE DIGITAL SOLUTIONS -->
-      <div class="pro-card">
-        <h3>💻 Business Solutions by Eze Digital</h3>
-        <p>Websites · Booking system integration · GDPR-safe forms &amp; workflows · E-commerce setup · Marketing &amp; analytics — built specifically for aesthetic studios.</p>
-        <a href="https://ezedigital.co.uk" class="pro-link" target="_blank" rel="noopener">Visit Eze Digital →</a>
-      </div>
-
-      <!-- CARD 3: COMPLIANCE & SYSTEMS -->
-      <div class="pro-card">
-        <h3>📋 Compliance &amp; Operations</h3>
-        <p>GDPR &amp; ICO guidance · Studio SOPs &amp; daily workflows · HR, scheduling &amp; staff training · Hygiene, standards &amp; insurance readiness — simplified, practical, actionable.</p>
-      </div>
-
-      <!-- CARD 4: COACHING & LEADERSHIP -->
-      <div class="pro-card leadership-card">
-        <h3>💪 Step Into Your Power</h3>
-        <p class="lead-quote italic">"I don't just teach you how to run a clinic. I help you become the leader of it."</p>
-        <p>Startup roadmap · Pricing with confidence · Setting boundaries · Building your reputation · Resilience through the hard months — mentoring, public speaking, and courses to help you STAND TALL.</p>
-      </div>
-
+  <!-- EXACT SAME FOOTER STRUCTURE -->
+  <footer>
+    <div style="text-align:center;opacity:.7;">
+      <p>© 2026 Belle &amp; Beau Aesthetics</p>
     </div>
-
-    <div class="notify-section">
-      <h3>Be the first to know when we launch</h3>
-      <form class="notify-form">
-        <input type="email" placeholder="Enter your email address" required>
-        <button type="submit">Notify Me</button>
-      </form>
+    <div class="footer-bottom">
+      <span>© 2026 Belle &amp; Beau Aesthetics</span>
+      <span>Website by Sentia Tech</span>
     </div>
-
-  </div>
-</section>
-</main>
-
-<!-- YOUR EXISTING FOOTER STAYS EXACTLY THE SAME -->
-<!-- Copy your footer from index.html here -->
-
+  </footer>
 </body>
 </html>
