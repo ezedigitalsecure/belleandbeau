@@ -46,10 +46,10 @@
     .portal-section h3{font-family:var(--serif);font-size:22px;margin:0 0 14px}
     .portal-section p{font-size:14px;color:#4a453d;margin-bottom:10px}
     
-    /* ✅ CLICKABLE PDF MANUAL LINK */
-    .manual-link{display:inline-block;background:#fff;border:1px solid var(--gold);padding:14px 24px;margin:12px 0;font-weight:500;transition:.25em}
+    /* ✅ MANUAL LINK — CLEAN, NO EMOJI */
+    .manual-link{display:inline-block;background:#fff;border:1px solid var(--gold);padding:14px 24px;margin:12px 0 4px 0;font-weight:500;transition:.25em}
     .manual-link:hover{background:var(--gold);color:#fff}
-    .manual-note{font-size:11px;color:#7d756c;font-style:italic;margin-top:8px}
+    .manual-note{font-size:11px;color:#7d756c;font-style:italic}
 
     .portal-note{font-size:11px;color:#7d756c;font-style:italic;margin-top:24px}
 
@@ -91,39 +91,33 @@
       <div class="error-msg" id="errorMsg">Incorrect password — please try again.</div>
     </div>
 
-    <!-- ✅ PORTAL WITH PDF MANUAL LINK -->
+    <!-- ✅ PORTAL CONTENT — CLEAN, NO EMOJIS -->
     <div class="portal-content" id="portalContent">
       <div class="portal-header">
         <h1>Welcome to the Portal</h1>
         <p>Exclusive resources for students and approved partners</p>
       </div>
 
-      <!-- 📋 PDF MANUAL LINK -->
+      <!-- ✅ TRAINING SECTION — MANUAL LINK HERE -->
       <div class="portal-section">
-        <h3>📋 Portal User Manual</h3>
-        <p>View your guide here:</p>
-        <a href="Belle-Beau-Portal-Manual.pdf" class="manual-link" target="_blank">📄 Open Portal User Manual (PDF)</a>
+        <h3>Training &amp; Academy Materials</h3>
+        <p>CPD-accredited course content, lesson plans, and practitioner guides.</p>
+        <a href="Belle-Beau-Portal-Manual.pdf" class="manual-link" target="_blank">Portal User Manual</a>
         <p class="manual-note">Opens in a new window • PDF document</p>
       </div>
 
-      <!-- 📂 OTHER RESOURCES -->
       <div class="portal-section">
-        <h3>📚 Training &amp; Academy Materials</h3>
-        <p>CPD-accredited course content, lesson plans, and practitioner guides.</p>
-      </div>
-
-      <div class="portal-section">
-        <h3>📋 Studio Systems &amp; Templates</h3>
+        <h3>Studio Systems &amp; Templates</h3>
         <p>Client forms, consent checklists, daily operations, and business frameworks.</p>
       </div>
 
       <div class="portal-section">
-        <h3>🔐 Compliance &amp; Standards</h3>
+        <h3>Compliance &amp; Standards</h3>
         <p>GDPR / ICO documentation, safety protocols, and professional guidelines.</p>
       </div>
 
       <div class="portal-section">
-        <h3>📈 Business &amp; Growth</h3>
+        <h3>Business &amp; Growth</h3>
         <p>Pricing guides, marketing templates, and leadership resources.</p>
       </div>
 
@@ -142,7 +136,6 @@
 
   <!-- 🔑 PASSWORD CHECKING -->
   <script>
-    // ⚠️ CHANGE THIS PASSWORD TO YOUR OWN — KEEP IT SECURE
     const CORRECT_PASSWORD = "BelleBeau2026!";
 
     function checkPassword(){
@@ -155,7 +148,6 @@
         document.getElementById('errorMsg').style.display = 'block';
       }
     }
-    // Allow Enter key to submit
     document.getElementById('portalPassword').addEventListener('keydown',function(e){
       if(e.key === 'Enter') checkPassword();
     });
