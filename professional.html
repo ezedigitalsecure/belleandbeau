@@ -1,146 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Belle &amp; Beau — Professional &amp; Practitioner Pathways">
-  <title>Belle &amp; Beau | Professional</title>
-  <link rel="icon" href="assets/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-  <meta name="theme-color" content="#c38e18">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&amp;family=Italiana&amp;display=swap" rel="stylesheet">
-  <style>
-    :root{--ink:#100d09;--cream:#f3eee7;--paper:#faf8f4;--gold:#bd8616;--bronze:#806120;--line:rgba(16,13,9,.18);--serif:'Italiana',serif;--sans:'DM Sans',sans-serif}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300}a{color:inherit;text-decoration:none}button{font:inherit}.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;z-index:100;background:#fff;padding:12px}
-
-    /* ✅ BLACK TOP NAV — UNCHANGED */
-    .top-nav{background:#000;color:#fff;padding:12px 4vw;display:flex;justify-content:space-between;align-items:center;font-size:11px;text-transform:uppercase;letter-spacing:.16em}
-    .top-nav a{color:#fff;text-decoration:none}.top-nav a:hover{color:var(--gold)}
-
-    /* ✅ CREAM BAR — FIXED HEIGHT SO LOGO FITS PERFECTLY */
-    .logo-bar{padding:0 4vw;height:52px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;background:rgba(250,248,244,.94);border-bottom:1px solid var(--line);position:relative;z-index:20}
-    
-    /* ✅ LOGO — 48px = ALMOST BAR HEIGHT → CLEARLY VISIBLE, NO STRETCHING THE BAR */
-    .logo{display:block;width:auto;height:48px;object-fit:contain;object-position:center;margin:0 auto;padding:0;transform:none}
-    .logo-bar a:hover{opacity:.92}
-
-    section{padding:80px 6vw}
-    .pro-hero{text-align:center;padding-bottom:40px}
-    .eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;display:inline-flex;align-items:center;gap:13px}.eyebrow:before{content:"";width:34px;height:1px;background:currentColor}
-    h1{font-family:var(--serif);font-size:clamp(48px,6vw,78px);font-weight:400;line-height:.95;letter-spacing:-.04em;margin:24px 0 20px}
-    h1 em{color:var(--bronze);font-style:normal}
-    .pro-hero p{max-width:620px;margin:0 auto;line-height:1.75;font-size:15px;color:#3a352d}
-
-    /* ✅ YOUR 4 BOXES — UNCHANGED */
-    .pro-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;margin-top:70px}
-    .pro-card{background:var(--paper);border:1px solid var(--line);padding:38px 32px;text-align:left;transition:.25s}
-    .pro-card:hover{padding-left:42px;border-color:var(--gold)}
-    .pro-card h3{font-family:var(--serif);font-size:clamp(28px,3.4vw,42px);font-weight:400;margin:0 0 14px}
-    .pro-card p{font-size:13px;line-height:1.7;color:#5f5850;margin:0}
-    .pro-card .card-note{font-size:11px;color:#8a8277;margin-top:12px;letter-spacing:.08em;text-transform:uppercase}
-
-    /* ✅ SUBSCRIBER BAR — UNCHANGED */
-    .email-list{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:48px 4vw;text-align:center;margin:60px 0}
-    .email-list h2{font-family:var(--serif);font-size:clamp(28px,3.4vw,38px);margin:0 0 10px}
-    .email-list p{max-width:600px;margin:0 auto 24px;font-size:14px;line-height:1.65;color:#4a453d}
-    .email-list-form{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-    .email-list-input{flex:1;min-width:280px;max-width:420px;padding:14px 18px;border:1px solid var(--line);background:#fff;font-size:15px;color:var(--ink)}
-    .email-list-input:focus{outline:none;border-color:var(--gold)}
-    .email-list button{background:var(--ink);color:#fff;border:none;padding:14px 28px;font-size:11px;text-transform:uppercase;letter-spacing:.14em;cursor:pointer;transition:.25s}
-    .email-list button:hover{background:var(--gold);color:#fff}
-    .honeypot,.skip{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:1px;width:1px;margin:-1px;padding:0;border:0}
-
-    /* ✅ BLACK CONTACT BAR — UNCHANGED */
-    .contact-bar{background:#000;color:#fff;padding:18px 4vw;text-align:center;font-size:12px;letter-spacing:.12em;text-transform:uppercase;border-top:1px solid rgba(255,255,255,.12)}
-    .contact-bar a{color:var(--gold);text-decoration:none}.contact-bar a:hover{color:#fff}
-
-    /* ✅ FOOTER — UNCHANGED */
-    footer{background:var(--ink);color:var(--cream);padding:40px 6vw 30px}
-    .footer-bottom{border-top:1px solid rgba(255,255,255,.15);margin-top:0;padding-top:24px;display:flex;justify-content:space-between;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#746f68}
-
-    @media(max-width:900px){
-      .pro-cards{grid-template-columns:1fr}
-      section{padding:60px 22px}
-    }
-    @media(max-width:560px){
-      .pro-cards{grid-template-columns:1fr}
-      .footer-bottom{display:block;line-height:2}
-      .top-nav{font-size:10px}
-      .email-list-form{flex-direction:column}
-      .email-list button{width:100%}
-    }
-  </style>
+  <title>Professional — Coming Soon | Belle & Beau</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
 
-  <!-- ✅ BLACK TOP NAV -->
-  <nav class="top-nav">
-    <div></div>
-    <div><a href="index.html">Return to Homepage</a></div>
+  <nav class="nav">
+    <a href="index.html" class="logo-link">
+      <img src="belle-beau-logo-new-transparent.png" alt="Belle & Beau" class="logo" style="max-height:48px;width:auto">
+    </a>
+    <div class="nav-links">
+      <a href="treatments.html">Treatments</a>
+      <a href="about.html">About</a>
+      <a href="academycomingsoon.html">Academy</a>
+      <a href="boutiquecomingsoon.html">Boutique</a>
+    </div>
+    <div class="nav-actions">
+      <a href="https://www.fresha.com/en-GB/a/belle-beau-formerlybodybydesign-calne-8-phelps-parade-awjddr4y" target="_blank" class="book-link">Book Consultation</a>
+    </div>
   </nav>
 
-  <!-- ✅ CREAM BAR + LOGO — BOTH LOCKED TOGETHER PERFECTLY -->
-  <header class="logo-bar">
-    <div></div>
-    <a href="index.html" aria-label="Belle &amp; Beau Home"><img class="logo" src="belle-beau-logo-new-transparent.png" alt="Belle &amp; Beau Evolutionary Aesthetics"></a>
-    <div></div>
-  </header>
-
-  <main id="main">
-    <section class="pro-hero">
-      <div class="eyebrow">For Practitioners &amp; Studio Owners</div>
-      <h1>Professional Pathways.<em>Work in progress.</em></h1>
-      <p>Everything we have learned — built, tested, and refined in a real studio — shared openly with those ready to raise standards, grow with confidence, and build thoughtfully.</p>
-
-      <!-- ✅ YOUR 4 BOXES — UNCHANGED -->
-      <div class="pro-cards">
-        <div class="pro-card">
-          <h3>Academy &amp; Training</h3>
-          <p>Practitioner training pathways, CPD-accredited courses, and structured learning built from real studio experience.</p>
-          <div class="card-note">DRAFT — PRIVATE</div>
-        </div>
-        <div class="pro-card">
-          <h3>Studio Systems</h3>
-          <p>Checklists, templates, client-care frameworks, and daily operations — exactly how we run Belle &amp; Beau.</p>
-          <div class="card-note">DRAFT — PRIVATE</div>
-        </div>
-        <div class="pro-card">
-          <h3>Compliance &amp; Standards</h3>
-          <p>GDPR, ICO, safety protocols, record-keeping, and professional standards — simplified and actionable.</p>
-          <div class="card-note">DRAFT — PRIVATE</div>
-        </div>
-        <div class="pro-card">
-          <h3>Leadership &amp; Growth</h3>
-          <p>Building a team, setting culture, pricing with confidence, and growing without compromising care.</p>
-          <div class="card-note">DRAFT — PRIVATE</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ✅ SUBSCRIBER BAR — UNCHANGED -->
-    <section class="email-list" id="email-list">
-      <h2>Stay Updated</h2>
-      <p>Be the first to hear about new opportunities, exclusive promotions, upcoming events, and professional development pathways.</p>
-      <form class="email-list-form" method="POST" name="email-list-pro">
-        <input type="hidden" name="form-name" value="email-list-pro">
-        <p class="honeypot"><label>Leave this field empty <input name="website" tabindex="-1" autocomplete="off"></label></p>
-        <label class="skip" for="emailAddress">Email address</label>
-        <input type="email" class="email-list-input" id="emailAddress" name="email" placeholder="Enter your email address" autocomplete="email" required>
-        <button type="submit">Subscribe</button>
+  <main style="min-height:70vh;display:flex;align-items:center;justify-content:center;padding:60px 4vw;background:#FCFAF5">
+    <div style="max-width:600px;width:100%;text-align:center;padding:40px;background:#fff;border:1px solid #E8E4DB;border-radius:4px;box-shadow:0 8px 30px rgba(16,13,9,.06)">
+      <h1 style="font-size:28px;color:#1A1712;margin-bottom:16px;letter-spacing:.05em">For Professionals</h1>
+      <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:32px">Practitioner pathways, standards & compliance, and business systems — all being prepared. Enter your email address below to be the first to know when this area launches.</p>
+      <form style="display:flex;flex-direction:column;gap:12px;max-width:420px;margin:0 auto">
+        <input type="email" placeholder="Enter your email address" required style="padding:14px 16px;border:1px solid #CCC;border-radius:4px;font-size:14px;background:#fff;color:#333">
+        <button type="submit" style="padding:14px 24px;background:#1A1712;color:#F0EDE5;border:none;border-radius:4px;font-size:14px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:.2s">Stay Updated</button>
       </form>
-    </section>
+    </div>
   </main>
 
-  <!-- ✅ BLACK CONTACT BAR — UNCHANGED -->
-  <div class="contact-bar">
-    <span>Calne · Wiltshire · <a href="tel:+44XXXXXXXXX">Call Us</a> · <a href="mailto:hello@belleandbeauaesthetics.com">hello@belleandbeauaesthetics.com</a></span>
-  </div>
-
-  <script src="footer.js"></script>
+<script src="footer.js"></script>
 </body>
 </html>
