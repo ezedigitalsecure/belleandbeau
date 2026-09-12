@@ -21,7 +21,7 @@
     .top-nav{background:#000;color:#fff;padding:12px 4vw;display:flex;justify-content:space-between;align-items:center;font-size:11px;text-transform:uppercase;letter-spacing:.16em}
     .top-nav a{color:#fff;text-decoration:none}.top-nav a:hover{color:var(--gold)}
 
-    /* ✅ CREAM LOGO BAR — MATCHES PERFECTLY */
+    /* ✅ CREAM LOGO BAR — PERFECT FIT */
     .logo-bar{padding:0 4vw;height:52px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;background:rgba(250,248,244,.94);border-bottom:1px solid var(--line);position:relative;z-index:20}
     .logo{display:block;width:auto;height:48px;object-fit:contain;margin:0 auto}
 
@@ -42,9 +42,15 @@
     .portal-header{text-align:center;margin-bottom:48px}
     .portal-header h1{font-family:var(--serif);font-size:clamp(36px,5vw,52px);margin:0 0 12px}
     .portal-header p{color:#5f5850;font-size:15px}
-    .portal-section{margin-bottom:40px;padding:32px;background:var(--cream);border:1px solid var(--line)}
+    .portal-section{margin-bottom:30px;padding:32px;background:var(--cream);border:1px solid var(--line)}
     .portal-section h3{font-family:var(--serif);font-size:22px;margin:0 0 14px}
     .portal-section p{font-size:14px;color:#4a453d;margin-bottom:10px}
+    
+    /* ✅ CLICKABLE MANUAL LINK */
+    .manual-link{display:inline-block;background:#fff;border:1px solid var(--gold);padding:14px 24px;margin:12px 0;font-weight:500;transition:.25em}
+    .manual-link:hover{background:var(--gold);color:#fff}
+    .manual-note{font-size:11px;color:#7d756c;font-style:italic;margin-top:8px}
+
     .portal-note{font-size:11px;color:#7d756c;font-style:italic;margin-top:24px}
 
     /* ✅ FOOTER — MATCHES YOUR SITE */
@@ -75,7 +81,7 @@
 
   <main id="main">
 
-    <!-- 🔒 PASSWORD LOCK — EVERYTHING HIDDEN UNTIL UNLOCKED -->
+    <!-- 🔒 PASSWORD LOCK -->
     <div class="lock-screen" id="lockScreen">
       <h2>Private Portal</h2>
       <p>Enter your password to access student and business resources.</p>
@@ -85,13 +91,24 @@
       <div class="error-msg" id="errorMsg">Incorrect password — please try again.</div>
     </div>
 
-    <!-- ✅ PORTAL CONTENT — VISIBLE ONLY AFTER UNLOCK -->
+    <!-- ✅ PORTAL WITH CLICKABLE MANUAL LINK -->
     <div class="portal-content" id="portalContent">
       <div class="portal-header">
         <h1>Welcome to the Portal</h1>
         <p>Exclusive resources for students and approved partners</p>
       </div>
 
+      <!-- 📋 CLICKABLE MANUAL LINK SECTION -->
+      <div class="portal-section">
+        <h3>📋 Portal User Manual</h3>
+        <p>Download or view your guide here:</p>
+        
+        <!-- ✅ CLICKABLE LINK — UPDATE FILENAME WHEN YOU UPLOAD -->
+        <a href="Belle-Beau-Portal-Manual.pdf" class="manual-link" target="_blank">📄 Open Portal User Manual</a>
+        <p class="manual-note">Opens in a new window • PDF document</p>
+      </div>
+
+      <!-- 📂 OTHER RESOURCES -->
       <div class="portal-section">
         <h3>📚 Training &amp; Academy Materials</h3>
         <p>CPD-accredited course content, lesson plans, and practitioner guides.</p>
