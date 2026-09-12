@@ -1,59 +1,79 @@
-<!-- ========== SHARED FOOTER — ALL LINKS & DETAILS FILLED ========== -->
 <style>
-.site-footer{background:#1A1712;color:#F0EDE5;padding:48px 4vw 24px;border-top:1px solid #332E25;margin-top:0}
-.footer-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;max-width:1280px;margin:0 auto 32px}
-.footer-col h3{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:#C8B69C;margin-bottom:16px;padding-bottom:6px;border-bottom:1px solid #332E25}
-.footer-col a{display:block;color:#BFB9AD;font-size:13px;text-decoration:none;margin-bottom:8px}
-.footer-col a:hover{color:#E8D4A8}
-.portal-link{color:#E8D4A8;border-left:2px solid #D4B16A;padding-left:10px;font-weight:600;margin-top:6px}
-.footer-social{display:flex;gap:12px;margin-top:8px}
-.footer-social a{width:40px;height:40px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.2);border-radius:50%;color:#CCC;text-decoration:none}
-.footer-social a:hover{background:#D4B16A;border-color:#D4B16A;color:#000}
-.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid #332E25;font-size:11px;color:#777;line-height:1.6}
-@media(max-width:900px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
+footer{background:#000;color:#BFB9AD;padding:48px 4vw 24px;border-top:1px solid #222}
+.footer-top{display:grid;grid-template-columns:240px repeat(4,1fr);gap:32px;max-width:1280px;margin:0 auto}
+.footer-col h4{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#C8B69C;margin-bottom:16px;padding-bottom:6px;border-bottom:1px solid #2A2A2A}
+.footer-col ul{list-style:none;padding:0;margin:0}
+.footer-col li{margin-bottom:8px}
+.footer-col a{color:#BFB9AD;font-size:13px;text-decoration:none;transition:.2s}
+.footer-col a:hover{color:#D4B16A}
+.footer-desc{font-size:12px;line-height:1.6;color:#777;margin-top:12px}
+.footer-logo-img{max-width:140px;height:auto}
+.footer-social{display:flex;gap:12px;margin-top:24px}
+.social-link{width:40px;height:40px;display:grid;place-items:center;border:1px solid #444;border-radius:50%;color:#AAA;text-decoration:none;transition:.25s}
+.social-link:hover{border-color:#D4B16A;color:#D4B16A}
+.social-icon{width:18px;height:18px}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;max-width:1280px;margin:30px auto 0;padding-top:20px;border-top:1px solid #222;font-size:11px;color:#666}
+@media(max-width:900px){.footer-top{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.footer-top{grid-template-columns:1fr}}
 </style>
 
-<footer class="site-footer">
-  <div class="footer-grid">
+<footer>
+  <div class="footer-top">
+    <!-- WHITE BELLE & BEAU LOGO -->
     <div class="footer-col">
-      <h3>Belle & Beau</h3>
-      <a href="index.html">Home</a>
-      <a href="treatments.html">Treatments & Pricing</a>
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact</a>
-      <a href="https://www.fresha.com/en-GB/a/belle-beau-formerlybodybydesign-calne-8-phelps-parade-awjddr4y" target="_blank" class="portal-link">Book Appointment — Fresha</a>
+      <a href="index.html"><img src="belle-beau-logo-footer-white.png" alt="Belle & Beau" class="footer-logo-img"></a>
+      <p class="footer-desc">An inclusive body contouring and aesthetics studio offering personalised practitioner-led care.</p>
     </div>
+    <!-- STUDIO -->
     <div class="footer-col">
-      <h3>Academy & Education</h3>
-      <a href="academy.html">CPD Academy</a>
-      <a href="courses.html">Courses</a>
-      <a href="shop.html">Shop</a>
-      <a href="portal.html" class="portal-link">Professional Portal</a>
+      <h4>Studio</h4>
+      <ul>
+        <li><a href="treatments.html">Treatments & Pricing</a></li>
+        <li><a href="body-contouring.html">Body Contouring</a></li>
+        <li><a href="owner.html">Meet the Owner</a></li>
+        <li><a href="https://www.fresha.com/en-GB/a/belle-beau-formerlybodybydesign-calne-8-phelps-parade-awjddr4y" target="_blank">Book an Appointment</a></li>
+      </ul>
     </div>
+    <!-- PROFESSIONAL -->
     <div class="footer-col">
-      <h3>Compliance</h3>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-      <a href="gdpr.html">GDPR Compliance</a>
-      <a href="cookies.html">Cookie Policy</a>
+      <h4>Professional</h4>
+      <ul>
+        <li><a href="professional.html">Practitioner Pathways</a></li>
+        <li><a href="#">Standards & Compliance</a></li>
+        <li><a href="#">Business Systems</a></li>
+        <li><a href="portal.html">Private Portal</a></li>
+      </ul>
     </div>
+    <!-- ACADEMY -->
     <div class="footer-col">
-      <h3>Connect</h3>
-      <a href="tel:+447778997092">Call Us: 07778 997092</a>
-      <a href="mailto:hello@belleandbeau.co.uk">hello@belleandbeau.co.uk</a>
-      <a href="https://www.google.com/maps/search/?api=1&query=8+Phelps+Parade+Calne+SN11+0HA" target="_blank">8 Phelps Parade, Calne, SN11 0HA</a>
+      <h4>Academy</h4>
+      <ul>
+        <li><a href="academy.html">Courses & Training</a></li>
+        <li><a href="#">CPD Accreditation</a></li>
+        <li><a href="#">Student Resources</a></li>
+        <li><a href="#">Certification</a></li>
+      </ul>
     </div>
+    <!-- BOUTIQUE + SOCIAL -->
     <div class="footer-col">
-      <h3>Social</h3>
+      <h4>Boutique</h4>
+      <ul>
+        <li><a href="boutique.html">Shop Products</a></li>
+        <li><a href="#">Gift Vouchers</a></li>
+        <li><a href="#">Self-Care Collection</a></li>
+      </ul>
       <div class="footer-social">
-        <a href="https://instagram.com/YOUR-HANDLE" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
-        <a href="https://facebook.com/YOUR-PAGE" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+        <a href="https://instagram.com/YOUR-HANDLE" target="_blank" class="social-link" aria-label="Instagram">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://facebook.com/YOUR-PAGE" target="_blank" class="social-link" aria-label="Facebook">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
-    &copy; 2026 Belle & Beau. All rights reserved.<br>
-    8 Phelps Parade, Calne, Wiltshire SN11 0HA
+    <span>© 2026 Belle & Beau Aesthetic Ltd (17402375)</span>
+    <span>Designed developed & secured in collaboration between Eze Digital & Sentia Tech</span>
   </div>
 </footer>
