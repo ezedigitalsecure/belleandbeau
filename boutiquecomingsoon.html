@@ -5,10 +5,18 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Boutique — Coming Soon | Belle & Beau</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .nav { padding: 4px 4vw; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; background: rgba(250,248,244,.94); border-bottom: 1px solid var(--line, #E8E4DB); position: relative; z-index: 20; }
+    .nav-links, .nav-actions { display: flex; align-items: center; gap: 28px; }
+    .nav-actions { justify-content: flex-end; }
+    .nav a { text-decoration: none; font-size: 11px; text-transform: uppercase; letter-spacing: .16em; font-weight: 500; color: #1A1712; }
+    .nav a:hover { color: var(--bronze, #cda13d); }
+    .logo { display: block; width: auto; height: 42px; max-width: 180px; object-fit: contain; object-position: center; }
+    .book-link { border-bottom: 1px solid transparent; padding: 10px 0; }
+  </style>
 </head>
 <body>
 
-  <!-- CREAM NAV BAR — EXACT SAME AS INDEX.HTML -->
   <nav class="nav">
     <a href="index.html" class="logo-link">
       <img src="belle-beau-logo-new-transparent.png" alt="Belle & Beau" class="logo">
@@ -26,7 +34,7 @@
 
   <main style="min-height:70vh;display:flex;align-items:center;justify-content:center;padding:60px 4vw;background:#FCFAF5">
     <div style="max-width:600px;width:100%;text-align:center;padding:40px;background:#fff;border:1px solid #E8E4DB;border-radius:4px;box-shadow:0 8px 30px rgba(16,13,9,.06)">
-      <h1 style="font-size:28px;color:#1A1712;margin-bottom:16px;letter-spacing:.05em">Boutique — Coming Soon</h1>
+      <h1 style="font-size:28px;color:#1A1712;margin-bottom:16px;letter-spacing:.05em;text-transform:uppercase;font-weight:500">Boutique — Coming Soon</h1>
       <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:16px">Please check back soon — we are crafting up some beautiful handmade products to support our services, your bodies and clinics.</p>
       <p style="font-size:14px;color:#888;margin-bottom:32px">Launching <strong>October 2026</strong></p>
       <form style="display:flex;flex-direction:column;gap:12px;max-width:420px;margin:0 auto">
