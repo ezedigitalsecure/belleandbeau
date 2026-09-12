@@ -1,18 +1,22 @@
 <style>
 footer{background:#000;color:#BFB9AD;padding:48px 4vw 24px;border-top:1px solid #222}
-.footer-top{display:grid;grid-template-columns:240px repeat(4,1fr);gap:32px;max-width:1280px;margin:0 auto}
-.footer-col h4{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#C8B69C;margin-bottom:16px;padding-bottom:6px;border-bottom:1px solid #2A2A2A}
+.footer-top{display:grid;grid-template-columns:260px repeat(4,1fr);gap:32px;max-width:1280px;margin:0 auto}
+.footer-col h4{font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:#D4B16A;margin-bottom:16px;padding-bottom:6px;border-bottom:1px solid #2A2A2A;cursor:pointer;transition:all .3s ease}
+.footer-col h4:hover{color:#F0D48A;text-shadow:0 0 8px rgba(212,177,106,.6)}
 .footer-col ul{list-style:none;padding:0;margin:0}
 .footer-col li{margin-bottom:8px}
 .footer-col a{color:#BFB9AD;font-size:13px;text-decoration:none;transition:.2s}
 .footer-col a:hover{color:#D4B16A}
-.footer-desc{font-size:12px;line-height:1.6;color:#777;margin-top:12px}
-.footer-logo-img{max-width:140px;height:auto}
+.footer-desc{font-size:12px;line-height:1.6;color:#777;margin-top:16px}
+.footer-logo-img{max-width:180px;height:auto}
 .footer-social{display:flex;gap:12px;margin-top:24px}
 .social-link{width:40px;height:40px;display:grid;place-items:center;border:1px solid #444;border-radius:50%;color:#AAA;text-decoration:none;transition:.25s}
 .social-link:hover{border-color:#D4B16A;color:#D4B16A}
 .social-icon{width:18px;height:18px}
-.footer-bottom{display:flex;justify-content:space-between;align-items:center;max-width:1280px;margin:30px auto 0;padding-top:20px;border-top:1px solid #222;font-size:11px;color:#666}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;max-width:1280px;margin:30px auto 0;padding-top:20px;border-top:1px solid #222;font-size:11px;color:#888;flex-wrap:wrap;gap:8px}
+/* ========== EZE & SENTIA LINK STYLES ========== */
+.footer-bottom a{color:#D4B16A;font-weight:700;text-decoration:underline;text-underline-offset:3px;transition:all .3s ease}
+.footer-bottom a:hover{color:#F0D48A;text-shadow:0 0 10px rgba(212,177,106,.8);text-decoration:underline}
 @media(max-width:900px){.footer-top{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.footer-top{grid-template-columns:1fr}}
 </style>
@@ -26,7 +30,7 @@ footer{background:#000;color:#BFB9AD;padding:48px 4vw 24px;border-top:1px solid 
     </div>
     <!-- STUDIO -->
     <div class="footer-col">
-      <h4>Studio</h4>
+      <h4 onclick="window.location.href='treatments.html'">Studio</h4>
       <ul>
         <li><a href="treatments.html">Treatments & Pricing</a></li>
         <li><a href="body-contouring.html">Body Contouring</a></li>
@@ -36,31 +40,31 @@ footer{background:#000;color:#BFB9AD;padding:48px 4vw 24px;border-top:1px solid 
     </div>
     <!-- PROFESSIONAL -->
     <div class="footer-col">
-      <h4>Professional</h4>
+      <h4 onclick="window.location.href='professional.html'">Professional</h4>
       <ul>
         <li><a href="professional.html">Practitioner Pathways</a></li>
-        <li><a href="#">Standards & Compliance</a></li>
-        <li><a href="#">Business Systems</a></li>
+        <li><a href="standards.html">Standards & Compliance</a></li>
+        <li><a href="business-systems.html">Business Systems</a></li>
         <li><a href="portal.html">Private Portal</a></li>
       </ul>
     </div>
     <!-- ACADEMY -->
     <div class="footer-col">
-      <h4>Academy</h4>
+      <h4 onclick="window.location.href='academy.html'">Academy</h4>
       <ul>
         <li><a href="academy.html">Courses & Training</a></li>
-        <li><a href="#">CPD Accreditation</a></li>
-        <li><a href="#">Student Resources</a></li>
-        <li><a href="#">Certification</a></li>
+        <li><a href="cpd.html">CPD Accreditation</a></li>
+        <li><a href="student-resources.html">Student Resources</a></li>
+        <li><a href="certification.html">Certification</a></li>
       </ul>
     </div>
     <!-- BOUTIQUE + SOCIAL -->
     <div class="footer-col">
-      <h4>Boutique</h4>
+      <h4 onclick="window.location.href='boutique.html'">Boutique</h4>
       <ul>
         <li><a href="boutique.html">Shop Products</a></li>
-        <li><a href="#">Gift Vouchers</a></li>
-        <li><a href="#">Self-Care Collection</a></li>
+        <li><a href="gift-vouchers.html">Gift Vouchers</a></li>
+        <li><a href="self-care.html">Self-Care Collection</a></li>
       </ul>
       <div class="footer-social">
         <a href="https://instagram.com/YOUR-HANDLE" target="_blank" class="social-link" aria-label="Instagram">
@@ -74,6 +78,6 @@ footer{background:#000;color:#BFB9AD;padding:48px 4vw 24px;border-top:1px solid 
   </div>
   <div class="footer-bottom">
     <span>© 2026 Belle & Beau Aesthetic Ltd (17402375)</span>
-    <span>Designed developed & secured in collaboration between Eze Digital & Sentia Tech</span>
+    <span>Designed developed & secured in collaboration between <a href="https://ezedigital.co.uk" target="_blank" rel="noopener">Eze Digital</a> & <a href="https://sentiatechnologieslimited.com" target="_blank" rel="noopener">Sentia Tech</a></span>
   </div>
 </footer>
