@@ -1,0 +1,193 @@
+/* ─── BELLE & BEAU PROFESSIONAL PAGE ─── */
+.professional-coming-soon {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 4vw 80px;
+  background: linear-gradient(180deg, #f7f3eb 0%, #fffaf2 100%);
+}
+
+.professional-inner {
+  max-width: 960px;
+  width: 100%;
+  text-align: center;
+}
+
+.brand-mark { margin-bottom: 16px; }
+.amp {
+  font-size: 32px;
+  font-family: var(--serif);
+  color: #c49226;
+  font-style: italic;
+}
+
+.professional-inner h1 {
+  font-family: var(--serif);
+  font-size: 36px;
+  margin: 0 0 8px;
+  color: #1a1a1a;
+}
+
+.subheading {
+  font-size: 15px;
+  color: #7d756c;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 32px;
+}
+
+.intro-text {
+  max-width: 720px;
+  margin: 0 auto 40px;
+}
+
+.intro-text p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #2e2a24;
+}
+
+.professional-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.pro-card {
+  background: #fffdf7;
+  border: 1px solid #e9ddcf;
+  border-radius: 6px;
+  padding: 28px 24px;
+  text-align: left;
+  box-shadow: 0 6px 20px rgba(20, 16, 10, 0.04);
+  transition: 0.25s;
+}
+
+.pro-card:hover {
+  box-shadow: 0 10px 30px rgba(20, 16, 10, 0.08);
+  transform: translateY(-2px);
+}
+
+.leadership-card {
+  border-color: #c49226;
+  background: linear-gradient(135deg, #fffdf7 0%, #fff8ea 100%);
+}
+
+.pro-card h3 {
+  font-family: var(--serif);
+  font-size: 18px;
+  margin: 0 0 12px;
+  color: #1a1a1a;
+}
+
+.pro-card p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #4a453d;
+  margin: 0 0 10px;
+}
+
+.lead-quote {
+  font-style: italic;
+  color: #8a6d28;
+  border-left: 2px solid #c49226;
+  padding-left: 14px;
+  margin: 12px 0 !important;
+}
+
+.italic { font-style: italic; }
+
+.pay-note {
+  font-size: 11px !important;
+  color: #7d756c !important;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 12px !important;
+}
+
+.pro-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: #c49226;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: 0.2s;
+}
+
+.pro-link:hover {
+  border-bottom-color: #c49226;
+}
+
+.notify-section {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.notify-section h3 {
+  font-family: var(--serif);
+  font-size: 18px;
+  margin: 0 0 16px;
+  color: #1a1a1a;
+}
+
+.notify-form {
+  display: flex;
+  gap: 12px;
+}
+
+.notify-form input {
+  flex: 1;
+  border: 1px solid #d9cdbf;
+  padding: 13px 18px;
+  font-size: 14px;
+  color: #1a1a1a;
+  background: #fff;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.notify-form input:focus {
+  outline: none;
+  border-color: #c49226;
+}
+
+.notify-form button {
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  padding: 13px 26px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.25s;
+}
+
+.notify-form button:hover {
+  background: #c49226;
+  color: #fff;
+}
+
+/* Responsive — stack neatly on mobile */
+@media (max-width: 860px) {
+  .professional-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 580px) {
+  .notify-form {
+    flex-direction: column;
+  }
+  .notify-form button {
+    width: 100%;
+  }
+  .professional-inner h1 {
+    font-size: 28px;
+  }
+}
