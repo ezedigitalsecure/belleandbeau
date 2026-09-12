@@ -52,35 +52,33 @@
     .manual-note{font-size:11px;color:#7d756c;font-style:italic}
     .portal-note{font-size:11px;color:#7d756c;font-style:italic;margin-top:24px}
 
-    /* ✅ FOOTER — MATCHES HOMEPAGE EXACTLY */
+    /* ✅ FOOTER — PNG LOGO + 3 GOLD COLUMNS */
     footer{background:#000;color:#fff;padding:60px 4vw 30px}
-    .footer-top{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-bottom:40px}
-    .footer-logo{font-family:var(--serif);font-size:clamp(38px,5vw,52px);line-height:.9;margin-bottom:16px}
+    .footer-top{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:40px;margin-bottom:40px}
+    .footer-logo-img{display:block;width:160px;height:auto;margin-bottom:16px}
     .footer-desc{font-size:12px;line-height:1.7;color:#b8b5af;max-width:240px}
     .footer-col h4{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--gold);margin:0 0 16px}
     .footer-col ul{list-style:none;padding:0;margin:0}
     .footer-col li{margin-bottom:10px}
-    .footer-col a{color:#b8b5af;text-decoration:none;font-size:13px;transition:.15em}
-    .footer-col a:hover{color:#fff}
+    .footer-col a{color:#fff;text-decoration:none;font-size:13px;transition:.15em}
+    .footer-col a:hover{color:var(--gold)}
     .footer-contact p{font-size:13px;color:#b8b5af;margin:4px 0}
-    .footer-contact a{color:#b8b5af;text-decoration:none}
-    .footer-contact a:hover{color:#fff}
+    .footer-contact a{color:#fff;text-decoration:none}
+    .footer-contact a:hover{color:var(--gold)}
     .footer-social{display:flex;gap:14px;margin-top:18px}
     .social-link{width:40px;height:40px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.25);border-radius:50%;color:#b8b5af;transition:.25em}
     .social-link:hover{border-color:var(--gold);color:#fff}
-    .social-icon{width:18px;height:18px;display:grid;place-items:center;align-items:center;justify-content:center}
+    .social-icon{width:18px;height:18px;display:block}
     .footer-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:30px;padding-top:20px;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#66635d}
-    .footer-nav{display:flex;gap:24px}
-    .footer-nav a{color:#66635d;text-decoration:none}
-    .footer-nav a:hover{color:#fff}
+    .footer-bottom a{color:#66635d;text-decoration:none}
+    .footer-bottom a:hover{color:#fff}
 
     @media(max-width:900px){
-      .footer-top{grid-template-columns:repeat(2,1fr)}
+      .footer-top{grid-template-columns:repeat(3,1fr)}
     }
     @media(max-width:580px){
       .footer-top{grid-template-columns:1fr}
       .footer-bottom{flex-direction:column;gap:10px;text-align:center}
-      .footer-nav{justify-content:center;flex-wrap:wrap}
       .top-nav{font-size:10px}
     }
   </style>
@@ -145,13 +143,16 @@
     </div>
   </main>
 
-  <!-- ✅ UPDATED FOOTER — MATCHES HOMEPAGE, ICONS STRAIGHT, 3 LINKS -->
+  <!-- ✅ FOOTER — PNG LOGO + 3 GOLD COLUMNS -->
   <footer>
     <div class="footer-top">
+      <!-- PNG LOGO + DESCRIPTION -->
       <div class="footer-col">
-        <h3 class="footer-logo">Belle & Beau</h3>
+        <a href="index.html"><img src="belle-beau-logo-new-transparent.png" alt="Belle & Beau" class="footer-logo-img"></a>
         <p class="footer-desc">An inclusive body contouring and aesthetics studio offering personalised practitioner-led care.</p>
       </div>
+
+      <!-- STUDIO -->
       <div class="footer-col">
         <h4>Studio</h4>
         <ul>
@@ -161,13 +162,37 @@
           <li><a href="book.html">Book an Appointment</a></li>
         </ul>
       </div>
-      <div class="footer-col footer-contact">
-        <h4>Contact</h4>
-        <p><a href="mailto:hello@belleandbeauaesthetic.com">hello@belleandbeauaesthetic.com</a></p>
-        <p><a href="mailto:bookings@belleandbeauaesthetic.com">bookings@belleandbeauaesthetic.com</a></p>
-      </div>
+
+      <!-- PROFESSIONAL -->
       <div class="footer-col">
-        <h4>Follow</h4>
+        <h4>Professional</h4>
+        <ul>
+          <li><a href="professional.html">Practitioner Pathways</a></li>
+          <li><a href="#">Standards & Compliance</a></li>
+          <li><a href="#">Business Systems</a></li>
+          <li><a href="#">Private Portal</a></li>
+        </ul>
+      </div>
+
+      <!-- ACADEMY -->
+      <div class="footer-col">
+        <h4>Academy</h4>
+        <ul>
+          <li><a href="academy.html">Courses & Training</a></li>
+          <li><a href="#">CPD Accreditation</a></li>
+          <li><a href="#">Student Resources</a></li>
+          <li><a href="#">Certification</a></li>
+        </ul>
+      </div>
+
+      <!-- BOUTIQUE + FOLLOW -->
+      <div class="footer-col">
+        <h4>Boutique</h4>
+        <ul>
+          <li><a href="boutique.html">Shop Products</a></li>
+          <li><a href="#">Gift Vouchers</a></li>
+          <li><a href="#">Self-Care Collection</a></li>
+        </ul>
         <div class="footer-social">
           <a href="https://instagram.com/YOUR-HANDLE" target="_blank" class="social-link" aria-label="Instagram">
             <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
@@ -178,13 +203,10 @@
         </div>
       </div>
     </div>
+
     <div class="footer-bottom">
       <span>© 2026 Belle & Beau Aesthetics</span>
-      <nav class="footer-nav">
-        <a href="professional.html">Professional</a>
-        <a href="academy.html">Academy</a>
-        <a href="boutique.html">Boutique</a>
-      </nav>
+      <span><a href="professional.html">Professional</a> · <a href="academy.html">Academy</a> · <a href="boutique.html">Boutique</a></span>
       <span>Website by Sentia Tech</span>
     </div>
   </footer>
