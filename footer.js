@@ -1,4 +1,87 @@
-fetch('footer.html')
-  .then(r=>r.text())
-  .then(h=>document.body.insertAdjacentHTML('beforeend',h))
-  .catch(e=>console.log('Footer error:',e))
+document.addEventListener('DOMContentLoaded', function () {
+  const footerHTML = `
+<style>
+footer{background:#000;color:#BFB9AD;padding:48px 4vw 24px;border-top:1px solid #222}
+.footer-top{display:grid;grid-template-columns:260px repeat(4,1fr);gap:32px;max-width:1280px;margin:0 auto}
+.footer-col h4{font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:#D4B16A;margin-bottom:16px;padding-bottom:6px;border-bottom:1px solid #2A2A2A;cursor:pointer;transition:all .3s ease}
+.footer-col h4:hover{color:#F0D48A;text-shadow:0 0 8px rgba(212,177,106,.6)}
+.footer-col ul{list-style:none;padding:0;margin:0}
+.footer-col li{margin-bottom:8px}
+.footer-col a{color:#BFB9AD;font-size:13px;text-decoration:none;transition:.2s}
+.footer-col a:hover{color:#D4B16A}
+.footer-desc{font-size:12px;line-height:1.6;color:#888;margin-top:12px}
+.footer-logo-wrap{display:flex;flex-direction:column;gap:8px}
+.footer-logo-img{max-width:180px;height:auto;display:block}
+.footer-social{display:flex;gap:14px;margin-top:24px}
+.social-link{width:38px;height:38px;display:grid;place-items:center;border:1px solid #444;border-radius:50%;color:#AAA;text-decoration:none;transition:.25s}
+.social-link:hover{border-color:#D4B16A;color:#D4B16A;background:rgba(212,177,106,.08)}
+.social-icon{width:18px;height:18px;fill:currentColor}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;max-width:1280px;margin:30px auto 0;padding-top:20px;border-top:1px solid #222;font-size:11px;color:#777;flex-wrap:wrap;gap:8px}
+.footer-bottom a{color:#D4B16A;font-weight:700;text-decoration:underline;text-underline-offset:3px;transition:all .3s ease}
+.footer-bottom a:hover{color:#F0D48A;text-shadow:0 0 10px rgba(212,177,106,.8);text-decoration:underline}
+@media(max-width:900px){.footer-top{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.footer-top{grid-template-columns:1fr}}
+</style>
+<footer>
+  <div class="footer-top">
+    <div class="footer-col">
+      <div class="footer-logo-wrap">
+        <a href="index.html"><img src="belle-beau-logo-footer-white.png" alt="Belle & Beau" class="footer-logo-img"></a>
+        <p class="footer-desc">An inclusive body contouring and aesthetics studio offering personalised practitioner-led care.</p>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4 onclick="window.location.href='treatments.html'">Studio</h4>
+      <ul>
+        <li><a href="treatments.html">Treatments & Pricing</a></li>
+        <li><a href="body-contouring.html">Body Contouring</a></li>
+        <li><a href="owner.html">Meet the Owner</a></li>
+        <li><a href="https://www.fresha.com/a/bodybydesignboutique-calne-1-conigre-cottages-zjoo2e1n" target="_blank" rel="noopener">Book an Appointment</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 onclick="window.location.href='professional.html'">Professional</h4>
+      <ul>
+        <li><a href="professional.html">Practitioner Pathways</a></li>
+        <li><a href="compliance.html">Standards & Compliance</a></li>
+        <li><a href="business-systems.html">Business Systems</a></li>
+        <li><a href="portal.html">Private Portal</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 onclick="window.location.href='academy.html'">Academy</h4>
+      <ul>
+        <li><a href="academy.html">Courses & Training</a></li>
+        <li><a href="cpd.html">CPD Accreditation</a></li>
+        <li><a href="student-resources.html">Student Resources</a></li>
+        <li><a href="certification.html">Certification</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 onclick="window.location.href='boutique.html'">Boutique</h4>
+      <ul>
+        <li><a href="boutique.html">Shop Products</a></li>
+        <li><a href="gift-vouchers.html">Gift Vouchers</a></li>
+        <li><a href="self-care.html">Self-Care Collection</a></li>
+      </ul>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/bodybydesignboutique7/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+          <svg class="social-icon" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 19.4 6.6 22 9.8 22h4.4a3.6 3.6 0 0 0 3.6-3.6v-8.8A3.6 3.6 0 0 0 14.2 4H7.6zm9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 6.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61572413162577" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+          <svg class="social-icon" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Belle & Beau Aesthetic Ltd (17402375)</span>
+    <span>Designed, developed & secured in collaboration between 
+      <a href="https://ezedigital.co.uk" target="_blank" rel="noopener">Eze Digital</a> & 
+      <a href="https://sentiatechnologieslimited.com" target="_blank" rel="noopener">Sentia Technologies</a>
+    </span>
+  </div>
+</footer>
+`;
+  document.body.insertAdjacentHTML('beforeend', footerHTML);
+});
