@@ -1,33 +1,91 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Belle & Beau Academy — Professional training, CPD accreditation and courses coming soon.">
   <title>Academy — Coming Soon | Belle & Beau</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#c38e18">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Italiana&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#100d09;--cream:#f3eee7;--paper:#faf8f4;--gold:#bd8616;--bronze:#806120;--line:rgba(16,13,9,.18);--serif:'Italiana',serif;--sans:'DM Sans',sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300}
+    a{color:inherit}button{font:inherit}.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;z-index:100;background:#fff;padding:12px}
+    /* ✅ Black Announcement Bar */
+    .announcement{height:31px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+    /* ✅ Subscribe Bar */
+    .email-list{background:#f5efe8;color:#4a3f35;padding:80px 24px;text-align:center;border-top:none;border-bottom:none}
+    .email-list h2{margin:0 0 14px;font-family:var(--serif);font-size:clamp(30px,4vw,46px);font-weight:400;line-height:1.1;color:#9a6f16}
+    .email-list>p{max-width:720px;margin:0 auto 32px;font-size:15px;line-height:1.7;color:#6b6055}
+    .email-list-form{display:flex;gap:12px;justify-content:center;max-width:580px;margin:0 auto}
+    .email-list-input{flex:1;min-width:0;padding:15px 18px;border:1px solid #d4c5b5;border-radius:0;background:#fff;color:#4a3f35;font:14px var(--sans);outline:none}
+    .email-list-input:focus{border-color:#9a6f16;box-shadow:0 0 0 1px #9a6f16}
+    .email-list-btn{padding:15px 30px;border:1px solid var(--gold);border-radius:0;background:var(--gold);color:#fff;font:600 10px var(--sans);letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:.25s}
+    .email-list-btn:hover,.email-list-btn:focus-visible{background:var(--ink);border-color:var(--ink)}
+    .email-list-status{display:none;max-width:580px;margin:22px auto 0;padding-top:20px;border-top:1px solid #d4c5b5}
+    .email-list-status.show{display:block}
+    .email-list-status h3{margin:0 0 8px;font-family:var(--serif);font-size:29px;font-weight:400;color:#9a6f16}
+    .email-list-status p{margin:0;font-size:13px;line-height:1.6}
+    .honeypot{position:absolute;left:-9999px}
+    /* ✅ Responsive */
+    @media(max-width:640px){
+      .email-list{padding:50px 22px}
+      .email-list-form{flex-direction:column}
+      .email-list-input,.email-list-btn{width:100%}
+      .email-list h2{font-size:28px}
+    }
+  </style>
 </head>
 <body>
-  <!-- CREAM NAV BAR — LOGO ONLY, NO LINKS -->
-  <nav class="nav">
-    <a href="index.html" class="logo-link">
-      <img src="belle-beau-logo-new-transparent.png" alt="Belle & Beau" class="logo">
-    </a>
-    <!-- NAV LINKS REMOVED AS REQUESTED -->
-    <div class="nav-actions">
-      <a href="https://www.fresha.com/en-GB/a/belle-beau-formerlybodybydesign-calne-8-phelps-parade-awjddr4y" target="_blank" class="book-link">Book Consultation</a>
+  <a class="skip" href="#main">Skip to content</a>
+  <!-- ✅ Black Announcement Bar -->
+  <div class="announcement">CPD Accredited Courses — Coming Soon</div>
+  <!-- ✅ Subscribe Bar — Academy Wording -->
+  <section class="email-list" id="email-list" aria-labelledby="email-list-title">
+    <h2 id="email-list-title">Professional training is coming…</h2>
+    <p>Our academy page is currently under construction. We are preparing a curated range of professional training courses, CPD-accredited learning pathways and practitioner resources designed to help you grow and advance your skills.<br>
+    Full course details, availability and accreditation information launching soon.<br>
+    Subscribe below to be the first to know — and receive priority access to course bookings and early-bird offers.</p>
+    <form class='email-list-form' id='emailListForm' method='POST' name='email-list'>
+      <input type="hidden" name="form-name" value="email-list">
+      <p class="honeypot"><label>Leave this field empty <input name="website" tabindex="-1" autocomplete="off"></label></p>
+      <label class="skip" for="emailListAddress">Email address</label>
+      <input type="email" class="email-list-input" id="emailListAddress" name="email" placeholder="Enter your email address" autocomplete="email" required>
+      <button type="submit" class="email-list-btn">REQUEST INFORMATION</button>
+    </form>
+    <div class="email-list-status" id="emailListStatus" role="status">
+      <h3>Thank you.</h3>
+      <p>Your interest has been noted. We will keep you updated with full course details, availability and accreditation information as soon as it is ready.</p>
     </div>
-  </nav>
-  <main style="min-height:70vh;display:flex;align-items:center;justify-content:center;padding:60px 4vw;background:#FCFAF5">
-    <div style="max-width:600px;width:100%;text-align:center;padding:40px;background:#fff;border:1px solid #E8E4DB;border-radius:4px;box-shadow:0 8px 30px rgba(16,13,9,.06)">
-      <img src="cpd-logo.png" alt="CPD Accreditation" style="max-width:180px;height:auto;margin-bottom:24px">
-      <h1 style="font-size:28px;color:#1A1712;margin-bottom:16px;letter-spacing:.05em">Academy — Live Page Being Built</h1>
-      <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:32px">Our courses page is currently under construction. For full course details, availability and CPD accreditation information, please email us and we will send everything over straight away.</p>
-      <form style="display:flex;flex-direction:column;gap:12px;max-width:420px;margin:0 auto">
-        <input type="email" placeholder="Enter your email address" required style="padding:14px 16px;border:1px solid #CCC;border-radius:4px;font-size:14px;background:#fff;color:#333">
-        <button type="submit" style="padding:14px 24px;background:#1A1712;color:#F0EDE5;border:none;border-radius:4px;font-size:14px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:.2s">Request Information</button>
-      </form>
-    </div>
-  </main>
-<script src="footer.js"></script>
+  </section>
+  <!-- ✅ SHARED FOOTER -->
+  <script src="footer.js"></script>
+  <!-- ✅ Form Submit Handler -->
+  <script>
+    const form = document.getElementById('emailListForm');
+    const status = document.getElementById('emailListStatus');
+    if(form){
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(form))
+        }).then(() => {
+          form.style.display = 'none';
+          status.classList.add('show');
+        }).catch(() => {
+          form.style.display = 'none';
+          status.classList.add('show');
+        });
+      });
+    }
+  </script>
 </body>
 </html>
