@@ -66,17 +66,22 @@
   </section>
   <!-- ✅ SHARED FOOTER -->
   <script src="footer.js"></script>
-  <!-- ✅ Form Submit Handler -->
+  <!-- ✅ Form Submit Handler — sends to hello@belleandbeauaesthetic.com -->
   <script>
     const form = document.getElementById('emailListForm');
     const status = document.getElementById('emailListStatus');
     if(form){
       form.addEventListener('submit', function(e){
         e.preventDefault();
-        fetch('/', {
+        const formData = Object.fromEntries(new FormData(form));
+        formData._subject = 'New Professional Page — Coming Soon Subscription';
+        fetch('https://formsubmit.co/ajax/hello@belleandbeauaesthetic.com', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(new FormData(form))
+          headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(formData)
         }).then(() => {
           form.style.display = 'none';
           status.classList.add('show');
