@@ -31,11 +31,11 @@ footer{background:#000;color:#BFB9AD;padding:48px 4vw 24px;border-top:1px solid 
       </div>
     </div>
     <div class="footer-col">
-      <h4 onclick="window.location.href='treatments.html'">Studio</h4>
+      <h4 onclick="window.location.href='index.html#pricing'">Studio</h4>
       <ul>
-        <li><a href="treatments.html">Treatments & Pricing</a></li>
-        <li><a href="body-contouring.html">Body Contouring</a></li>
-        <li><a href="owner.html">Meet the Owner</a></li>
+        <li><a href="index.html#pricing">Treatments & Pricing</a></li>
+        <li><a href="index.html#body-contouring">Body Contouring</a></li>
+        <li><a href="index.html#owner">Meet the Owner</a></li>
         <li><a href="https://www.fresha.com/a/bodybydesignboutique-calne-1-conigre-cottages-zjoo2e1n" target="_blank" rel="noopener">Book an Appointment</a></li>
       </ul>
     </div>
