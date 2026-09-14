@@ -40,29 +40,29 @@ footer{background:#000;color:#BFB9AD;padding:48px 4vw 24px;border-top:1px solid 
       </ul>
     </div>
     <div class="footer-col">
-      <h4 onclick="window.location.href='professional.html'">Professional</h4>
+      <h4 onclick="window.location.href='professionalcomingsoon.html'">Professional</h4>
       <ul>
-        <li><a href="professional.html">Practitioner Pathways</a></li>
-        <li><a href="compliance.html">Standards & Compliance</a></li>
-        <li><a href="business-systems.html">Business Systems</a></li>
+        <li><a href="professionalcomingsoon.html">Practitioner Pathways</a></li>
+        <li><a href="professionalcomingsoon.html">Standards & Compliance</a></li>
+        <li><a href="professionalcomingsoon.html">Business Systems</a></li>
         <li><a href="portal.html">Private Portal</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4 onclick="window.location.href='academy.html'">Academy</h4>
+      <h4 onclick="window.location.href='academycomingsoon.html'">Academy</h4>
       <ul>
-        <li><a href="academy.html">Courses & Training</a></li>
-        <li><a href="cpd.html">CPD Accreditation</a></li>
-        <li><a href="student-resources.html">Student Resources</a></li>
-        <li><a href="certification.html">Certification</a></li>
+        <li><a href="academycomingsoon.html">Courses & Training</a></li>
+        <li><a href="academycomingsoon.html">CPD Accreditation</a></li>
+        <li><a href="academycomingsoon.html">Student Resources</a></li>
+        <li><a href="academycomingsoon.html">Certification</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4 onclick="window.location.href='boutique.html'">Boutique</h4>
+      <h4 onclick="window.location.href='boutiquecomingsoon.html'">Boutique</h4>
       <ul>
-        <li><a href="boutique.html">Shop Products</a></li>
-        <li><a href="gift-vouchers.html">Gift Vouchers</a></li>
-        <li><a href="self-care.html">Self-Care Collection</a></li>
+        <li><a href="boutiquecomingsoon.html">Shop Products</a></li>
+        <li><a href="boutiquecomingsoon.html">Gift Vouchers</a></li>
+        <li><a href="boutiquecomingsoon.html">Self-Care Collection</a></li>
       </ul>
       <div class="footer-social">
         <a href="https://www.instagram.com/bodybydesignboutique7/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
