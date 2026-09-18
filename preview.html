@@ -90,7 +90,17 @@ header,.nav,.navbar{height:auto;overflow:hidden}.logo{display:none !important} .
   </style>
   <style>
   .email-list{background:#f5efe8;color:#4a3f35;padding:42px 24px;text-align:center;border-top:1px solid #e2d5c8;border-bottom:1px solid #e2d5c8;position:relative;overflow:hidden}
-.email-watermark{position:absolute;top:0;left:0;width:100%;height:100%;background-image:url('belle-beau-logo-new-transparent.png');background-repeat:no-repeat;background-position:center;background-size:contain;opacity:0.07;pointer-events:none;z-index:0}
+.email-watermark {
+  position: absolute;
+  inset: 0; /* covers top, right, bottom, left edges of the section */
+  background-image: url('belle-beau-logo-new-transparent.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; /* fills full height + width, touches top/bottom edges */
+  opacity: 0.07;
+  pointer-events: none;
+  z-index: 0;
+}
 .email-list h2,.email-list p,.email-list-form,.email-list-status{position:relative;z-index:1}
 .email-list h2{margin:0 0 14px;font-family:var(--serif);font-size:clamp(30px,3vw,46px);font-weight:400;line-height:1.1;color:#9a6f16}
 .email-list>p{max-width:650px;margin:0 auto 24px;font-size:14px;line-height:1.7}
