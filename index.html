@@ -101,7 +101,8 @@ header,.nav,.navbar{height:auto;overflow:hidden}.logo{display:none !important} .
   transform:rotate(45deg);
   margin-left:8px;
 }
-/* ORIGINAL WORKING HOVER RULES — exactly as you had them */
+/* These TWO extra lines fix the wrapped-link hover */
+a:hover .price-book,
 .price-item:hover .price-book,
 .combined-card:hover .price-book,
 .consult-card:hover .price-book{
@@ -453,22 +454,34 @@ header,.nav,.navbar{height:auto;overflow:hidden}.logo{display:none !important} .
    const bookingURL = 'https://www.fresha.com/en-GB/a/belle-beau-formerlybodybydesign-calne-8-phelps-parade-awjddr4y';
 const FRESHA_URL = "https://www.fresha.com/en-GB/a/belle-beau-formerlybodybydesign-calne-8-phelps-parade-awjddr4y";
 
-document.querySelectorAll('.price-item, .consult-card, .combined-card').forEach(card => {
-  // Clear any previous "processed" flag so it always runs fresh
-  card.removeAttribute('data-processed');
+// Clear old processed flags first
+document.querySelectorAll('[data-processed="true"]').forEach(el => {
+  el.removeAttribute('data-processed');
+  // Unwrap if already wrapped
+  if (el.parentNode.tagName === 'A' && el.parentNode.classList.contains('book-link-wrap')) {
+    const wrapper = el.parentNode;
+    wrapper.parentNode.insertBefore(el, wrapper);
+    wrapper.remove();
+  }
+});
 
+// Apply fresh
+document.querySelectorAll('.price-item, .consult-card, .combined-card').forEach(card => {
+  if (card.getAttribute('data-processed') === "true") return;
+  
+  const bookLabel = document.createElement('span');
+  bookLabel.className = "price-book";
+  bookLabel.textContent = "Book a consultation";
+  card.appendChild(bookLabel);
+  
   const link = document.createElement('a');
   link.href = FRESHA_URL;
   link.target = "_blank";
   link.rel = "noopener noreferrer";
   link.style.textDecoration = "none";
   link.style.color = "inherit";
-
-  const bookLabel = document.createElement('span');
-  bookLabel.className = "price-book";
-  bookLabel.textContent = "Book a consultation";
-  card.appendChild(bookLabel);
-
+  link.classList.add('book-link-wrap');
+  
   card.parentNode.insertBefore(link, card);
   link.appendChild(card);
   card.setAttribute('data-processed', "true");
