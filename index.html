@@ -350,7 +350,7 @@ header,.nav,.navbar{height:auto;overflow:hidden}.logo{display:none !important} .
       
     </section>
 <div class="marquee"><div class="marquee-track"><span>Skin confidence</span><i></i><span>Quiet luxury</span><i></i><span>Beautifully considered</span><i></i><span>Always you</span><i></i><span>Skin confidence</span><i></i><span>Quiet luxury</span><i></i><span>Beautifully considered</span><i></i><span>Always you</span><i></i></div></div>
-    <section class="booking" id="book"><div class="eyebrow">Book</div><h2 class="reveal">Begin with your <em>consultation.</em></h2><p>Your initial bespoke consultation is complimentary for a limited time against any course, package or treatment booked. View live availability and choose a suitable date and time.</p><a class="btn" href="https://calendar.app.google/L7ENiwfreWVrskHP8" target="_blank" rel="noopener noreferrer" data-book>Book your consultation</a><div class="booking-note">Private · Personalised · Confirmation sent automatically</div></section>
+    <section class="booking" id="book"><div class="eyebrow">Book</div><h2 class="reveal">Begin with your <em>consultation.</em></h2><p>Your initial bespoke consultation is complimentary for a limited time against any course, package or treatment booked. View live availability and choose a suitable date and time.</p><a class="btn" href="https://www.fresha.com/en-GB/a/belle-beau-formerlybodybydesign-calne-8-phelps-parade-awjddr4y" target="_blank" rel="noopener noreferrer" data-book>Book your consultation</a><div class="booking-note">Private · Personalised · Confirmation sent automatically</div></section>
 <div class="marquee"><div class="marquee-track"><span>Skin confidence</span><i></i><span>Quiet luxury</span><i></i><span>Beautifully considered</span><i></i><span>Always you</span><i></i><span>Skin confidence</span><i></i><span>Quiet luxury</span><i></i><span>Beautifully considered</span><i></i><span>Always you</span><i></i></div></div>
     <section class="review-submit" id="reviews"><div class="review-copy reveal"><div class="eyebrow">Client feedback</div><h2>Share your experience.</h2><p>Your feedback helps Belle &amp; Beau continue to offer thoughtful, personalised care. Every submission is reviewed privately before anything is considered for publication.</p></div><div class="review-form reveal">
       <form id='reviewForm' method='POST' name='client-review'><input type="hidden" name="form-name" value="client-review"><p class="honeypot"><label>Leave this field empty <input name="company"></label></p><div class="grid"><div class="field"><label for="reviewName">Your name</label><input id="reviewName" name="name" required autocomplete="name"></div><div class="field"><label for="reviewEmail">Email address</label><input id="reviewEmail" name="email" type="email" required autocomplete="email"></div><div class="field"><label for="reviewService">Treatment received</label><select id="reviewService" name="treatment" required><option value="">Choose a treatment…</option><option>Targeted Sculpting</option><option>RF Facial</option><option>RF Décolletage</option><option>Vitamin B12</option><option>Polynucleotides</option><option>Skin Boosters</option><option>Anti-Wrinkle</option><option>Infrared Detox Blanket</option><option>Manual Lymphatic Drainage</option><option>Brazilian Wood Sculpting</option><option>Monthly Maintenance</option><option>Combined Treatment Package</option><option>Other</option></select></div><div class="field"><label for="reviewRating">Your rating</label><select id="reviewRating" name="rating" required><option value="">Choose a rating…</option><option value="5">5 — Excellent</option><option value="4">4 — Very good</option><option value="3">3 — Good</option><option value="2">2 — Fair</option><option value="1">1 — Poor</option></select></div><div class="field full"><label for="reviewMessage">Your review</label><textarea id="reviewMessage" name="review" required minlength="20" maxlength="800" placeholder="Tell us about your experience"></textarea></div></div><label class="review-consent"><input type="checkbox" name="publication_permission" value="yes" required><span>I give Belle &amp; Beau permission to contact me about this feedback and, after review, publish my first name or initials with my review.</span></label><button class="btn" type="submit">Submit review for approval</button><p class="review-note">Your email address will remain private. Reviews are never published automatically.</p></form><div class="review-status" id="reviewStatus" role="status"><h3>Thank you.</h3><p>Your feedback has been received for private review. Nothing will be published automatically.</p></div></div></section>
@@ -390,70 +390,37 @@ header,.nav,.navbar{height:auto;overflow:hidden}.logo{display:none !important} .
     );
     mobileNav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
-    const bookingLinks = {
-      '1 Area':'https://calendar.app.google/A2PzziFX8BzAGVEy7',
-      '2 Areas':'https://calendar.app.google/vrN4hsQZN2kSBEvM8',
-      '3 Areas':'https://calendar.app.google/DBeF12E2YXx11yon8',
-      'Arm Sculpt (Bingo Wings)':'https://calendar.app.google/Z5GtFbn9486Fw1Kw9',
-      'Back Sculpt':'https://calendar.app.google/3ihevoYyzXPXLy916',
-      'Brazilian Wood Sculpting':'https://calendar.app.google/hN89HuzpeooooWyd9',
-      'Brow Lift':'https://calendar.app.google/nXcADS76TDv27Z3Q9',
-      'Bunny Lines':'https://calendar.app.google/fDoN9BLbbpdNUmn47',
-      'Custom Area Sculpt':'https://calendar.app.google/JQg14VtChH9Mxrei9',
-      'Define & Refine':'https://calendar.app.google/qhVwoSK93KJ7ag976',
-      'Downturned Mouth Corners':'https://calendar.app.google/7P94fcgmiz4RyZ758',
-      'Gummy Smile':'https://calendar.app.google/hXG9MEspHyxcJkNw8',
-      'Hip Sculpt':'https://calendar.app.google/1Lg94Nwo4xayxwMa8',
-      'Infrared Detox Blanket':'https://calendar.app.google/ZvynEhKyshQ6DTFa8',
-      'Inner Thigh Sculpt':'https://calendar.app.google/RfQdtDCVVFSpYitd7',
-      'Jawline Slimming / Masseter Reduction':'https://calendar.app.google/eQQ94oQxVTQ9DVMG9',
-      'Knee Sculpt':'https://calendar.app.google/oeJajwzrv3WeRqbWA',
-      'Lip Flip / Smoker\'s Lines':'https://calendar.app.google/B8Lm8FUd2TnNDDbg7',
-      'Manual Lymphatic Drainage (MLD)':'https://calendar.app.google/SkZxVvc6BzLBxqNX7',
-      'Monthly Maintenance Session':'https://calendar.app.google/wZHcDSZo7jSN17Vb8',
-      'Neck Lift (Nefertiti)':'https://calendar.app.google/1TJKxAXTThNDrVFj8',
-      'Non-Surgical BBL':'https://calendar.app.google/eWHedV7oQxierSVV7',
-      'Outer Thigh Sculpt':'https://calendar.app.google/9rcwiUzy3Z3HAvS37',
-      'Pebble Chin':'https://calendar.app.google/mCzqtmPnv5br9TNg8',
-      'Polynucleotides · Eye Area':'https://calendar.app.google/NcuR8yEJBaFBc4Ld7',
-      'Polynucleotides · Full Face':'https://calendar.app.google/2t1k8phG2t1FJCcBA',
-      'Radiance & Renewal':'https://calendar.app.google/cmBKTSEDNQcJXbRz6',
-      'RF Décolletage':'https://calendar.app.google/TzhkqYauej9meRGg6',
-      'RF Facial':'https://calendar.app.google/Z81nt9vYeDGZD3C27',
-      'Skin Boosters':'https://calendar.app.google/sTbU8Ak8a2zXZgMd6',
-      'Tummy & Waist Sculpt':'https://calendar.app.google/L5k4gWDCgUAEzB569',
-      'Underarm Hyperhidrosis':'https://calendar.app.google/aRCt6LeuPWJPZaFC7',
-      'Vitamin B12 — First Appointment':'https://calendar.app.google/TtrHNedrZzArnE9k7',
-      'Vitamin B12 — Top-Up Appointment':'https://calendar.app.google/ebTvAKkaj4Wd55X16'
-    };
-   const bookingURL = 'https://www.fresha.com/en-GB/a/belle-beau-formerlybodybydesign-calne-8-phelps-parade-awjddr4y';
-const FRESHA_URL = "https://www.fresha.com/en-GB/a/belle-beau-formerlybodybydesign-calne-8-phelps-parade-awjddr4y";
 
+    /* ============================================================
+       ALL BOOKING LINKS NOW GO TO FRESHA — NO EXCEPTIONS
+       ============================================================ */
+    const FRESHA = "https://www.fresha.com/en-GB/a/belle-beau-formerlybodybydesign-calne-8-phelps-parade-awjddr4y";
+
+    // Anti-wrinkle dropdown buttons → Fresha
     document.querySelectorAll('.anti-choice').forEach(card => {
       const select = card.querySelector('.anti-addon-select');
       const button = card.querySelector('.anti-book-btn');
-      const heading = card.querySelector('h4').textContent.trim();
-      const url = bookingLinks[heading] || bookingURL;
       button.disabled = true;
       select.addEventListener('change', () => {
         const choice = select.value.trim();
+        const heading = card.querySelector('h4').textContent.trim();
         button.disabled = !choice;
         button.textContent = choice ? `Book ${heading} · ${choice}` : 'Choose an option to continue';
       });
       button.addEventListener('click', () => {
         if (button.disabled) return;
-        window.open(url, '_blank', 'noopener,noreferrer');
+        window.open(FRESHA, '_blank', 'noopener,noreferrer');
       });
     });
+
+    // All [data-book] buttons/links → Fresha
     document.querySelectorAll('[data-book]').forEach(el => {
-      const heading = el.dataset.choice?.trim();
-      const url = bookingLinks[heading] || bookingURL;
       if (el.tagName === 'A') {
-        el.href = url;
+        el.href = FRESHA;
         el.target = '_blank';
         el.rel = 'noopener noreferrer';
       } else {
-        el.addEventListener('click', () => window.open(url, '_blank', 'noopener,noreferrer'));
+        el.addEventListener('click', () => window.open(FRESHA, '_blank', 'noopener,noreferrer'));
       }
     });
  </script>
