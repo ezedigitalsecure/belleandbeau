@@ -105,7 +105,7 @@ header,.nav,.navbar{height:auto;overflow:hidden}.logo{display:none !important} .
 a:hover .price-book,
 .price-item:hover .price-book,
 .combined-card:hover .price-book,
-.consult-card:hover .price-book{
+.consult-card:hover .price-book {
   opacity:1;
   transform:translateY(0);
   height:auto;
@@ -453,26 +453,8 @@ a:hover .price-book,
     };
    const bookingURL = 'https://www.fresha.com/en-GB/a/belle-beau-formerlybodybydesign-calne-8-phelps-parade-awjddr4y';
 const FRESHA_URL = "https://www.fresha.com/en-GB/a/belle-beau-formerlybodybydesign-calne-8-phelps-parade-awjddr4y";
-
-// Clear old processed flags first
-document.querySelectorAll('[data-processed="true"]').forEach(el => {
-  el.removeAttribute('data-processed');
-  // Unwrap if already wrapped
-  if (el.parentNode.tagName === 'A' && el.parentNode.classList.contains('book-link-wrap')) {
-    const wrapper = el.parentNode;
-    wrapper.parentNode.insertBefore(el, wrapper);
-    wrapper.remove();
-  }
-});
-
-// Apply fresh
-document.querySelectorAll('.price-item, .consult-card, .combined-card').forEach(card => {
+document.querySelectorAll('.price-item').forEach(card => {
   if (card.getAttribute('data-processed') === "true") return;
-  
-  const bookLabel = document.createElement('span');
-  bookLabel.className = "price-book";
-  bookLabel.textContent = "Book a consultation";
-  card.appendChild(bookLabel);
   
   const link = document.createElement('a');
   link.href = FRESHA_URL;
@@ -480,7 +462,11 @@ document.querySelectorAll('.price-item, .consult-card, .combined-card').forEach(
   link.rel = "noopener noreferrer";
   link.style.textDecoration = "none";
   link.style.color = "inherit";
-  link.classList.add('book-link-wrap');
+  
+  const bookLabel = document.createElement('span');
+  bookLabel.className = "price-book";
+  bookLabel.textContent = "Book a consultation";
+  card.appendChild(bookLabel);
   
   card.parentNode.insertBefore(link, card);
   link.appendChild(card);
