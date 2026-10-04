@@ -48,7 +48,7 @@ header,.nav,.navbar{height:auto;overflow:hidden}.logo{display:none !important} .
     .coming-soon-block{border:1px solid var(--line);padding:50px 40px;text-align:center;margin:60px 0}.coming-soon-block h2{font-family:var(--serif);font-size:clamp(36px,4.5vw,58px);font-weight:400;margin:0 0 14px}.coming-soon-price{font-family:var(--serif);font-size:42px;margin:10px 0 20px;color:var(--bronze)}.waitlist-note{font-size:13px;line-height:1.7;color:#5f5850;margin-bottom:24px}
     .academy-note{background:rgba(189,134,22,.08);border-left:2px solid var(--gold);padding:24px 28px;margin:40px 0}.academy-note h3{font-family:var(--serif);font-size:22px;margin:0 0 10px}.academy-note p{font-size:13px;line-height:1.7;margin:0}
     .reveal{opacity:0;transform:translateY(25px);transition:.7s ease}.reveal.on{opacity:1;transform:none}
-    .email-list{background:#f5efe8;color:#4a3f35;padding:42px 24px;text-align:center;border-top:1px solid #e2d5c8;border-bottom:1px solid #e2d5c8;position:relative;overflow:hidden;margin-top:60px}
+    .email-list{background:#f5efe8;color:#4a3f35;padding:42px 24px;text-align:center;border-top:1px solid #e2d5c8;border-bottom:1px solid #e2d5c8;position:relative;overflow:hidden;margin-top:0}
 .email-watermark {
   position: absolute;
   inset: 0;
@@ -95,12 +95,36 @@ header,.nav,.navbar{height:auto;overflow:hidden}.logo{display:none !important} .
   white-space: nowrap;
 }
 .email-list-btn:hover,.email-list-btn:focus-visible{background:var(--ink);border-color:var(--ink)}
+.email-list-status{display:none;max-width:580px;margin:22px auto 0;padding-top:20px;border-top:1px solid #d4c5b5}
+.email-list-status.show{display:block}
+.email-list-status h3{margin:0 0 8px;font-family:var(--serif);font-size:29px;font-weight:400;color:#9a6f16}
+.email-list-status p{margin:0;font-size:13px;line-height:1.6}
     @media(max-width:640px){section{padding:70px 22px}.course-card{padding:28px 22px}.bundle-block,.testimonial-block,.coming-soon-block{padding:34px 22px}.email-list-form{flex-direction:column}.email-list-input,.email-list-btn{width:100%}}
   </style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ✅ EMAIL BANNER — VERY TOP (matches main site) -->
+  <section class="email-list" id="email-list" aria-labelledby="email-list-title">
+    <div class="email-watermark"></div>
+    <h2 id="email-list-title">Join Our Exclusive List — Get 10% Off + Free Consultation</h2>
+    <p>Be the first to know about new treatments, exclusive offers and self-care tips. The first 15 subscribers also receive a free consultation, normally £25.</p>
+    <form class='email-list-form' id='emailListForm' method='POST' name='email-list'>
+      <input type="hidden" name="form-name" value="email-list">
+      <p class="honeypot" style="position:absolute;left:-9999px;"><label>Leave this field empty <input name="website" tabindex="-1" autocomplete="off"></label></p>
+      <label class="skip" for="emailListAddress">Email address</label>
+      <input type="email" class="email-list-input" id="emailListAddress" name="email" placeholder="Enter your email address" autocomplete="email" required>
+      <button type="submit" class="email-list-btn">SUBSCRIBE</button>
+    </form>
+    <div class="email-list-status" id="emailListStatus" role="status">
+      <h3>You're on the list ✨</h3>
+      <p>Thank you — check your inbox for your 10% off code.</p>
+    </div>
+  </section>
+
   <div class="announcement">Founding Member pricing · Limited to our first 8 students</div>
+
   <header class="nav">
     <nav class="nav-links" aria-label="Primary">
       <a href="index.html">Home</a>
@@ -112,6 +136,7 @@ header,.nav,.navbar{height:auto;overflow:hidden}.logo{display:none !important} .
     </nav>
     <div class="nav-actions"><a href="index.html#contact">Contact</a><a href="https://www.fresha.com/en-GB/a/belle-beau-formerlybodybydesign-calne-8-phelps-parade-awjddr4y" target="_blank" rel="noopener noreferrer" class="book-link">Book</a></div>
   </header>
+
   <main id="main">
     <section class="hero">
       <div class="hero-copy reveal">
@@ -119,10 +144,12 @@ header,.nav,.navbar{height:auto;overflow:hidden}.logo{display:none !important} .
         <h1>Learn. Grow.<em>Confidently.</em></h1>
         <p>Professional, CPD-accredited training delivered in small, supportive groups — maximum four students per course. Learn from an experienced practitioner who cares as much about how <em>you</em> learn as what you learn.</p>
         <p style="margin-top:12px;"><strong>Founding Member pricing</strong> available — limited to our first 8 students.</p>
-        <div class="actions"><a class="btn" href="#courses">View Courses</a><a class="btn ghost" href="#waitlist">Join Waitlist</a></div>
+        <div class="actions"><a class="btn" href="#courses">View Courses</a><a class="btn ghost" href="#courses">Enquire Now</a></div>
       </div>
     </section>
+
     <div class="marquee"><div class="marquee-track"><span>CPD Accredited</span><i></i><span>Small Groups</span><i></i><span>In-Person · Calne, Wiltshire</span><i></i><span>Lifetime Support</span><i></i><span>CPD Accredited</span><i></i><span>Small Groups</span><i></i><span>In-Person · Calne, Wiltshire</span><i></i><span>Lifetime Support</span><i></i></div></div>
+
     <section id="courses">
       <div class="intro" style="margin-bottom:50px">
         <div>
@@ -233,7 +260,7 @@ header,.nav,.navbar{height:auto;overflow:hidden}.logo{display:none !important} .
         <p style="font-size:15px; line-height:1.7;">EMS Body Sculpting Complete Package</p>
         <div class="coming-soon-price">£2,999</div>
         <p class="waitlist-note">Launching October 2026<br>Includes full CPD certification + professional EMS machine + manufacturer warranty + delivery + ongoing support</p>
-        <a class="btn ghost" href="#waitlist">Join the Waitlist</a>
+        <p style="font-size:13px;color:#5f5850;margin-bottom:24px;">Join our email list at the top of this page to be first to hear when it launches.</p>
       </div>
 
       <!-- ACADEMY PROMISE -->
@@ -244,25 +271,8 @@ header,.nav,.navbar{height:auto;overflow:hidden}.logo{display:none !important} .
     </section>
 
     <div class="marquee"><div class="marquee-track"><span>Supportive Learning</span><i></i><span>Confidence First</span><i></i><span>Ready to Practise</span><i></i><span>Always Here</span><i></i><span>Supportive Learning</span><i></i><span>Confidence First</span><i></i><span>Ready to Practise</span><i></i><span>Always Here</span><i></i></div></div>
-
-    <!-- WAITLIST -->
-    <section class="email-list" id="waitlist">
-      <div class="email-watermark"></div>
-      <h2 id="waitlist-title">Join the Academy Waitlist</h2>
-      <p>Be first to hear about new course dates, availability, and exclusive offers — including the EMS Body Sculpting launch. Your email stays private, never shared, and you can unsubscribe at any time.</p>
-      <form class='email-list-form' id='academyWaitlistForm' method='POST' name='academy-waitlist'>
-        <input type="hidden" name="form-name" value="academy-waitlist">
-        <p class="honeypot" style="position:absolute;left:-9999px;"><label>Leave empty <input name="website" tabindex="-1"></label></p>
-        <label class="skip" for="academyEmail">Your email</label>
-        <input type="email" class="email-list-input" id="academyEmail" name="email" placeholder="Enter your email address" required>
-        <button type="submit" class="email-list-btn">Join Waitlist</button>
-      </form>
-      <div class="email-list-status" id="waitlistStatus" role="status">
-        <h3>You're on the list ✨</h3>
-        <p>Thank you — we'll be in touch first when new dates are released.</p>
-      </div>
-    </section>
   </main>
+
   <script>
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -270,23 +280,24 @@ header,.nav,.navbar{height:auto;overflow:hidden}.logo{display:none !important} .
       });
     }, { threshold: .12 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    const waitlistForm = document.getElementById('academyWaitlistForm');
-    const waitlistStatus = document.getElementById('waitlistStatus');
-    if(waitlistForm){
-      waitlistForm.addEventListener('submit', function(e){
+
+    const emailForm = document.getElementById('emailListForm');
+    const emailStatus = document.getElementById('emailListStatus');
+    if(emailForm){
+      emailForm.addEventListener('submit', function(e){
         e.preventDefault();
-        const formData = Object.fromEntries(new FormData(waitlistForm));
-        formData._subject = 'Academy Waitlist Signup';
+        const formData = Object.fromEntries(new FormData(emailForm));
+        formData._subject = 'Academy Page — Email List Signup';
         fetch('https://formsubmit.co/ajax/hello@belleandbeauaesthetic.com', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify(formData)
         }).then(() => {
-          waitlistForm.style.display = 'none';
-          waitlistStatus.classList.add('show');
+          emailForm.style.display = 'none';
+          emailStatus.classList.add('show');
         }).catch(() => {
-          waitlistForm.style.display = 'none';
-          waitlistStatus.classList.add('show');
+          emailForm.style.display = 'none';
+          emailStatus.classList.add('show');
         });
       });
     }
