@@ -27,9 +27,8 @@
             min-height: 500px;
         }
 
-        .hero-copy {
-            max-width: 600px;
-            position: relative;
+        .hero-inner {
+            max-width: 620px;
         }
 
         .hero-tag {
@@ -68,7 +67,6 @@
             display: flex;
             gap: 16px;
             align-items: center;
-            position: relative;
         }
 
         .btn {
@@ -104,17 +102,19 @@
 
         .cpd-logo {
             position: absolute;
-            right: -320px;
-            top: 0;
-            width: 140px;
+            right: 60px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 200px;
             height: auto;
-            object-fit: contain;
         }
 
         @media (max-width: 1100px) {
             .cpd-logo {
                 position: static;
-                margin-left: auto;
+                transform: none;
+                margin: 32px 0 0 0;
+                width: 160px;
             }
         }
 
@@ -130,21 +130,16 @@
             .actions {
                 flex-wrap: wrap;
             }
-
-            .cpd-logo {
-                width: 110px;
-                margin: 24px 0 0 0;
-            }
         }
     </style>
 </head>
 <body>
 
-<!-- Include your header here as normal -->
-<!-- <div id="header"></div> -->
+<!-- YOUR HEADER KEEPS WORKING AS BEFORE -->
+<div id="header"></div>
 
 <section class="hero">
-    <div class="hero-copy">
+    <div class="hero-inner">
         <p class="hero-tag">Belle & Beau Academy</p>
         <h1>Learn. Grow.<br><span>Confidently.</span></h1>
         <p>Professional, CPD-accredited training delivered in small, supportive groups — maximum four students per course. Learn from an experienced practitioner who cares as much about how you learn as what you learn.</p>
@@ -153,15 +148,29 @@
         <div class="actions">
             <a href="#courses" class="btn solid">VIEW COURSES</a>
             <a href="#enquire" class="btn ghost">ENQUIRE NOW</a>
-            <img src="cpd-logo.png" alt="CPD Accredited" class="cpd-logo">
         </div>
     </div>
+
+    <!-- CPD LOGO — large, vertically centered in the right space -->
+    <img src="cpd-logo.png" alt="The CPD Standards Office Accredited" class="cpd-logo">
 </section>
 
-<!-- Rest of your page content here -->
+<!-- YOUR FULL PAGE CONTENT REMAINS HERE -->
+<!-- [rest of your original academy page stays exactly as it was] -->
 
-<!-- Include your footer here -->
-<!-- <div id="footer"></div> -->
+<!-- YOUR FOOTER KEEPS WORKING AS BEFORE -->
+<div id="footer"></div>
+
+<script>
+// Header/footer fetch — keep your original code here
+fetch('header.html')
+  .then(r => r.text())
+  .then(h => { document.getElementById('header').innerHTML = h; });
+
+fetch('footer.html')
+  .then(r => r.text())
+  .then(f => { document.getElementById('footer').innerHTML = f; });
+</script>
 
 </body>
 </html>
