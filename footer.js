@@ -51,10 +51,10 @@ footer{background:#000;color:#BFB9AD;padding:48px 4vw 24px;border-top:1px solid 
     <div class="footer-col">
       <h4 onclick="window.location.href='academycomingsoon.html'">Academy</h4>
       <ul>
-        <li><a href="academycomingsoon.html">Courses & Training</a></li>
-        <li><a href="academycomingsoon.html">CPD Accreditation</a></li>
-        <li><a href="academycomingsoon.html">Student Resources</a></li>
-        <li><a href="academycomingsoon.html">Certification</a></li>
+        <li><a href="academy.html">Courses & Training</a></li>
+        <li><a href="academy.html">CPD Accreditation</a></li>
+        <li><a href="academy.html">Student Resources</a></li>
+        <li><a href="academy.html">Certification</a></li>
       </ul>
     </div>
     <div class="footer-col">
