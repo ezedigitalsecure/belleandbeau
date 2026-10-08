@@ -1,166 +1,284 @@
-<!DOCTYPE html>
-<html lang="en-GB">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academy · Belle & Beau</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Segoe UI', serif;
-            background-color: #FAF6F0;
-            color: #2C2C2C;
-            line-height: 1.6;
-        }
-
-        .hero {
-            padding: 80px 40px;
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-            min-height: 520px;
-        }
-
-        .hero-content {
-            max-width: 620px;
-        }
-
-        .hero-tag {
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 16px;
-            color: #4A4A4A;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            line-height: 1.1;
-            font-weight: 300;
-            margin-bottom: 32px;
-        }
-
-        .hero h1 span {
-            color: #916F2F;
-            font-style: italic;
-        }
-
-        .hero p {
-            font-size: 1rem;
-            margin-bottom: 24px;
-            color: #555;
-        }
-
-        .founder-note {
-            font-weight: 500;
-            color: #916F2F;
-            margin-bottom: 40px;
-        }
-
-        .actions {
-            display: flex;
-            gap: 16px;
-        }
-
-        .btn {
-            padding: 14px 32px;
-            border: none;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-
-        .btn.solid {
-            background-color: #222;
-            color: #FAF6F0;
-        }
-
-        .btn.ghost {
-            background: transparent;
-            color: #222;
-            border: 1px solid #222;
-        }
-
-        .cpd-logo {
-            position: absolute;
-            right: 40px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 130px;
-            height: auto;
-            object-fit: contain;
-        }
-
-        @media (min-width: 1200px) {
-            .cpd-logo {
-                right: calc(50% - 310px);
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .cpd-logo {
-                position: static;
-                margin: 32px 0 0 0;
-                width: 110px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                padding: 40px 24px;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .actions {
-                flex-wrap: wrap;
-            }
-
-            .cpd-logo {
-                width: 100px;
-            }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Belle & Beau Academy — CPD-accredited training in body contouring, sauna blanket therapy and manual lymphatic drainage.">
+  <title>Belle & Beau Academy | Training & Courses</title>
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#c38e18">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Italiana&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#100d09;--cream:#f3eee7;--paper:#faf8f4;--gold:#bd8616;--bronze:#806120;--line:rgba(16,13,9,.18);--serif:'Italiana',serif;--sans:'DM Sans',sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300}a{color:inherit}.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;z-index:100;background:#fff;padding:12px}
+    .announcement{height:31px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+    .nav{padding:14px 4vw;display:flex;justify-content:space-between;align-items:center;gap:20px;background:#000;border-bottom:1px solid rgba(255,255,255,.08);position:relative;z-index:20}
+    .nav-links{display:flex;align-items:center;justify-content:space-between;gap:12px;flex:1;max-width:900px;margin:0 auto}
+    .nav-actions{display:flex;align-items:center;gap:28px}
+    .nav a{text-decoration:none;font-size:11px;text-transform:uppercase;letter-spacing:.16em;font-weight:500;color:#fff;transition:color .25s ease;white-space:nowrap}
+    .nav a:hover{color:var(--gold)}
+    .book-link{border-bottom:none;padding:10px 0}
+    .hero{min-height:60vh;position:relative;display:flex;align-items:center;overflow:hidden;padding:100px 6vw 80px}
+    .eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;display:flex;align-items:center;gap:13px}
+    .eyebrow:before{content:"";width:34px;height:1px;background:currentColor}.eyebrow.no-line:before{display:none}
+    .hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(48px,6vw,92px);line-height:.92;letter-spacing:-.04em;margin:24px 0 28px}
+    .hero h1 em{display:block;font-weight:400;color:var(--bronze)}
+    .hero p{max-width:520px;line-height:1.75;font-size:14px}
+    .actions{display:flex;gap:12px;margin-top:36px}
+    .btn{border:1px solid var(--ink);background:var(--ink);color:#fff;text-transform:uppercase;letter-spacing:.17em;font-size:10px;font-weight:600;padding:17px 23px;text-decoration:none;cursor:pointer;transition:.25s}
+    .btn:hover{background:var(--gold);border-color:var(--gold)}
+    .btn.ghost{background:transparent;color:var(--ink)}.btn.ghost:hover{background:var(--ink);color:#fff}
+    .marquee{background:var(--gold);overflow:hidden;padding:15px 0;white-space:nowrap}
+    .marquee-track{display:inline-block;animation:marquee 24s linear infinite;font-family:var(--serif);font-size:17px}
+    .marquee span{margin:0 30px}.marquee i{font-style:normal}.marquee i:after{content:'✦';font-size:9px}
+    @keyframes marquee{to{transform:translateX(-50%)}}
+    section{padding:100px 6vw}
+    .section-no{font-size:10px;letter-spacing:.16em;text-transform:uppercase;border-top:1px solid;padding-top:14px}
+    .intro{display:grid;grid-template-columns:.7fr 1.3fr;gap:8vw;align-items:start;margin-bottom:50px}
+    .intro h2{font-family:var(--serif);font-size:clamp(42px,5vw,72px);font-weight:400;line-height:1.05;letter-spacing:-.03em;margin:0}
+    .intro-body{max-width:500px;margin:38px 0 0 auto}.intro-body p{font-size:15px;line-height:1.8}
+    .course-card{border:1px solid var(--line);margin-bottom:40px;background:rgba(16,13,9,.02);transition:.3s;padding:34px 38px}
+    .course-card:hover{border-color:var(--bronze);transform:translateY(-2px)}
+    .founding-badge{display:inline-block;background:var(--gold);color:#fff;font-size:9px;letter-spacing:.16em;text-transform:uppercase;padding:5px 10px;margin-bottom:14px}
+    .course-card h3{font-family:var(--serif);font-size:clamp(28px,3.5vw,44px);font-weight:400;margin:0 0 12px}
+    .course-meta{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+    .course-meta span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);padding:4px 10px;border:1px solid var(--line)}
+    .course-price{font-family:var(--serif);font-size:32px;margin:16px 0}
+    .course-price em{font-style:normal;color:var(--bronze);font-size:16px}
+    .course-card p{font-size:13px;line-height:1.7;margin-bottom:10px}
+    .course-highlights{margin:20px 0;padding-left:20px}
+    .course-highlights li{font-size:13px;line-height:1.7;margin-bottom:6px}
+    .bundle-block{background:var(--ink);color:var(--cream);padding:50px 40px;margin:60px 0}
+    .bundle-block h2{font-family:var(--serif);font-size:clamp(36px,4.5vw,58px);font-weight:400;margin:0 0 14px}
+    .bundle-price{font-family:var(--serif);font-size:42px;margin:10px 0 20px}
+    .bundle-price span{font-size:16px;color:#aca59c;text-decoration:line-through;margin-right:12px}
+    .bundle-save{color:var(--gold);font-size:14px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:24px}
+    .testimonial-block{background:var(--cream);padding:50px 40px;margin:60px 0}
+    .testimonial-block h2{font-family:var(--serif);font-size:clamp(32px,4vw,46px);font-weight:400;margin:0 0 24px}
+    .testimonial-text{font-size:15px;line-height:1.9;font-style:italic;margin-bottom:20px}
+    .testimonial-name{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze)}
+    .coming-soon-block{border:1px solid var(--line);padding:50px 40px;text-align:center;margin:60px 0}
+    .coming-soon-block h2{font-family:var(--serif);font-size:clamp(36px,4.5vw,58px);font-weight:400;margin:0 0 14px}
+    .coming-soon-price{font-family:var(--serif);font-size:42px;margin:10px 0 20px;color:var(--bronze)}
+    .waitlist-note{font-size:13px;line-height:1.7;color:#5f5850;margin-bottom:24px}
+    .academy-note{background:rgba(189,134,22,.08);border-left:2px solid var(--gold);padding:24px 28px;margin:40px 0}
+    .academy-note h3{font-family:var(--serif);font-size:22px;margin:0 0 10px}
+    .academy-note p{font-size:13px;line-height:1.7;margin:0}
+    .reveal{opacity:0;transform:translateY(25px);transition:.7s ease}.reveal.on{opacity:1;transform:none}
+    .email-list{background:#f5efe8;color:#4a3f35;padding:42px 24px;text-align:center;border-top:1px solid #e2d5c8;border-bottom:1px solid #e2d5c8;position:relative;overflow:hidden;margin-top:60px}
+    .email-watermark{position:absolute;inset:0;background-image:url('belle-beau-logo-new-transparent.png');background-repeat:no-repeat;background-position:center;background-size:cover;opacity:.07;pointer-events:none;z-index:0}
+    .email-list h2,.email-list p,.email-list-form,.email-list-status{position:relative;z-index:1}
+    .email-list h2{margin:0 0 14px;font-family:var(--serif);font-size:clamp(30px,3vw,46px);font-weight:400;line-height:1.1;color:#9a6f16}
+    .email-list>p{max-width:650px;margin:0 auto 24px;font-size:14px;line-height:1.7}
+    .email-list-form{display:flex;gap:12px;justify-content:center;align-items:center;width:100%;margin:0 auto;padding:0;flex-wrap:wrap}
+    .email-list-input{flex:1 1 260px;max-width:340px;padding:15px 18px;border:1px solid #d4c5b5;background:#fff;font:14px var(--sans);outline:none}
+    .email-list-btn{padding:15px 30px;border:1px solid var(--gold);background:var(--gold);color:#fff;font:600 10px var(--sans);letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:.25s;white-space:nowrap}
+    .email-list-btn:hover,.email-list-btn:focus-visible{background:var(--ink);border-color:var(--ink)}
+    .email-list-status{display:none}.email-list-status.show{display:block;margin-top:20px}
+    @media(max-width:640px){section{padding:70px 22px}.course-card{padding:28px 22px}.bundle-block,.testimonial-block,.coming-soon-block{padding:34px 22px}.email-list-form{flex-direction:column}.email-list-input,.email-list-btn{width:100%}}
+  </style>
 </head>
 <body>
-
-<div id="header"></div>
-
-<section class="hero">
-    <div class="hero-content">
-        <p class="hero-tag">Belle & Beau Academy</p>
-        <h1>Learn. Grow.<br><span>Confidently.</span></h1>
-        <p>Professional, CPD-accredited training delivered in small, supportive groups — maximum four students per course. Learn from an experienced practitioner who cares as much about how you learn as what you learn.</p>
-        <p class="founder-note">Founding Member pricing available — limited to our first 8 students.</p>
-        
-        <div class="actions">
-            <a href="#courses" class="btn solid">VIEW COURSES</a>
-            <a href="#enquire" class="btn ghost">ENQUIRE NOW</a>
-        </div>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="announcement">Founding Member pricing · Limited to our first 8 students</div>
+  <header class="nav">
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="index.html#pricing">Treatments & Pricing</a>
+      <a href="index.html#body-contouring">Body Contouring</a>
+      <a href="index.html#owner">Meet the Owner</a>
+      <a href="academy.html" style="color:var(--gold)">Academy</a>
+      <a href="boutiquecomingsoon.html">Boutique</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="index.html#contact">Contact</a>
+      <a href="https://www.fresha.com/en-GB/a/belle-beau-formerlybodybydesign-calne-8-phelps-parade-awjddr4y" target="_blank" rel="noopener noreferrer" class="book-link">Book</a>
     </div>
-
-    <img src="cpd-logo.png" alt="CPD Standards Office Accredited" class="cpd-logo">
-</section>
-
-<!-- Keep all your other academy page content here exactly as before -->
-
-<div id="footer"></div>
-
-<script>
-fetch('header.html')
-  .then(res => res.text())
-  .then(html => { document.getElementById('header').innerHTML = html; });
-
-fetch('footer.html')
-  .then(res => res.text())
-  .then(html => { document.getElementById('footer').innerHTML = html; });
-</script>
-
+  </header>
+  <main id="main">
+    <section class="hero">
+      <div class="hero-copy reveal">
+        <div class="eyebrow no-line">Belle & Beau Academy</div>
+        <h1>Learn. Grow.<em>Confidently.</em></h1>
+        <p>Professional, CPD-accredited training delivered in small, supportive groups — maximum four students per course. Learn from an experienced practitioner who cares as much about how <em>you</em> learn as what you learn.</p>
+        <p style="margin-top:12px;"><strong>Founding Member pricing</strong> available — limited to our first 8 students.</p>
+        <div class="actions">
+          <a class="btn" href="#courses">View Courses</a>
+          <a class="btn ghost" href="#waitlist">Join Waitlist</a>
+        </div>
+      </div>
+    </section>
+    <div class="marquee">
+      <div class="marquee-track">
+        <span>CPD Accredited</span><i></i>
+        <span>Small Groups</span><i></i>
+        <span>In-Person · Calne, Wiltshire</span><i></i>
+        <span>Lifetime Support</span><i></i>
+        <span>CPD Accredited</span><i></i>
+        <span>Small Groups</span><i></i>
+        <span>In-Person · Calne, Wiltshire</span><i></i>
+        <span>Lifetime Support</span><i></i>
+      </div>
+    </div>
+    <section id="courses">
+      <div class="intro">
+        <div>
+          <div class="section-no">01</div>
+          <h2>Our Courses</h2>
+        </div>
+        <div class="intro-body">
+          <p>Every course includes thorough client consultation guidance, real examples for different body types, contraindication awareness, and full aftercare support. You will leave feeling excited and confident to begin your practice.</p>
+          <p style="margin-top:12px;">All students receive <strong>lifetime access</strong> to online course videos + our Academy Chat community. First 6 months of Academy Chat membership is complimentary.</p>
+        </div>
+      </div>
+      <article class="course-card reveal">
+        <span class="founding-badge">Founding Member Price</span>
+        <h3>Complete Body Contouring Practitioner Starter Course</h3>
+        <div class="course-meta">
+          <span>CPD Accredited</span>
+          <span>In-Person · Calne, Wiltshire</span>
+          <span>2 Days</span>
+        </div>
+        <p><strong>Covers:</strong> Cavitation · Vacuum Therapy · Radio Frequency · Laser Lipolysis · Anatomy & Physiology · Consultation skills for all body types</p>
+        <p><strong>Dates:</strong> 28th & 29th September · 7th & 8th October</p>
+        <p><strong>Includes:</strong> KIM8 salon-grade machine (CE/UKCA certified) — yours to take away on course day</p>
+        <div class="course-price"><em>Normally £1,250</em><br><strong>£625</strong></div>
+        <p style="font-size:12px; color:#5f5850;">50% deposit secures your place · Limited availability</p>
+        <ul class="course-highlights">
+          <li>Hands-on practical demonstrations of all four core treatments</li>
+          <li>Guidance on consulting for every body shape</li>
+          <li>Machine ready to start your business immediately</li>
+          <li>Lifetime video access + Academy Chat support</li>
+        </ul>
+        <a class="btn" href="https://www.fresha.com/en-GB/a/belle-beau-formerlybodybydesign-calne-8-phelps-parade-awjddr4y" target="_blank" rel="noopener noreferrer">Enquire & Book</a>
+      </article>
+      <article class="course-card reveal">
+        <span class="founding-badge">Founding Member Price</span>
+        <h3>Custom Infrared Sauna Blanket Therapy</h3>
+        <div class="course-meta">
+          <span>CPD Accredited</span>
+          <span>In-Person · Calne, Wiltshire</span>
+          <span>Standalone or add-on</span>
+        </div>
+        <p><strong>Covers:</strong> Theory · Safety protocols · Client consultation · Aftercare guidance</p>
+        <p><strong>Dates:</strong> Late September — flexible to fit around other courses</p>
+        <p><strong>Includes:</strong> Custom Belle & Beau Academy Infrared Blanket — rich brown matte faux leather, embroidered, low-EMF, digital timer & temp control, salon-grade</p>
+        <div class="course-price"><em>Normally £700</em><br><strong>£350</strong></div>
+        <p style="font-size:12px; color:#5f5850;">50% deposit secures your place · Online course coming soon</p>
+        <ul class="course-highlights">
+          <li>Detox, circulation & bloating reduction protocols</li>
+          <li>Safe operating temperature guidance</li>
+          <li>Blanket included — ready to use immediately</li>
+          <li>Lifetime video access + Academy Chat support</li>
+        </ul>
+        <a class="btn" href="https://www.fresha.com/en-GB/a/belle-beau-formerlybodybydesign-calne-8-phelps-parade-awjddr4y" target="_blank" rel="noopener noreferrer">Enquire & Book</a>
+      </article>
+      <article class="course-card reveal">
+        <span class="founding-badge">Founding Member Price</span>
+        <h3>Manual Lymphatic Drainage (MLD)</h3>
+        <div class="course-meta">
+          <span>CPD Accredited</span>
+          <span>In-Person · Calne, Wiltshire</span>
+          <span>Standalone or add-on</span>
+        </div>
+        <p><strong>Covers:</strong> Full lymphatic system theory · Vodder Technique (gold standard) · Holistic gentle approach · Practical hands-on methods</p>
+        <p><strong>Dates:</strong> Late September — flexible to fit around other courses</p>
+        <p><strong>Includes:</strong> Complete MLD Treatment Starter Kit</p>
+        <div class="course-price"><em>Normally £390</em><br><strong>£195</strong></div>
+        <p style="font-size:12px; color:#5f5850;">50% deposit secures your place · Online course coming soon</p>
+        <ul class="course-highlights">
+          <li>Reduce swelling, heaviness & fluid retention</li>
+          <li>Gold-standard Vodder method taught</li>
+          <li>Perfect as standalone or complement to body contouring</li>
+          <li>Lifetime video access + Academy Chat support</li>
+        </ul>
+        <a class="btn" href="https://www.fresha.com/en-GB/a/belle-beau-formerlybodybydesign-calne-8-phelps-parade-awjddr4y" target="_blank" rel="noopener noreferrer">Enquire & Book</a>
+      </article>
+      <div class="bundle-block reveal">
+        <h2>The Ultimate Bundle — All Three Courses</h2>
+        <p>Complete Body Contouring + Sauna Blanket + MLD — everything you need to launch a fully equipped, professional practice.</p>
+        <p style="margin:10px 0;">Includes KIM8 Machine + Custom Blanket + MLD Starter Kit — all ready to take away on course day.</p>
+        <div class="bundle-price"><span>Normally £2,465</span> £1,100</div>
+        <div class="bundle-save">Save £1,365 · Extra £70 discount for booking all three together</div>
+        <p style="margin-bottom:24px;">Limited to our first 8 Founding Members only.</p>
+        <a class="btn" href="https://www.fresha.com/en-GB/a/belle-beau-formerlybodybydesign-calne-8-phelps-parade-awjddr4y" target="_blank" rel="noopener noreferrer">Secure Your Bundle</a>
+      </div>
+      <div class="testimonial-block reveal">
+        <h2>What Our Students Say</h2>
+        <div class="testimonial-text">"Nicki is a fantastic teacher, she's so friendly and approachable that she makes you feel at ease instantly! She is very knowledgeable and makes the course easy to understand and less overwhelming. I absolutely loved it, thank you!"</div>
+        <div class="testimonial-text" style="margin-bottom:0;">"I highly recommend Nicki if you are looking for a course that is thorough, fun and gives you the confidence you need moving forward."</div>
+        <p class="testimonial-name" style="margin-top:16px;">— Past Student</p>
+      </div>
+      <div class="coming-soon-block reveal">
+        <h2>Coming Soon</h2>
+        <p style="font-size:15px; line-height:1.7;">EMS Body Sculpting Complete Package</p>
+        <div class="coming-soon-price">£2,999</div>
+        <p class="waitlist-note">Launching October 2026<br>Includes full CPD certification + professional EMS machine + manufacturer warranty + delivery + ongoing support</p>
+        <a class="btn ghost" href="#waitlist">Join the Waitlist</a>
+      </div>
+      <div class="academy-note reveal">
+        <h3>The Belle & Beau Academy Promise</h3>
+        <p>We keep class sizes intentionally small — maximum four students — so you never feel lost or rushed. Long after your course ends, you will have lifetime access to our online materials and our community. Whenever you feel unsure, we're here.</p>
+      </div>
+    </section>
+    <div class="marquee">
+      <div class="marquee-track">
+        <span>Supportive Learning</span><i></i>
+        <span>Confidence First</span><i></i>
+        <span>Ready to Practise</span><i></i>
+        <span>Always Here</span><i></i>
+        <span>Supportive Learning</span><i></i>
+        <span>Confidence First</span><i></i>
+        <span>Ready to Practise</span><i></i>
+        <span>Always Here</span><i></i>
+      </div>
+    </div>
+    <section class="email-list" id="waitlist">
+      <div class="email-watermark"></div>
+      <h2 id="waitlist-title">Join the Academy Waitlist</h2>
+      <p>Be first to hear about new course dates, availability, and exclusive offers — including the EMS Body Sculpting launch. Your email stays private, never shared, and you can unsubscribe at any time.</p>
+      <form class="email-list-form" id="academyWaitlistForm" method="POST" name="academy-waitlist">
+        <input type="hidden" name="form-name" value="academy-waitlist">
+        <p style="position:absolute;left:-9999px;"><label>Leave empty <input name="website" tabindex="-1"></label></p>
+        <label class="skip" for="academyEmail">Your email</label>
+        <input type="email" class="email-list-input" id="academyEmail" name="email" placeholder="Enter your email address" required>
+        <button type="submit" class="email-list-btn">Join Waitlist</button>
+      </form>
+      <div class="email-list-status" id="waitlistStatus" role="status">
+        <h3>You're on the list ✨</h3>
+        <p>Thank you — we'll be in touch first when new dates are released.</p>
+      </div>
+    </section>
+  </main>
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('on'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    const form = document.getElementById('academyWaitlistForm');
+    const status = document.getElementById('waitlistStatus');
+    if(form){
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(form));
+        data._subject = 'Academy Waitlist Signup';
+        fetch('https://formsubmit.co/ajax/hello@belleandbeauaesthetic.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(data)
+        }).finally(() => {
+          form.style.display = 'none';
+          status.classList.add('show');
+        });
+      });
+    }
+  </script>
 </body>
 </html>
