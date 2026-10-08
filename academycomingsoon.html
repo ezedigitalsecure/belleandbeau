@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
             font-family: 'Segoe UI', serif;
             background-color: #FAF6F0;
             color: #2C2C2C;
             line-height: 1.6;
         }
+
         .hero {
             padding: 80px 40px;
             max-width: 1400px;
@@ -20,9 +22,11 @@
             position: relative;
             min-height: 520px;
         }
+
         .hero-content {
             max-width: 620px;
         }
+
         .hero-tag {
             font-size: 0.9rem;
             letter-spacing: 2px;
@@ -30,30 +34,36 @@
             margin-bottom: 16px;
             color: #4A4A4A;
         }
+
         .hero h1 {
             font-size: 4rem;
             line-height: 1.1;
             font-weight: 300;
             margin-bottom: 32px;
         }
+
         .hero h1 span {
             color: #916F2F;
             font-style: italic;
         }
+
         .hero p {
             font-size: 1rem;
             margin-bottom: 24px;
             color: #555;
         }
+
         .founder-note {
             font-weight: 500;
             color: #916F2F;
             margin-bottom: 40px;
         }
+
         .actions {
             display: flex;
             gap: 16px;
         }
+
         .btn {
             padding: 14px 32px;
             border: none;
@@ -63,34 +73,58 @@
             display: inline-block;
             transition: all 0.3s ease;
         }
+
         .btn.solid {
             background-color: #222;
             color: #FAF6F0;
         }
+
         .btn.ghost {
             background: transparent;
             color: #222;
             border: 1px solid #222;
         }
+
         .cpd-logo {
             position: absolute;
-            right: 60px;
+            right: 40px;
             top: 50%;
             transform: translateY(-50%);
-            width: 200px;
+            width: 130px;
             height: auto;
+            object-fit: contain;
         }
+
+        @media (min-width: 1200px) {
+            .cpd-logo {
+                right: calc(50% - 310px);
+            }
+        }
+
         @media (max-width: 1024px) {
             .cpd-logo {
                 position: static;
-                transform: none;
                 margin: 32px 0 0 0;
+                width: 110px;
             }
         }
+
         @media (max-width: 768px) {
-            .hero { padding: 40px 24px; }
-            .hero h1 { font-size: 2.5rem; }
-            .actions { flex-wrap: wrap; }
+            .hero {
+                padding: 40px 24px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .actions {
+                flex-wrap: wrap;
+            }
+
+            .cpd-logo {
+                width: 100px;
+            }
         }
     </style>
 </head>
@@ -114,7 +148,7 @@
     <img src="cpd-logo.png" alt="CPD Standards Office Accredited" class="cpd-logo">
 </section>
 
-<!-- Keep the rest of your original page content here exactly as before -->
+<!-- Keep all your other academy page content here exactly as before -->
 
 <div id="footer"></div>
 
