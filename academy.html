@@ -88,10 +88,17 @@
         .cpd-logo {
             position: absolute;
             right: 40px;
-            bottom: 40px;
+            top: 50%;
+            transform: translateY(-50%);
             width: 130px;
             height: auto;
             object-fit: contain;
+        }
+
+        @media (min-width: 1200px) {
+            .cpd-logo {
+                right: calc(50% - 310px);
+            }
         }
 
         @media (max-width: 1024px) {
