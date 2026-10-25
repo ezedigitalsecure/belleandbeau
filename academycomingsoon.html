@@ -1,166 +1,83 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academy · Belle & Beau</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Segoe UI', serif;
-            background-color: #FAF6F0;
-            color: #2C2C2C;
-            line-height: 1.6;
-        }
-
-        .hero {
-            padding: 80px 40px;
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-            min-height: 520px;
-        }
-
-        .hero-content {
-            max-width: 620px;
-        }
-
-        .hero-tag {
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 16px;
-            color: #4A4A4A;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            line-height: 1.1;
-            font-weight: 300;
-            margin-bottom: 32px;
-        }
-
-        .hero h1 span {
-            color: #916F2F;
-            font-style: italic;
-        }
-
-        .hero p {
-            font-size: 1rem;
-            margin-bottom: 24px;
-            color: #555;
-        }
-
-        .founder-note {
-            font-weight: 500;
-            color: #916F2F;
-            margin-bottom: 40px;
-        }
-
-        .actions {
-            display: flex;
-            gap: 16px;
-        }
-
-        .btn {
-            padding: 14px 32px;
-            border: none;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-
-        .btn.solid {
-            background-color: #222;
-            color: #FAF6F0;
-        }
-
-        .btn.ghost {
-            background: transparent;
-            color: #222;
-            border: 1px solid #222;
-        }
-
-        .cpd-logo {
-            position: absolute;
-            right: 40px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 130px;
-            height: auto;
-            object-fit: contain;
-        }
-
-        @media (min-width: 1200px) {
-            .cpd-logo {
-                right: calc(50% - 310px);
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .cpd-logo {
-                position: static;
-                margin: 32px 0 0 0;
-                width: 110px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                padding: 40px 24px;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .actions {
-                flex-wrap: wrap;
-            }
-
-            .cpd-logo {
-                width: 100px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CPD Academy | Belle & Beau</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div id="header"></div>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">Belle & Beau</a>
+      
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="academy.html" class="active">CPD Academy</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
 
-<section class="hero">
-    <div class="hero-content">
-        <p class="hero-tag">Belle & Beau Academy</p>
-        <h1>Learn. Grow.<br><span>Confidently.</span></h1>
-        <p>Professional, CPD-accredited training delivered in small, supportive groups — maximum four students per course. Learn from an experienced practitioner who cares as much about how you learn as what you learn.</p>
-        <p class="founder-note">Founding Member pricing available — limited to our first 8 students.</p>
-        
-        <div class="actions">
-            <a href="#courses" class="btn solid">VIEW COURSES</a>
-            <a href="#enquire" class="btn ghost">ENQUIRE NOW</a>
-        </div>
+      <!-- ✅ HAMBURGER — ONLY ON INNER PAGES -->
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
+  </header>
 
-    <img src="cpd-logo.png" alt="CPD Standards Office Accredited" class="cpd-logo">
-</section>
+  <!-- ✅ SUBSCRIBE BANNER — IMMEDIATELY AFTER HEADER -->
+  <section class="subscribe-banner">
+    <div class="container">
+      <h3>Join Our Mailing List</h3>
+      <p>Be the first to know about new CPD courses & exclusive updates</p>
+      <form class="subscribe-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
 
-<!-- Keep all your other academy page content here exactly as before -->
+  <main>
+    <div class="container">
+      <h1>CPD Academy</h1>
+      <p>Accredited beauty training courses and continuing professional development programmes...</p>
+    </div>
+  </main>
 
-<div id="footer"></div>
+  <!-- ✅ PLACEHOLDER + FETCH — NO FOOTER CODE HERE -->
+  <div id="footer-placeholder"></div>
 
-<script>
-fetch('header.html')
-  .then(res => res.text())
-  .then(html => { document.getElementById('header').innerHTML = html; });
+  <script>
+    // Load central footer
+    fetch('./footer.html')
+      .then(res => {
+        if (!res.ok) throw new Error('Footer file not found');
+        return res.text();
+      })
+      .then(html => {
+        document.getElementById('footer-placeholder').innerHTML = html;
+      })
+      .catch(err => {
+        console.warn('Footer:', err.message);
+        document.getElementById('footer-placeholder').innerHTML = 
+          '<p style="padding:2rem;text-align:center;color:red;">Footer not found — check footer.html location</p>';
+      });
 
-fetch('footer.html')
-  .then(res => res.text())
-  .then(html => { document.getElementById('footer').innerHTML = html; });
-</script>
+    // Hamburger toggle
+    const hamburger = document.getElementById('hamburgerBtn');
+    const mainNav = document.querySelector('.main-nav');
+    if (hamburger && mainNav) {
+      hamburger.addEventListener('click', () => {
+        mainNav.classList.toggle('nav-open');
+        hamburger.classList.toggle('is-active');
+      });
+    }
+  </script>
 
 </body>
 </html>
