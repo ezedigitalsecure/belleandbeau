@@ -101,6 +101,12 @@
     .dark-card .btn{background:transparent;border-color:rgba(243,238,231,.6)}.dark-card .btn:hover{background:var(--gold);border-color:var(--gold)}
     .dark-card .card-kicker{color:#d9a441}
     .grid.four{grid-template-columns:repeat(2,1fr)}
+    .grid.two{grid-template-columns:repeat(2,1fr)}
+    .avail{display:inline-block;align-self:flex-start;font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--bronze);border:1px solid rgba(128,97,32,.35);padding:6px 10px;margin:0 0 18px}
+    .dark-card .avail{color:#d9a441;border-color:rgba(217,164,65,.4)}
+    .sub-head{font-family:var(--serif);font-weight:400;font-size:clamp(32px,3.4vw,46px);line-height:1.05;margin:80px 0 12px}
+    .sub-head em{font-style:normal;color:var(--bronze)}
+    .sub-intro{font-size:14px;line-height:1.75;max-width:620px;margin:0 0 36px;color:#3b342c}
     .photo-soon{display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,#7a4a1c 0%,#3a2412 45%,#15100b 100%)}
     .photo-soon span{font-family:var(--serif);font-size:28px;line-height:1.1;text-align:center;color:#e9c48a;letter-spacing:.02em}
     .bulk.salon{max-width:none;margin-top:44px}
@@ -190,7 +196,7 @@
       .soon-grid{grid-template-columns:1fr}
     }
     @media(max-width:620px){
-      .grid.four{grid-template-columns:1fr}
+      .grid.four,.grid.two{grid-template-columns:1fr}
       .grid{grid-template-columns:1fr}
       form.panel{grid-template-columns:1fr;padding:28px 22px}
       .faq summary{grid-template-columns:40px 1fr 24px}
@@ -223,7 +229,7 @@
   <main id="main">
     <section class="hero" style="padding:0">
       <div class="hero-copy reveal">
-        <p class="eyebrow">The Belle & Beau Boutique</p>
+        <p class="eyebrow">Introducing the Belle & Beau Boutique</p>
         <h1>Rituals for <em>home.</em></h1>
         <p>The finishing touch to your treatment, made for your own bathroom shelf. Small-batch oils, balms and blends, made by hand in our Calne studio with the same care we give you in the treatment room.</p>
         <p>Every bottle is filled, labelled and checked by Nicki herself.</p>
@@ -253,7 +259,7 @@
         </div>
       </div>
 
-      <div class="grid">
+      <div class="grid two">
         <article class="card reveal" data-product="EVOLVE Lymphatic Massage Oil">
           <div class="card-media"><span class="tag">Signature</span>
             <img src="images/boutique/evolve-oil-100ml.jpg" alt="EVOLVE Lymphatic Massage Oil, 100ml amber dropper bottle" loading="lazy" data-img-100="images/boutique/evolve-oil-100ml.jpg" data-img-250="images/boutique/evolve-oil-250ml.jpg">
@@ -267,9 +273,10 @@
               <button type="button" aria-pressed="true" data-size="100ml" data-price="34">100ml</button>
               <button type="button" aria-pressed="false" data-size="250ml" data-price="69">250ml</button>
             </div>
+            <div class="avail">In final production, pre-order for January</div>
             <div class="card-foot">
               <div class="price"><span class="js-price">£34</span><small class="js-size">100ml</small></div>
-              <a class="btn js-reserve" href="#reserve">Reserve</a>
+              <a class="btn js-reserve" href="#reserve">Pre-order</a>
             </div>
           </div>
         </article>
@@ -281,13 +288,19 @@
             <h3>EVOLVE Body Balm</h3>
             <p>A rich, whipped-feel balm of shea and cocoa butter that melts into the skin. Lovely on elbows, knees and anywhere that needs a little extra care.</p>
             <div class="notes">Cypress · Lemongrass · Grapefruit · Geranium</div>
+            <div class="avail">In final production, pre-order for January</div>
             <div class="card-foot">
               <div class="price">£42<small>250ml jar</small></div>
-              <a class="btn js-reserve" href="#reserve">Reserve</a>
+              <a class="btn js-reserve" href="#reserve">Pre-order</a>
             </div>
           </div>
         </article>
 
+      </div>
+
+      <h3 class="sub-head reveal">Calm Sanctuary <em>at home.</em></h3>
+      <p class="sub-intro reveal">The scent of our treatment room, made for your home, car and bathroom. Each one is blended by hand in small batches in Calne.</p>
+      <div class="grid">
         <article class="card reveal" data-product="Calm Sanctuary Diffuser Blend">
           <div class="card-media"><img src="images/boutique/calm-sanctuary-blend.jpg" alt="Calm Sanctuary Diffuser Blend in a 10ml amber bottle beside dried lavender" loading="lazy"></div>
           <div class="card-body">
@@ -295,8 +308,37 @@
             <h3>Calm Sanctuary</h3>
             <p>The scent of our treatment room, bottled. A pure essential oil blend for your diffuser, for slow evenings and a calmer home.</p>
             <div class="notes">Lemongrass · Lavender · Grapefruit · Rosemary · Geranium</div>
+            <div class="avail">Coming early December</div>
             <div class="card-foot">
               <div class="price">£16<small>10ml · for diffuser use only</small></div>
+              <a class="btn js-reserve" href="#reserve">Reserve</a>
+            </div>
+          </div>
+        </article>
+        <article class="card reveal" data-product="Fresh Sanctuary Bathroom Drops">
+          <div class="card-media photo-soon"><span>Fresh<br>Sanctuary</span></div>
+          <div class="card-body">
+            <span class="card-kicker">Bathroom drops</span>
+            <h3>Fresh Sanctuary Bathroom Drops</h3>
+            <p>A few drops in the toilet before you go leave a light, fresh film on the water, so the only thing anyone notices is a bright citrus scent.</p>
+            <div class="notes">Lemongrass · Grapefruit · Lemon · Rosemary · Cypress</div>
+            <div class="avail">Coming early December</div>
+            <div class="card-foot">
+              <div class="price">£14<small>10ml · around 50 uses</small></div>
+              <a class="btn js-reserve" href="#reserve">Reserve</a>
+            </div>
+          </div>
+        </article>
+        <article class="card reveal" data-product="Calm Sanctuary Room & Linen Spray">
+          <div class="card-media photo-soon"><span>Room &amp;<br>Linen</span></div>
+          <div class="card-body">
+            <span class="card-kicker">Room & linen spray</span>
+            <h3>Calm Sanctuary Room & Linen Spray</h3>
+            <p>Our treatment-room scent in a fine mist. Spray into the air or lightly over pillows and throws for a calm, clean feel at home.</p>
+            <div class="notes">Lemongrass · Lavender · Grapefruit · Rosemary · Geranium</div>
+            <div class="avail">Coming early December</div>
+            <div class="card-foot">
+              <div class="price">£18<small>100ml spray</small></div>
               <a class="btn js-reserve" href="#reserve">Reserve</a>
             </div>
           </div>
@@ -370,8 +412,9 @@
             <span class="card-kicker">On the go</span>
             <h3>Calm Sanctuary Car Diffuser</h3>
             <p>A little glass bottle with a wooden cap, filled with our Calm Sanctuary blend. Hang it from your mirror for a calmer drive. A lovely stocking filler, too.</p>
+            <div class="avail">Coming early December</div>
             <div class="card-foot">
-              <div class="price">£12<small>Hanging glass bottle</small></div>
+              <div class="price">£16<small>Hanging glass bottle</small></div>
               <a class="btn js-reserve" href="#reserve">Reserve</a>
             </div>
           </div>
@@ -481,6 +524,8 @@
               <option>EVOLVE Lymphatic Massage Oil, 250ml</option>
               <option>EVOLVE Body Balm</option>
               <option>Calm Sanctuary Diffuser Blend</option>
+              <option>Fresh Sanctuary Bathroom Drops</option>
+              <option>Calm Sanctuary Room &amp; Linen Spray</option>
               <option>Glass & Walnut Diffuser (pre-order)</option>
               <option>Edison Glow Diffuser (pre-order)</option>
               <option>Amber Drop Diffuser (pre-order)</option>
