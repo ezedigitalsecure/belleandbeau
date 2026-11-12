@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="The Belle & Beau Boutique. Small-batch body oils, balms and diffuser blends made in Calne, plus our custom embroidered infrared sauna blanket.">
+  <title>Belle & Beau | The Boutique</title>
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#c38e18">
+  <meta property="og:title" content="The Belle & Beau Boutique">
+  <meta property="og:image" content="images/boutique/evolve-oil-100ml.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Italiana&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#100d09;--cream:#f3eee7;--paper:#faf8f4;--sand:#e8d6c4;--gold:#bd8616;--bronze:#806120;--line:rgba(16,13,9,.18);--serif:'Italiana',serif;--sans:'DM Sans',sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased}
+    a{color:inherit}img{display:block;max-width:100%}button,select,input,textarea{font:inherit}
+    .skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;z-index:100;background:#fff;padding:12px}
+
+    .announcement{min-height:31px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:8px 16px;text-align:center}
+    .nav{padding:14px 4vw;display:flex;justify-content:space-between;align-items:center;gap:20px;background:#000;border-bottom:1px solid rgba(255,255,255,.08);position:relative;z-index:20}
+    .nav-links{display:flex;align-items:center;justify-content:space-between;gap:12px;flex:1;max-width:900px;margin:0 auto}
+    .nav-actions{display:flex;align-items:center;gap:28px}
+    .nav a{text-decoration:none;font-size:11px;text-transform:uppercase;letter-spacing:.16em;font-weight:500;color:#fff;transition:color .25s;white-space:nowrap}
+    .nav a:hover,.nav a[aria-current]{color:var(--gold)}
+    .menu-btn{display:none;background:none;border:0;color:#fff;font-size:11px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;padding:8px 0}
+
+    .eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;display:flex;align-items:center;gap:13px;margin:0}
+    .eyebrow:before{content:"";width:34px;height:1px;background:currentColor}
+    .btn{display:inline-block;border:1px solid var(--ink);background:var(--ink);color:#fff;text-transform:uppercase;letter-spacing:.17em;font-size:10px;font-weight:600;padding:17px 23px;text-decoration:none;cursor:pointer;transition:.25s}
+    .btn:hover,.btn:focus-visible{background:var(--gold);border-color:var(--gold)}
+    .btn.ghost{background:transparent;color:var(--ink)}.btn.ghost:hover{background:var(--ink);color:#fff}
+    .btn.light{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}.btn.light:hover{background:var(--gold);border-color:var(--gold)}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+
+    /* hero: split, image fades into paper like the home page */
+    .hero{display:grid;grid-template-columns:1fr 1fr;min-height:640px;background:var(--cream)}
+    .hero-copy{padding:110px 6vw 90px;display:flex;flex-direction:column;justify-content:center}
+    .hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(54px,6.4vw,104px);line-height:.92;letter-spacing:-.04em;margin:26px 0 30px}
+    .hero h1 em{display:block;font-style:normal;color:var(--bronze)}
+    .hero p{max-width:470px;line-height:1.8;font-size:14px;margin:0 0 14px}
+    .hero-media{position:relative;overflow:hidden;background:#eadfce}
+    .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+    .hero-media:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--cream) 0%,rgba(243,238,231,0) 28%);z-index:1}
+
+    .marquee{background:var(--gold);overflow:hidden;padding:15px 0;white-space:nowrap}
+    .marquee-track{display:inline-block;animation:marquee 26s linear infinite;font-family:var(--serif);font-size:17px}
+    .marquee span{margin:0 30px}.marquee i{font-style:normal}.marquee i:after{content:'✦';font-size:9px}
+    @keyframes marquee{to{transform:translateX(-50%)}}
+    @media (prefers-reduced-motion:reduce){.marquee-track{animation:none}}
+
+    section{padding:90px 6vw}
+    .section-no{font-size:10px;letter-spacing:.16em;text-transform:uppercase;border-top:1px solid;padding-top:14px;display:block;max-width:380px}
+    .intro{display:grid;grid-template-columns:.8fr 1.2fr;gap:8vw;align-items:start;margin-bottom:64px}
+    .intro h2{font-family:var(--serif);font-size:clamp(44px,5vw,76px);font-weight:400;line-height:1.02;letter-spacing:-.03em;margin:14px 0 0}
+    .intro h2 em{font-style:normal;color:var(--bronze)}
+    .intro-body{max-width:500px;margin:38px 0 0 auto}.intro-body p{font-size:15px;line-height:1.85;margin:0 0 16px}
+
+    /* product grid */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:34px}
+    .card{display:flex;flex-direction:column;background:#fff;border:1px solid rgba(16,13,9,.08);transition:transform .35s ease,box-shadow .35s ease}
+    .card:hover{transform:translateY(-4px);box-shadow:0 24px 50px -30px rgba(16,13,9,.35)}
+    .card-media{aspect-ratio:1/1;overflow:hidden;background:#efe4d6;position:relative}
+    .card-media img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+    .card:hover .card-media img{transform:scale(1.04)}
+    .tag{position:absolute;top:16px;left:16px;background:var(--gold);color:#fff;font-size:9px;letter-spacing:.16em;text-transform:uppercase;padding:6px 10px;font-weight:600}
+    .card-body{padding:28px 28px 30px;display:flex;flex-direction:column;flex:1}
+    .card-kicker{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze);font-weight:500}
+    .card h3{font-family:var(--serif);font-weight:400;font-size:32px;line-height:1.05;margin:10px 0 12px}
+    .card p{font-size:13px;line-height:1.75;margin:0 0 18px;color:#3b342c}
+    .notes{font-size:11px;letter-spacing:.08em;color:#6b6055;margin:-6px 0 20px}
+    .sizes{display:flex;gap:8px;margin:0 0 18px}
+    .sizes button{flex:1;border:1px solid var(--line);background:transparent;padding:11px 8px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:.2s}
+    .sizes button[aria-pressed="true"]{border-color:var(--ink);background:var(--ink);color:#fff}
+    .card-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:14px;padding-top:18px;border-top:1px solid rgba(16,13,9,.1)}
+    .price{font-family:var(--serif);font-size:30px;line-height:1}
+    .price small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#7a6f63;margin-top:6px}
+    .price.soon{font-size:20px;color:var(--bronze)}
+    .card .btn{padding:14px 18px}
+
+    /* dark split feature (pre-order) */
+    .dark{background:var(--ink);color:var(--cream)}
+    .split{display:grid;grid-template-columns:1fr 1fr;padding:0;min-height:620px}
+    .split-media{position:relative;overflow:hidden}
+    .split-media img{width:100%;height:100%;object-fit:cover}
+    .split-copy{padding:90px 6vw;display:flex;flex-direction:column;justify-content:center}
+    .split-copy h2{font-family:var(--serif);font-weight:400;font-size:clamp(44px,5vw,78px);line-height:1;letter-spacing:-.03em;margin:22px 0 26px}
+    .split-copy h2 em{font-style:normal;color:#d9a441}
+    .split-copy p{font-size:15px;line-height:1.85;max-width:470px;margin:0 0 16px}
+    .dark .split-media:after{content:"";position:absolute;inset:0;background:linear-gradient(270deg,var(--ink) 0%,rgba(16,13,9,0) 30%)}
+    .facts{list-style:none;padding:0;margin:20px 0 6px;max-width:470px}
+    .facts li{display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-bottom:1px solid rgba(243,238,231,.16);font-size:13px}
+    .facts li span:first-child{letter-spacing:.14em;text-transform:uppercase;font-size:10px;color:#b9ad9e;padding-top:2px}
+    .diffuser-range{padding-top:10px}
+    .dark-card{background:#1b1712;border-color:rgba(243,238,231,.1);color:var(--cream)}
+    .dark-card p{color:#cfc5b8}.dark-card .card-foot{border-color:rgba(243,238,231,.14)}
+    .dark-card .price.soon{color:#d9a441}.dark-card .price small{color:#a99d8f}
+    .dark-card .btn{background:transparent;border-color:rgba(243,238,231,.6)}.dark-card .btn:hover{background:var(--gold);border-color:var(--gold)}
+    .dark-card .card-kicker{color:#d9a441}
+    .grid.four{grid-template-columns:repeat(2,1fr)}
+    .photo-soon{display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,#7a4a1c 0%,#3a2412 45%,#15100b 100%)}
+    .photo-soon span{font-family:var(--serif);font-size:28px;line-height:1.1;text-align:center;color:#e9c48a;letter-spacing:.02em}
+    .bulk.salon{max-width:none;margin-top:44px}
+    .salon a{color:var(--bronze);font-weight:500}
+    .light-facts li{border-color:var(--line)}.light-facts li span:first-child{color:var(--bronze)}
+
+    /* blanket: cream split, image right, fading like home page */
+    .blanket{background:var(--cream)}
+    .blanket .split-media:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--cream) 0%,rgba(243,238,231,0) 26%);z-index:1}
+    .blanket .split-media img{object-position:center 30%}
+    .bulk{margin-top:26px;background:rgba(189,134,22,.09);border-left:2px solid var(--gold);padding:22px 24px;max-width:470px}
+    .bulk h3{font-family:var(--serif);font-weight:400;font-size:24px;margin:0 0 8px}
+    .bulk p{font-size:13px;line-height:1.7;margin:0}
+
+    /* coming soon */
+    .soon-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+    .soon-card{border:1px solid var(--line);padding:46px 40px;text-align:center;background:rgba(16,13,9,.015)}
+    .soon-card h3{font-family:var(--serif);font-weight:400;font-size:clamp(32px,3.4vw,46px);margin:14px 0 10px}
+    .soon-card p{font-size:13px;line-height:1.75;max-width:380px;margin:0 auto 24px;color:#4a4239}
+
+    /* gift band */
+    .gift{background:#c3901f;text-align:center;padding:96px 6vw}
+    .gift .eyebrow{justify-content:center}
+    .gift h2{font-family:var(--serif);font-weight:400;font-size:clamp(46px,6vw,92px);line-height:.95;letter-spacing:-.03em;margin:24px 0 22px}
+    .gift h2 em{display:block;font-style:normal;color:#5d4513}
+    .gift p{max-width:640px;margin:0 auto 30px;font-size:15px;line-height:1.75}
+
+    /* FAQ accordion, black like the treatments menu */
+    .faq{background:var(--ink);color:var(--cream)}
+    .faq details{border-top:1px solid rgba(243,238,231,.16)}
+    .faq details:last-of-type{border-bottom:1px solid rgba(243,238,231,.16)}
+    .faq summary{list-style:none;display:grid;grid-template-columns:70px 1fr 30px;align-items:center;padding:30px 0;cursor:pointer}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary .no{font-size:10px;color:var(--gold);letter-spacing:.1em}
+    .faq summary .q{font-family:var(--serif);font-size:clamp(26px,3.2vw,46px);line-height:1.1}
+    .faq summary .plus{font-size:26px;font-weight:200;text-align:right;transition:transform .3s}
+    .faq details[open] .plus{transform:rotate(45deg)}
+    .faq .a{padding:0 30px 30px 70px;max-width:780px;font-size:14px;line-height:1.85;color:#d8cfc4}
+
+    /* reserve form */
+    .reserve{background:#f5efe8;position:relative;overflow:hidden}
+    .watermark{position:absolute;inset:0;background:url('belle-beau-logo-new-transparent.png') no-repeat center/contain;opacity:.06;pointer-events:none}
+    .reserve-inner{position:relative;display:grid;grid-template-columns:.8fr 1.2fr;gap:6vw;align-items:start;max-width:1240px;margin:0 auto}
+    .reserve h2{font-family:var(--serif);font-weight:400;font-size:clamp(44px,5vw,78px);line-height:1;letter-spacing:-.03em;margin:22px 0 22px}
+    .reserve-copy p{font-size:14px;line-height:1.8;max-width:420px;margin:0 0 14px}
+    form.panel{background:var(--paper);padding:44px;display:grid;grid-template-columns:1fr 1fr;gap:22px 24px}
+    .field{display:flex;flex-direction:column;gap:8px}.field.full{grid-column:1/-1}
+    .field label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:600}
+    .field input,.field select,.field textarea{border:1px solid #d4c5b5;background:#fff;padding:15px 16px;font-size:14px;color:var(--ink);border-radius:0;outline:none;width:100%}
+    .field textarea{min-height:110px;resize:vertical}
+    .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--bronze);box-shadow:0 0 0 1px var(--bronze)}
+    .consent{grid-column:1/-1;display:flex;gap:12px;align-items:flex-start;font-size:11.5px;line-height:1.6;color:#5f5850}
+    .consent input{margin-top:3px;accent-color:var(--gold)}
+    .form-note{grid-column:1/-1;font-size:11px;color:#7a6f63;margin:0}
+    .honeypot{position:absolute;left:-9999px}
+    .status{display:none;grid-column:1/-1;border-top:1px solid #d4c5b5;padding-top:20px}
+    .status.show{display:block}
+    .status h3{font-family:var(--serif);font-weight:400;font-size:30px;color:#9a6f16;margin:0 0 8px}
+    .status p{font-size:13px;line-height:1.6;margin:0}
+
+    .small-print{font-size:11px;line-height:1.7;color:#7a6f63;text-align:center;padding:34px 6vw 40px;letter-spacing:.04em}
+
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}.reveal.on{opacity:1;transform:none}
+    @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+    @media(max-width:1000px){
+      .grid{grid-template-columns:1fr 1fr}
+      .intro,.reserve-inner{grid-template-columns:1fr;gap:10px}
+      .intro-body{margin:20px 0 0}
+    }
+    @media(max-width:860px){
+      .nav{flex-wrap:wrap}
+      .menu-btn{display:block}
+      .nav-links{display:none;flex-basis:100%;flex-direction:column;align-items:flex-start;gap:18px;padding:18px 0 6px;order:3}
+      .nav.open .nav-links{display:flex}
+      .hero,.split{grid-template-columns:1fr}
+      .hero-media{order:-1;height:420px}
+      .hero-media:before{background:linear-gradient(0deg,var(--cream) 0%,rgba(243,238,231,0) 30%)}
+      .hero-copy{padding:40px 22px 60px}
+      .split-media{height:420px}
+      .dark .split-media:after{background:linear-gradient(0deg,var(--ink) 0%,rgba(16,13,9,0) 35%)}
+      .blanket .split-media{order:-1}
+      .blanket .split-media:before{background:linear-gradient(0deg,var(--cream) 0%,rgba(243,238,231,0) 16%)}
+      .blanket .split-media img{object-position:center 62%}
+      .split-copy{padding:50px 22px 70px}
+      section{padding:64px 22px}
+      .soon-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:620px){
+      .grid.four{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      form.panel{grid-template-columns:1fr;padding:28px 22px}
+      .faq summary{grid-template-columns:40px 1fr 24px}
+      .faq .a{padding:0 0 26px 40px}
+      .soon-card{padding:36px 22px}
+      .nav-actions{gap:18px}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="announcement">The opening collection is now taking reservations · Made in small batches in Calne</div>
+
+  <header class="nav" id="nav">
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="index.html#pricing">Treatments & Pricing</a>
+      <a href="index.html#body-contouring">Body Contouring</a>
+      <a href="index.html#owner">Meet the Owner</a>
+      <a href="academy.html">Academy</a>
+      <a href="boutique.html" aria-current="page">Boutique</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="index.html#contact">Contact</a>
+      <a href="https://www.fresha.com/en-GB/a/belle-beau-formerlybodybydesign-calne-8-phelps-parade-awjddr4y" target="_blank" rel="noopener noreferrer" class="book-link">Book a consultation</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" style="padding:0">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">The Belle & Beau Boutique</p>
+        <h1>Rituals for <em>home.</em></h1>
+        <p>The finishing touch to your treatment, made for your own bathroom shelf. Small-batch oils, balms and blends, made by hand in our Calne studio with the same care we give you in the treatment room.</p>
+        <p>Every bottle is filled, labelled and checked by Nicki herself.</p>
+        <div class="actions">
+          <a class="btn" href="#collection">Shop the collection</a>
+          <a class="btn ghost" href="#reserve">Reserve yours</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="images/boutique/evolve-oil-100ml.jpg" alt="EVOLVE Lymphatic Massage Oil in an amber dropper bottle with a black label and copper Belle & Beau monogram" width="1000" height="1000">
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div class="marquee-track">
+      <span>Made by hand</span><i></i><span>Small batch</span><i></i><span>Practitioner formulated</span><i></i><span>Gift ready</span><i></i>
+      <span>Made by hand</span><i></i><span>Small batch</span><i></i><span>Practitioner formulated</span><i></i><span>Gift ready</span><i></i>
+      <span>Made by hand</span><i></i><span>Small batch</span><i></i><span>Practitioner formulated</span><i></i><span>Gift ready</span><i></i>
+      <span>Made by hand</span><i></i><span>Small batch</span><i></i><span>Practitioner formulated</span><i></i><span>Gift ready</span><i></i>
+    </div></div>
+
+    <section id="collection">
+      <div class="intro">
+        <div class="reveal"><span class="section-no">01</span><h2>The EVOLVE <em>collection.</em></h2></div>
+        <div class="intro-body reveal">
+          <p>Born in the treatment room. EVOLVE is the oil Nicki reaches for during massage: light enough to glide, rich enough to nourish, with a bright, clean scent of grapefruit, cypress and lavender.</p>
+          <p>Now you can bring the same ritual home, between appointments or as a moment just for you.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card reveal" data-product="EVOLVE Lymphatic Massage Oil">
+          <div class="card-media"><span class="tag">Signature</span>
+            <img src="images/boutique/evolve-oil-100ml.jpg" alt="EVOLVE Lymphatic Massage Oil, 100ml amber dropper bottle" loading="lazy" data-img-100="images/boutique/evolve-oil-100ml.jpg" data-img-250="images/boutique/evolve-oil-250ml.jpg">
+          </div>
+          <div class="card-body">
+            <span class="card-kicker">Body oil</span>
+            <h3>EVOLVE Lymphatic Massage Oil</h3>
+            <p>A silky, fast-absorbing blend of jojoba, sweet almond and grapeseed with vitamin E. Made for slow, flowing massage strokes, and leaves skin soft without feeling greasy.</p>
+            <div class="notes">Grapefruit · Cypress · Lavender · Rosemary · Ginger</div>
+            <div class="sizes" role="group" aria-label="Choose a size">
+              <button type="button" aria-pressed="true" data-size="100ml" data-price="34">100ml</button>
+              <button type="button" aria-pressed="false" data-size="250ml" data-price="69">250ml</button>
+            </div>
+            <div class="card-foot">
+              <div class="price"><span class="js-price">£34</span><small class="js-size">100ml</small></div>
+              <a class="btn js-reserve" href="#reserve">Reserve</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-product="EVOLVE Body Balm">
+          <div class="card-media"><img src="images/boutique/evolve-body-balm.jpg" alt="EVOLVE Body Balm in an amber glass jar with a black lid" loading="lazy"></div>
+          <div class="card-body">
+            <span class="card-kicker">Body balm</span>
+            <h3>EVOLVE Body Balm</h3>
+            <p>A rich, whipped-feel balm of shea and cocoa butter that melts into the skin. Lovely on elbows, knees and anywhere that needs a little extra care.</p>
+            <div class="notes">Cypress · Lemongrass · Grapefruit · Geranium</div>
+            <div class="card-foot">
+              <div class="price">£42<small>250ml jar</small></div>
+              <a class="btn js-reserve" href="#reserve">Reserve</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-product="Calm Sanctuary Diffuser Blend">
+          <div class="card-media"><img src="images/boutique/calm-sanctuary-blend.jpg" alt="Calm Sanctuary Diffuser Blend in a 10ml amber bottle beside dried lavender" loading="lazy"></div>
+          <div class="card-body">
+            <span class="card-kicker">Diffuser blend</span>
+            <h3>Calm Sanctuary</h3>
+            <p>The scent of our treatment room, bottled. A pure essential oil blend for your diffuser, for slow evenings and a calmer home.</p>
+            <div class="notes">Lemongrass · Lavender · Grapefruit · Rosemary · Geranium</div>
+            <div class="card-foot">
+              <div class="price">£16<small>10ml · for diffuser use only</small></div>
+              <a class="btn js-reserve" href="#reserve">Reserve</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="bulk salon reveal">
+        <h3>Salons & clinics</h3>
+        <p>Use EVOLVE in your own treatment room. We offer a 500ml salon size and bulk orders on all our oils and blends at trade prices. <a href="#reserve" class="js-reserve" data-product="Salon / trade: bulk oils & blends">Enquire for trade prices</a>.</p>
+      </div>
+    </section>
+
+    <section class="dark split" id="preorder">
+      <div class="split-media"><img src="images/boutique/amber-drop-diffuser.jpg" alt="Amber Drop Diffuser on a cream linen table with eucalyptus"></div>
+      <div class="split-copy reveal">
+        <p class="eyebrow" style="color:#d9a441">02 · Pre-order</p>
+        <h2>The home <em>diffusers.</em></h2>
+        <p>Hand-blown glass on solid walnut, with a brushed brass dial. These are waterless nebulisers: they turn pure essential oil into a fine, fragrant mist with no water and no heat, so the scent stays true. Made to sit beautifully on a shelf or bedside table.</p>
+        <ul class="facts">
+          <li><span>Type</span><span>Waterless nebuliser</span></li>
+          <li><span>Finish</span><span>Glass, walnut, brass</span></li>
+          <li><span>Pairs with</span><span>Calm Sanctuary blend</span></li>
+          <li><span>Prices</span><span>From £65</span></li>
+          <li><span>Bundle</span><span>Add Calm Sanctuary for £10</span></li>
+          <li><span>Dispatch</span><span>Confirmed when you pre-order</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="dark diffuser-range">
+      <div class="grid four">
+        <article class="card dark-card reveal" data-product="Glass & Walnut Diffuser (pre-order)">
+          <div class="card-media"><img src="images/boutique/glass-walnut-diffuser.jpg" alt="Clear glass diffuser on a textured walnut block with a brass dial, beside eucalyptus" loading="lazy"></div>
+          <div class="card-body">
+            <span class="card-kicker">Pre-order</span>
+            <h3>Glass & Walnut Diffuser</h3>
+            <p>A single glass teardrop on a walnut base. Pure, simple and quietly beautiful.</p>
+            <div class="card-foot">
+              <div class="price">£65<small>£75 with Calm Sanctuary</small></div>
+              <a class="btn js-reserve" href="#reserve">Pre-order</a>
+            </div>
+          </div>
+        </article>
+        <article class="card dark-card reveal" data-product="Edison Glow Diffuser (pre-order)">
+          <div class="card-media"><img src="images/boutique/edison-glow-diffuser.jpg" alt="Walnut diffuser with a glowing Edison bulb and a clear glass bottle, beside eucalyptus" loading="lazy"></div>
+          <div class="card-body">
+            <span class="card-kicker">Pre-order</span>
+            <h3>Edison Glow Diffuser</h3>
+            <p>The same glass and walnut, with a warm filament bulb for a soft evening glow. Scent and lamp in one.</p>
+            <div class="card-foot">
+              <div class="price">£89<small>£99 with Calm Sanctuary</small></div>
+              <a class="btn js-reserve" href="#reserve">Pre-order</a>
+            </div>
+          </div>
+        </article>
+        <article class="card dark-card reveal" data-product="Amber Drop Diffuser (pre-order)">
+          <div class="card-media"><img src="images/boutique/amber-drop-diffuser.jpg" alt="Amber glass drop diffuser set into a walnut block with a brass dial, beside eucalyptus" loading="lazy"></div>
+          <div class="card-body">
+            <span class="card-kicker">Pre-order</span>
+            <h3>Amber Drop Diffuser</h3>
+            <p>A warm amber glass drop set into a solid walnut block. Rechargeable, so it can move with you from room to room.</p>
+            <div class="card-foot">
+              <div class="price">£65<small>£75 with Calm Sanctuary</small></div>
+              <a class="btn js-reserve" href="#reserve">Pre-order</a>
+            </div>
+          </div>
+        </article>
+        <article class="card dark-card reveal" data-product="Calm Sanctuary Car Diffuser">
+          <div class="card-media"><img src="images/boutique/car-diffusers.jpg" alt="Small hanging glass car diffusers with wooden caps and jute cord" loading="lazy"></div>
+          <div class="card-body">
+            <span class="card-kicker">On the go</span>
+            <h3>Calm Sanctuary Car Diffuser</h3>
+            <p>A little glass bottle with a wooden cap, filled with our Calm Sanctuary blend. Hang it from your mirror for a calmer drive. A lovely stocking filler, too.</p>
+            <div class="card-foot">
+              <div class="price">£12<small>Hanging glass bottle</small></div>
+              <a class="btn js-reserve" href="#reserve">Reserve</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="blanket split" id="sauna-blanket">
+      <div class="split-copy reveal">
+        <p class="eyebrow">03 · Signature equipment</p>
+        <h2>The Belle & Beau <em style="color:var(--bronze)">sauna blanket.</em></h2>
+        <p>Our own infrared sauna blanket, finished in rich brown matte faux leather with the Belle & Beau wordmark embroidered in gold thread. Made to look as good in a treatment room as it does at home.</p>
+        <p class="price" style="margin:6px 0 4px">£525<small>Or £650 fully customised</small></p>
+        <ul class="facts light-facts">
+          <li><span>Finish</span><span>Brown matte faux leather</span></li>
+          <li><span>Detail</span><span>Gold embroidered wordmark</span></li>
+          <li><span>Controls</span><span>Digital timer & temperature</span></li>
+          <li><span>Build</span><span>Low-EMF, salon grade</span></li>
+        </ul>
+        <div class="bulk">
+          <h3>Make it yours <span style="font-family:var(--sans);font-size:13px;letter-spacing:.12em;color:var(--bronze)">+ £125</span></h3>
+          <p>Choose your own colour and leather finish, and have your logo embroidered in your choice from a wide range of thread colours. Perfect for salons and clinics who want equipment that matches their brand. Bulk orders welcome; ask us for a quote.</p>
+        </div>
+        <div class="actions">
+          <a class="btn js-reserve" data-product="Belle & Beau Sauna Blanket" href="#reserve">Reserve</a>
+          <a class="btn ghost js-reserve" data-product="Sauna Blanket: custom colour, finish & logo (+£125)" href="#reserve">Customise yours</a>
+        </div>
+      </div>
+      <div class="split-media"><img src="images/boutique/sauna-blanket.jpg" alt="The Belle & Beau infrared sauna blanket on a treatment couch with its controller"></div>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div class="marquee-track">
+      <span>Quiet luxury</span><i></i><span>Beautifully considered</span><i></i><span>Always you</span><i></i><span>Made in Calne</span><i></i>
+      <span>Quiet luxury</span><i></i><span>Beautifully considered</span><i></i><span>Always you</span><i></i><span>Made in Calne</span><i></i>
+      <span>Quiet luxury</span><i></i><span>Beautifully considered</span><i></i><span>Always you</span><i></i><span>Made in Calne</span><i></i>
+      <span>Quiet luxury</span><i></i><span>Beautifully considered</span><i></i><span>Always you</span><i></i><span>Made in Calne</span><i></i>
+    </div></div>
+
+    <section id="coming-soon">
+      <div class="intro">
+        <div class="reveal"><span class="section-no">04</span><h2>Coming <em>soon.</em></h2></div>
+        <div class="intro-body reveal"><p>Two more rituals are in the making. Join the waitlist and you'll be the first to hear when they're ready.</p></div>
+      </div>
+      <div class="soon-grid">
+        <div class="soon-card reveal">
+          <p class="eyebrow" style="justify-content:center">Waitlist</p>
+          <h3>Glow Mist</h3>
+          <p>A fine, refreshing face and body mist for a quick moment of calm, any time of day.</p>
+          <a class="btn ghost js-reserve" data-product="Waitlist: Glow Mist" href="#reserve">Join the waitlist</a>
+        </div>
+        <div class="soon-card reveal">
+          <p class="eyebrow" style="justify-content:center">Waitlist</p>
+          <h3>Body Scrub</h3>
+          <p>A polishing scrub to prepare skin for oil and balm, for a smooth, soft finish.</p>
+          <a class="btn ghost js-reserve" data-product="Waitlist: Body Scrub" href="#reserve">Join the waitlist</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="gift">
+      <p class="eyebrow">Gifting</p>
+      <h2>Give a little <em>Belle & Beau.</em></h2>
+      <p>Gift vouchers for treatments, or a hand-wrapped EVOLVE set. Thoughtful, personal and always appreciated.</p>
+      <div class="actions" style="justify-content:center">
+        <a class="btn" href="https://www.fresha.com/en-GB/a/belle-beau-formerlybodybydesign-calne-8-phelps-parade-awjddr4y" target="_blank" rel="noopener noreferrer">Buy a gift voucher</a>
+        <a class="btn ghost js-reserve" data-product="Gift set (please tell us more)" href="#reserve">Ask about gift sets</a>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <span class="section-no" style="border-color:rgba(243,238,231,.4);margin-bottom:30px">Good to know</span>
+      <details>
+        <summary><span class="no">01</span><span class="q">How does reserving work?</span><span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a">Choose what you'd like and send the form below. No payment is taken now. We'll email you to confirm your order, the total and how you'd like to pay, then let you know when it's ready.</div>
+      </details>
+      <details>
+        <summary><span class="no">02</span><span class="q">Collection & delivery</span><span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a">Collect from our studio in Calne at your next appointment, or ask us about UK delivery when you reserve.</div>
+      </details>
+      <details>
+        <summary><span class="no">03</span><span class="q">Ingredients & allergens</span><span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a">Full ingredient lists are printed on every label. Our products contain essential oils and nut oils (sweet almond, shea and cocoa butter). If you have a nut allergy or sensitive skin, please ask us before ordering.</div>
+      </details>
+      <details>
+        <summary><span class="no">04</span><span class="q">Using your products safely</span><span class="plus" aria-hidden="true">+</span></summary>
+        <div class="a">Oils and balms are for external use only. Patch test before first use and avoid the eyes. If you are pregnant, breastfeeding or under medical care, check with your GP first. Calm Sanctuary and the car diffusers are concentrated blends for fragrance use only. Never apply it to the skin, and keep it away from children and pets.</div>
+      </details>
+    </section>
+
+    <section class="reserve" id="reserve">
+      <div class="watermark" aria-hidden="true"></div>
+      <div class="reserve-inner">
+        <div class="reserve-copy reveal">
+          <p class="eyebrow">Reserve</p>
+          <h2>Reserve yours.</h2>
+          <p>Tell us what you'd like and we'll be in touch personally to confirm. No payment is taken until your order is ready.</p>
+          <p>Ordering for a salon? Use the message box to tell us quantities and whether you'd like your own logo.</p>
+        </div>
+        <form class="panel reveal" id="reserveForm" novalidate>
+          <p class="honeypot"><label>Leave this field empty <input name="website" tabindex="-1" autocomplete="off"></label></p>
+          <div class="field"><label for="rName">Your name</label><input id="rName" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="rEmail">Email address</label><input id="rEmail" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="rProduct">Product</label>
+            <select id="rProduct" name="product" required>
+              <option value="">Choose a product…</option>
+              <option>EVOLVE Lymphatic Massage Oil, 100ml</option>
+              <option>EVOLVE Lymphatic Massage Oil, 250ml</option>
+              <option>EVOLVE Body Balm</option>
+              <option>Calm Sanctuary Diffuser Blend</option>
+              <option>Glass & Walnut Diffuser (pre-order)</option>
+              <option>Edison Glow Diffuser (pre-order)</option>
+              <option>Amber Drop Diffuser (pre-order)</option>
+              <option>Diffuser + Calm Sanctuary bundle (pre-order)</option>
+              <option>Calm Sanctuary Car Diffuser</option>
+              <option>Belle & Beau Sauna Blanket</option>
+              <option>Sauna Blanket: custom colour, finish & logo (+£125)</option>
+              <option>Sauna Blanket: bulk order</option>
+              <option>Salon / trade: bulk oils & blends</option>
+              <option>Gift set (please tell us more)</option>
+              <option>Waitlist: Glow Mist</option>
+              <option>Waitlist: Body Scrub</option>
+            </select>
+          </div>
+          <div class="field"><label for="rQty">Quantity</label><input id="rQty" name="quantity" type="number" min="1" value="1" inputmode="numeric"></div>
+          <div class="field full"><label for="rMsg">Message (optional)</label><textarea id="rMsg" name="message" placeholder="Collection or delivery, gift wrapping, salon quantities…"></textarea></div>
+          <label class="consent"><input type="checkbox" name="consent" required> I'm happy for Belle & Beau to contact me about this reservation. My details are never shared.</label>
+          <div><button class="btn" type="submit">Send reservation</button></div>
+          <p class="form-note" id="formError" role="alert" hidden>Please add your name, email, a product and tick the box.</p>
+          <div class="status" id="reserveStatus" role="status">
+            <h3>Thank you, it's reserved.</h3>
+            <p>We'll be in touch personally to confirm your order. Keep an eye on your inbox (and your spam folder, just in case).</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <p class="small-print">Belle & Beau products are handmade in small batches and are cosmetic products for external use. They are not intended to diagnose, treat or prevent any medical condition.</p>
+  </main>
+
+  <script src="footer.js"></script>
+  <script>
+    // mobile menu
+    const nav=document.getElementById('nav'),mb=nav.querySelector('.menu-btn');
+    mb.addEventListener('click',()=>{const o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+
+    // reveal on scroll
+    const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.12}):null;
+    document.querySelectorAll('.reveal').forEach(el=>io?io.observe(el):el.classList.add('on'));
+
+    // size switcher on the oil card
+    document.querySelectorAll('.card').forEach(card=>{
+      const btns=card.querySelectorAll('.sizes button'); if(!btns.length) return;
+      const img=card.querySelector('.card-media img');
+      btns.forEach(b=>b.addEventListener('click',()=>{
+        btns.forEach(x=>x.setAttribute('aria-pressed',x===b));
+        card.querySelector('.js-price').textContent='£'+b.dataset.price;
+        card.querySelector('.js-size').textContent=b.dataset.size;
+        const src=img.dataset['img'+b.dataset.size.replace('ml','')]; if(src) img.src=src;
+      }));
+    });
+
+    // reserve buttons pre-fill the form
+    const sel=document.getElementById('rProduct');
+    function choose(name){
+      const opt=[...sel.options].find(o=>o.text===name)||[...sel.options].find(o=>name&&o.text.startsWith(name));
+      if(opt) sel.value=opt.text;
+    }
+    document.querySelectorAll('.js-reserve').forEach(a=>a.addEventListener('click',()=>{
+      const card=a.closest('.card');
+      let name=a.dataset.product||(card&&card.dataset.product)||'';
+      const size=card&&card.querySelector('.sizes button[aria-pressed="true"]');
+      if(size) name+=', '+size.dataset.size;
+      choose(name);
+    }));
+
+    // send to hello@belleandbeauaesthetic.com (same service as the rest of the site)
+    const form=document.getElementById('reserveForm'),status=document.getElementById('reserveStatus'),err=document.getElementById('formError');
+    form.addEventListener('submit',e=>{
+      e.preventDefault();
+      if(form.website.value) return;
+      const ok=form.name.value.trim()&&/\S+@\S+\.\S+/.test(form.email.value)&&sel.value&&form.consent.checked;
+      if(!ok){err.hidden=false;return}
+      err.hidden=true;
+      const data=Object.fromEntries(new FormData(form));
+      data._subject='Boutique reservation: '+data.product;
+      data._template='table';
+      fetch('https://formsubmit.co/ajax/hello@belleandbeauaesthetic.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
+        .finally(()=>{[...form.children].forEach(c=>{if(c!==status)c.style.display='none'});status.classList.add('show')});
+    });
+  </script>
+</body>
+</html>
