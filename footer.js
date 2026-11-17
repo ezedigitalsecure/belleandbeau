@@ -36,7 +36,7 @@ footer{background:#000;color:#BFB9AD;padding:48px 4vw 24px;border-top:1px solid 
         <li><a href="index.html#pricing">Treatments & Pricing</a></li>
         <li><a href="index.html#body-contouring">Body Contouring</a></li>
         <li><a href="index.html#owner">Meet the Owner</a></li>
-        <li><a href="https://www.fresha.com/a/bodybydesignboutique-calne-1-conigre-cottages-zjoo2e1n" target="_blank" rel="noopener">Book an Appointment</a></li>
+        <li><a href="https://www.fresha.com/en-GB/a/the-hideaway-beauty-calne-uk-8-phelps-parade-bqr1c6o4/booking?offerItems=sv%3A30336251" target="_blank" rel="noopener">Book an Appointment</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -65,7 +65,7 @@ footer{background:#000;color:#BFB9AD;padding:48px 4vw 24px;border-top:1px solid 
         <li><a href="boutiquecomingsoon.html">Self-Care Collection</a></li>
       </ul>
       <div class="footer-social">
-        <a href="https://www.instagram.com/bodybydesignboutique7/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+        <a href="https://www.instagram.com/belleandbeauaesthetic/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
           <svg class="social-icon" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 19.4 6.6 22 9.8 22h4.4a3.6 3.6 0 0 0 3.6-3.6v-8.8A3.6 3.6 0 0 0 14.2 4H7.6zm9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 6.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z"/></svg>
         </a>
         <a href="https://www.facebook.com/profile.php?id=61572413162577" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
