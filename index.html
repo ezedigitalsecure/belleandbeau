@@ -463,54 +463,49 @@ header,.nav,.navbar{height:auto;overflow:hidden}.logo{display:none !important} .
 </script>
 
 <script>
-  const emailForm = document.getElementById('emailListForm');
-  const emailStatus = document.getElementById('emailListStatus');
-  if(emailForm){
-    emailForm.addEventListener('submit', function(e){
+  // Sends a form to FormSubmit and only shows the thank-you if it really arrived.
+  function sendToInbox(form, statusEl, subject){
+    const btn = form.querySelector('button[type="submit"]');
+    let err = form.querySelector('.form-error');
+    if(!err){
+      err = document.createElement('p');
+      err.className = 'form-error';
+      err.setAttribute('role','alert');
+      err.style.cssText = 'display:none;margin-top:12px;color:#b3261e;font-weight:500;';
+      btn.insertAdjacentElement('afterend', err);
+    }
+    form.addEventListener('submit', function(e){
       e.preventDefault();
-      const formData = Object.fromEntries(new FormData(emailForm));
-      formData._subject = 'New Website — Email List Signup';
+      err.style.display = 'none';
+      const label = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      const formData = Object.fromEntries(new FormData(form));
+      formData._subject = subject;
       fetch('https://formsubmit.co/ajax/hello@belleandbeauaesthetic.com', {
         method: 'POST',
-        headers: { 
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(formData)
-      }).then(() => {
-        emailForm.style.display = 'none';
-        emailStatus.classList.add('show');
-      }).catch(() => {
-        emailForm.style.display = 'none';
-        emailStatus.classList.add('show');
+      }).then(r => r.json().catch(() => ({})).then(data => {
+        if(!r.ok || String(data.success) !== 'true') throw new Error('not sent');
+        form.style.display = 'none';
+        statusEl.classList.add('show');
+      })).catch(() => {
+        btn.disabled = false;
+        btn.textContent = label;
+        err.innerHTML = 'Sorry, that didn\'t send. Please try again in a moment, or email <a href="mailto:hello@belleandbeauaesthetic.com">hello@belleandbeauaesthetic.com</a>.';
+        err.style.display = 'block';
       });
     });
   }
 </script>
 <script>
+  const emailForm = document.getElementById('emailListForm');
+  const emailStatus = document.getElementById('emailListStatus');
+  if(emailForm) sendToInbox(emailForm, emailStatus, 'New Website — Email List Signup');
   const reviewForm = document.getElementById('reviewForm');
   const reviewStatus = document.getElementById('reviewStatus');
-  if(reviewForm){
-    reviewForm.addEventListener('submit', function(e){
-      e.preventDefault();
-      const formData = Object.fromEntries(new FormData(reviewForm));
-      formData._subject = 'New Website — Client Review Submission';
-      fetch('https://formsubmit.co/ajax/hello@belleandbeauaesthetic.com', {
-        method: 'POST',
-        headers: { 
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      }).then(() => {
-        reviewForm.style.display = 'none';
-        reviewStatus.classList.add('show');
-      }).catch(() => {
-        reviewForm.style.display = 'none';
-        reviewStatus.classList.add('show');
-      });
-    });
-  }
+  if(reviewForm) sendToInbox(reviewForm, reviewStatus, 'New Website — Client Review Submission');
 </script>
 <script src="footer.js"></script>
 </body>
