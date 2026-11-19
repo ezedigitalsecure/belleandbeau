@@ -24,6 +24,11 @@
     .nav a:hover{color:var(--gold)}
     .book-link{border-bottom:none;padding:10px 0}
     .hero{min-height:60vh;position:relative;display:flex;align-items:center;overflow:hidden;padding:100px 6vw 40px}
+    .hero{gap:5vw}.hero-copy{flex:1 1 0;min-width:0}
+    .hero-media{flex:0 0 min(34vw,430px);position:relative;isolation:isolate;margin-right:14px}
+    .hero-media video{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:var(--ink)}
+    .hero-media:after{content:"";position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--gold);z-index:-1}
+    @media(max-width:860px){.hero{flex-direction:column;align-items:stretch}.hero-media{width:calc(100% - 14px);max-width:420px;flex:none;margin:18px auto 14px}}
     .eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;display:flex;align-items:center;gap:13px}
     .eyebrow:before{content:"";width:34px;height:1px;background:currentColor}.eyebrow.no-line:before{display:none}
     .hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(48px,6vw,92px);line-height:.92;letter-spacing:-.04em;margin:24px 0 28px}
@@ -110,6 +115,11 @@
           <a class="btn" href="#courses">View Courses</a>
           <a class="btn ghost" href="#waitlist">Join Waitlist</a>
         </div>
+      </div>
+      <div class="hero-media reveal">
+        <video autoplay muted loop playsinline preload="metadata" poster="images/academy/academy-loop-poster.jpg" aria-label="Nicki delivering body contouring treatments in the Belle &amp; Beau treatment room">
+          <source src="images/academy/academy-loop.mp4" type="video/mp4">
+        </video>
       </div>
     </section>
 
