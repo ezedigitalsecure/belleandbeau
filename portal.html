@@ -58,62 +58,14 @@
   
   
   <main id="main">
-    <!-- 🔒 PASSWORD LOCK -->
-    <div class="lock-screen" id="lockScreen">
-      <h2>Private Portal</h2>
-      <p>Enter your password to access student and business resources.</p>
-      <input type="password" id="portalPassword" placeholder="Enter portal password">
-      <br>
-      <button onclick="checkPassword()">Unlock Portal</button>
-      <div class="error-msg" id="errorMsg">Incorrect password, please try again.</div>
-    </div>
-    <!-- ✅ PORTAL CONTENT -->
-    <div class="portal-content" id="portalContent">
-      <div class="portal-header">
-        <h1>Welcome to the Portal</h1>
-        <p>Exclusive resources for students and approved partners</p>
-      </div>
-      <div class="portal-section">
-        <h3>Training & Academy Materials</h3>
-        <p>CPD-accredited course content, lesson plans, and practitioner guides.</p>
-        <a href="Belle-Beau-Portal-Manual.pdf" class="manual-link" target="_blank">Portal User Manual</a>
-        <p class="manual-note">Opens in a new window • PDF document</p>
-      </div>
-      <div class="portal-section">
-        <h3>Studio Systems & Templates</h3>
-        <p>Client forms, consent checklists, daily operations, and business frameworks.</p>
-      </div>
-      <div class="portal-section">
-        <h3>Compliance & Standards</h3>
-        <p>GDPR / ICO documentation, safety protocols, and professional guidelines.</p>
-      </div>
-      <div class="portal-section">
-        <h3>Business & Growth</h3>
-        <p>Pricing guides, marketing templates, and leadership resources.</p>
-      </div>
-      <p class="portal-note">This portal is private and for authorised users only. Do not share your access.</p>
+    <div class="lock-screen" style="display:block">
+      <h2>Student &amp; Partner Area</h2>
+      <p>Course manuals, templates and resources are shared privately with each student after booking.</p>
+      <p>If you are a Belle &amp; Beau Academy student and can't find your materials, email <a href="mailto:hello@belleandbeauaesthetic.com">hello@belleandbeauaesthetic.com</a> and Nicki will send you access.</p>
     </div>
   </main>
 
   <div id="footer-placeholder"></div>
-
-  <!-- 🔑 PASSWORD CHECKING -->
-  <script>
-    const CORRECT_PASSWORD = "REMOVED";
-    function checkPassword(){
-      const entered = document.getElementById('portalPassword').value;
-      if(entered === CORRECT_PASSWORD){
-        document.getElementById('lockScreen').style.display = 'none';
-        document.getElementById('portalContent').style.display = 'block';
-        document.getElementById('errorMsg').style.display = 'none';
-      } else {
-        document.getElementById('errorMsg').style.display = 'block';
-      }
-    }
-    document.getElementById('portalPassword').addEventListener('keydown',function(e){
-      if(e.key === 'Enter') checkPassword();
-    });
-  </script>
 <script src="footer.js?v=4"></script>
 </body>
 </html>

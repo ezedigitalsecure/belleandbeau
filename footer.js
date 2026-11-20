@@ -70,7 +70,7 @@
     </div>
   </div>
   <div class="ft-bottom">
-    <span>© 2026 Belle & Beau Aesthetic Ltd (17402375)</span>
+    <span>© 2026 Belle & Beau Aesthetic Ltd (17402375) · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
     <span>Website by <a href="https://ezedigital.co.uk" target="_blank" rel="noopener">Eze Digital</a></span>
   </div>
 </footer>`;
