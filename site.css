@@ -45,7 +45,7 @@
 
 /* ---------- Email signup (same box on every page) ---------- */
 .email-list{background:#f5efe8;color:#4a3f35;padding:46px 24px;text-align:center;border-top:1px solid #e2d5c8;border-bottom:1px solid #e2d5c8;position:relative;overflow:hidden;margin:0}
-.email-watermark{position:absolute;inset:0;background:url('belle-beau-logo-new-transparent.png') center/contain no-repeat;opacity:.05;pointer-events:none;z-index:0}
+.email-watermark{position:absolute;inset:0;background:url('belle-beau-logo-new-transparent.png') center/cover no-repeat;opacity:.07;pointer-events:none;z-index:0}
 .email-list h2,.email-list>p,.email-list-form,.email-list-status{position:relative;z-index:1}
 .email-list h2{margin:0 0 14px;font-family:'Italiana',serif;font-size:clamp(30px,3vw,46px);font-weight:400;line-height:1.1;color:#9a6f16}
 .email-list>p{max-width:650px;margin:0 auto 24px;font-size:14px;line-height:1.7}
