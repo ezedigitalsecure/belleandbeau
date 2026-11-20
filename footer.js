@@ -49,7 +49,7 @@ footer{background:#000;color:#BFB9AD;padding:48px 4vw 24px;border-top:1px solid 
       </ul>
     </div>
     <div class="footer-col">
-      <h4 onclick="window.location.href='academycomingsoon.html'">Academy</h4>
+      <h4 onclick="window.location.href='academy.html'">Academy</h4>
       <ul>
         <li><a href="academy.html">Courses & Training</a></li>
         <li><a href="academy.html">CPD Accreditation</a></li>
@@ -58,11 +58,11 @@ footer{background:#000;color:#BFB9AD;padding:48px 4vw 24px;border-top:1px solid 
       </ul>
     </div>
     <div class="footer-col">
-      <h4 onclick="window.location.href='boutiquecomingsoon.html'">Boutique</h4>
+      <h4 onclick="window.location.href='boutique.html'">Boutique</h4>
       <ul>
-        <li><a href="boutiquecomingsoon.html">Shop Products</a></li>
-        <li><a href="boutiquecomingsoon.html">Gift Vouchers</a></li>
-        <li><a href="boutiquecomingsoon.html">Self-Care Collection</a></li>
+        <li><a href="boutique.html">Shop Products</a></li>
+        <li><a href="boutique.html">Gift Vouchers</a></li>
+        <li><a href="boutique.html">Self-Care Collection</a></li>
       </ul>
       <div class="footer-social">
         <a href="https://www.instagram.com/belleandbeauaesthetic/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
