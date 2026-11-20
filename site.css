@@ -1,0 +1,68 @@
+/* Belle & Beau shared styles: ticker, top menu, email signup.
+   Loaded last on every page so all pages look the same. */
+
+/* ---------- Ticker ---------- */
+.bbt{position:relative;height:56px;display:flex;align-items:stretch;overflow:hidden;background:radial-gradient(ellipse 28% 140% at 10% 50%,rgba(189,134,22,.38),transparent 70%),radial-gradient(ellipse 28% 140% at 90% 50%,rgba(233,196,106,.28),transparent 70%),linear-gradient(90deg,#100d09,#1d160c 50%,#100d09);border-bottom:1px solid rgba(189,134,22,.6);font-family:'DM Sans',sans-serif;z-index:21}
+.bbt:before{content:'';position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(233,196,106,.16) 50%,transparent 70%) no-repeat;background-size:40% 100%;animation:bbt-shine 9s linear infinite;pointer-events:none}
+.bbt-label{position:relative;z-index:2;flex:none;display:flex;align-items:center;gap:10px;padding:0 24px;background:rgba(16,13,9,.88);color:#fff;font-size:12px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;border-right:1px solid rgba(189,134,22,.5)}
+.bbt-dot{width:9px;height:9px;border-radius:50%;background:#e9c46a;animation:bbt-pulse 2s infinite}
+.bbt-stage{position:relative;flex:1}
+.bbt-stage a{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 20px;color:#fff;text-decoration:none;font-size:16px;font-weight:500;letter-spacing:.02em;opacity:0;transform:translateY(100%);animation:bbt-tick 24s infinite}
+.bbt-stage a b{color:#e9c46a;font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:13px}
+.bbt-stage a .go{color:#e9c46a;font-weight:700}
+.bbt-stage a:hover .go{text-decoration:underline}
+.bbt-stage .sm{display:none}
+.bbt-stage a:nth-child(2){animation-delay:6s}.bbt-stage a:nth-child(3){animation-delay:12s}.bbt-stage a:nth-child(4){animation-delay:18s}
+.bbt:hover .bbt-stage a{animation-play-state:paused}
+@keyframes bbt-tick{0%{opacity:0;transform:translateY(100%);visibility:visible}2.5%,22.5%{opacity:1;transform:translateY(0)}25%{opacity:0;transform:translateY(-100%)}25.01%,100%{opacity:0;transform:translateY(100%);visibility:hidden}}
+@keyframes bbt-shine{from{background-position:-60% 0}to{background-position:160% 0}}
+@keyframes bbt-pulse{0%{box-shadow:0 0 0 0 rgba(233,196,106,.6)}70%{box-shadow:0 0 0 10px rgba(233,196,106,0)}100%{box-shadow:0 0 0 0 rgba(233,196,106,0)}}
+
+/* ---------- Top menu ---------- */
+.site-nav{position:relative;z-index:20;background:#000;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:24px;padding:0 4vw;height:64px;overflow:visible!important;font-family:'DM Sans',sans-serif}
+.site-links{flex:1;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.site-nav a{color:#fff;text-decoration:none;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;transition:color .25s ease}
+.site-nav a:hover,.site-nav a[aria-current="page"]{color:#d4a640}
+.site-links .free{color:#e9c46a}
+.site-book{flex:none;border:1px solid #bd8616;padding:11px 18px;color:#fff!important;background:transparent;transition:background .25s ease,border-color .25s ease!important}
+.site-book:hover{background:#bd8616;color:#fff!important}
+.site-menu{display:none;background:none;border:0;color:#fff;cursor:pointer;align-items:center;gap:10px;padding:8px 0;font:600 11px 'DM Sans',sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.site-menu i{position:relative;display:block;width:22px;height:1px;background:#fff}
+.site-menu i:before,.site-menu i:after{content:'';position:absolute;left:0;width:22px;height:1px;background:#fff;transition:transform .25s ease,top .25s ease}
+.site-menu i:before{top:-7px}.site-menu i:after{top:7px}
+.site-menu[aria-expanded="true"] i{background:transparent}
+.site-menu[aria-expanded="true"] i:before{top:0;transform:rotate(45deg)}
+.site-menu[aria-expanded="true"] i:after{top:0;transform:rotate(-45deg)}
+@media(max-width:1100px){.site-nav a{letter-spacing:.11em}.site-links{gap:8px}}
+@media(max-width:960px){
+  .site-nav{justify-content:space-between;height:60px}
+  .site-menu{display:flex}
+  .site-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#000;padding:8px 6vw 22px;border-top:1px solid rgba(255,255,255,.1);box-shadow:0 18px 30px rgba(0,0,0,.35)}
+  .site-links.open{display:flex}
+  .site-links a{padding:15px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:12px}
+  .site-book{padding:10px 14px;font-size:10px!important}
+}
+
+/* ---------- Email signup (same box on every page) ---------- */
+.email-list{background:#f5efe8;color:#4a3f35;padding:46px 24px;text-align:center;border-top:1px solid #e2d5c8;border-bottom:1px solid #e2d5c8;position:relative;overflow:hidden;margin:0}
+.email-watermark{position:absolute;inset:0;background:url('belle-beau-logo-new-transparent.png') center/contain no-repeat;opacity:.05;pointer-events:none;z-index:0}
+.email-list h2,.email-list>p,.email-list-form,.email-list-status{position:relative;z-index:1}
+.email-list h2{margin:0 0 14px;font-family:'Italiana',serif;font-size:clamp(30px,3vw,46px);font-weight:400;line-height:1.1;color:#9a6f16}
+.email-list>p{max-width:650px;margin:0 auto 24px;font-size:14px;line-height:1.7}
+.email-list-form{display:flex;gap:12px;justify-content:center;align-items:center;max-width:620px;margin:0 auto;flex-wrap:wrap}
+.email-list-input{flex:1 1 260px;max-width:360px;padding:15px 18px;border:1px solid #d4c5b5;background:#fff;font:14px 'DM Sans',sans-serif;outline:none;box-sizing:border-box}
+.email-list-btn{padding:15px 30px;border:1px solid #bd8616;background:#bd8616;color:#fff;font:600 10px 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:.25s;white-space:nowrap}
+.email-list-btn:hover,.email-list-btn:focus-visible{background:#100d09;border-color:#100d09}
+.email-list-status{display:none}
+.email-list-status.show{display:block;margin-top:20px}
+@media(max-width:640px){.email-list-form{flex-direction:column}.email-list-input,.email-list-btn{width:100%;max-width:none;flex:none}}
+
+/* ---------- Phones ---------- */
+@media(max-width:700px){
+  .bbt{height:58px}.bbt-label{padding:0 12px}.bbt-label .txt{display:none}
+  .bbt-stage a{font-size:13px;gap:6px;padding:0 10px;flex-wrap:wrap;row-gap:0;line-height:1.25;text-align:center}
+  .bbt-stage a b{font-size:11px;width:100%}
+  .bbt-stage a .msg{display:none}
+  .bbt-stage .sm{display:inline;font-size:14px;font-weight:600}
+}
+@media(prefers-reduced-motion:reduce){.bbt:before,.bbt-dot,.bbt-stage a{animation:none}.bbt-stage a:first-child{opacity:1;transform:none}}

@@ -1,83 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CPD Academy | Belle & Beau</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="robots" content="noindex">
+  <title>Belle &amp; Beau</title>
+  <link rel="canonical" href="https://belleandbeauaesthetic.com/academy.html">
+  <meta http-equiv="refresh" content="0; url=academy.html">
 </head>
-<body>
-
-  <header class="site-header">
-    <div class="container">
-      <a href="index.html" class="logo">Belle & Beau</a>
-      
-      <nav class="main-nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="academy.html" class="active">CPD Academy</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-
-      <!-- ✅ HAMBURGER — ONLY ON INNER PAGES -->
-      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- ✅ SUBSCRIBE BANNER — IMMEDIATELY AFTER HEADER -->
-  <section class="subscribe-banner">
-    <div class="container">
-      <h3>Join Our Mailing List</h3>
-      <p>Be the first to know about new CPD courses & exclusive updates</p>
-      <form class="subscribe-form">
-        <input type="email" placeholder="Enter your email" required>
-        <button type="submit">Subscribe</button>
-      </form>
-    </div>
-  </section>
-
-  <main>
-    <div class="container">
-      <h1>CPD Academy</h1>
-      <p>Accredited beauty training courses and continuing professional development programmes...</p>
-    </div>
-  </main>
-
-  <!-- ✅ PLACEHOLDER + FETCH — NO FOOTER CODE HERE -->
-  <div id="footer-placeholder"></div>
-
-  <script>
-    // Load central footer
-    fetch('./footer.html')
-      .then(res => {
-        if (!res.ok) throw new Error('Footer file not found');
-        return res.text();
-      })
-      .then(html => {
-        document.getElementById('footer-placeholder').innerHTML = html;
-      })
-      .catch(err => {
-        console.warn('Footer:', err.message);
-        document.getElementById('footer-placeholder').innerHTML = 
-          '<p style="padding:2rem;text-align:center;color:red;">Footer not found — check footer.html location</p>';
-      });
-
-    // Hamburger toggle
-    const hamburger = document.getElementById('hamburgerBtn');
-    const mainNav = document.querySelector('.main-nav');
-    if (hamburger && mainNav) {
-      hamburger.addEventListener('click', () => {
-        mainNav.classList.toggle('nav-open');
-        hamburger.classList.toggle('is-active');
-      });
-    }
-  </script>
-
-</body>
+<body><p>This page has moved. <a href="academy.html">Continue to the new page</a>.</p></body>
 </html>

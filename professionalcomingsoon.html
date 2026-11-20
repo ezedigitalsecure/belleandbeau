@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Belle & Beau — For Professionals. Practitioner pathways, standards & compliance, and business systems coming soon.">
-  <title>Professional — Coming Soon | Belle & Beau</title>
+  <meta name="description" content="Belle & Beau for professionals. Practitioner pathways, standards & compliance, and business systems coming soon.">
+  <title>Professional | Coming Soon | Belle & Beau</title>
   <link rel="icon" href="assets/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
@@ -41,15 +42,19 @@
       .email-list h2{font-size:28px}
     }
   </style>
+  <link rel="stylesheet" href="site.css?v=1">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
+<div class="bbt" role="region" aria-label="Latest from Belle &amp; Beau"><div class="bbt-label"><span class="bbt-dot" aria-hidden="true"></span><span class="txt">New</span></div><div class="bbt-stage"><a href="index.html#laser"><b>Now introducing</b><span class="msg">Laser hair removal at The Hideaway, Calne</span><span class="sm">Laser hair removal</span><span class="go">See prices →</span></a><a href="glow.html"><b>Free download</b><span class="msg">The Glow Ritual: small daily habits to feel more like you</span><span class="sm">The Glow Ritual</span><span class="go">Get yours →</span></a><a href="https://www.fresha.com/en-GB/a/the-hideaway-beauty-calne-uk-8-phelps-parade-bqr1c6o4/booking?offerItems=sv%3A30336251" target="_blank" rel="noopener"><b>Free consultation</b><span class="msg">Normally £25, complimentary for a limited time</span><span class="sm">Normally £25</span><span class="go">Book now →</span></a><a href="index.html#body-contouring"><b>Now at The Hideaway</b><span class="msg">Body contouring in Calne</span><span class="sm">Body contouring</span><span class="go">Find out more →</span></a></div></div>
+<header class="site-nav"><button class="site-menu" type="button" aria-expanded="false" aria-controls="siteLinks"><i></i>Menu</button><nav class="site-links" id="siteLinks" aria-label="Main menu"><a href="index.html">Home</a><a href="index.html#pricing">Treatments & Pricing</a><a href="index.html#laser">Laser Hair Removal</a><a href="index.html#body-contouring">Body Contouring</a><a href="index.html#owner">Meet Nicki</a><a href="academy.html">Academy</a><a href="boutique.html">Boutique</a><a href="glow.html" class="free">✦ Free Guide</a><a href="#contact">Contact</a></nav><a class="site-book" href="https://www.fresha.com/en-GB/a/the-hideaway-beauty-calne-uk-8-phelps-parade-bqr1c6o4/booking?offerItems=sv%3A30336251" target="_blank" rel="noopener">Book a consultation</a></header>
+
   <!-- ✅ Black Announcement Bar -->
-  <div class="announcement">Practitioner Resources — Coming Soon</div>
-  <!-- ✅ Subscribe Bar — Professional Wording -->
+  
+  <!-- ✅ Subscribe Bar - Professional Wording -->
   <section class="email-list" id="email-list" aria-labelledby="email-list-title">
-    <h2 id="email-list-title">For professionals — coming soon…</h2>
-    <p>Practitioner pathways, standards & compliance, and business systems — all being prepared.<br>
+    <h2 id="email-list-title">For professionals: coming soon</h2>
+    <p>Practitioner pathways, standards & compliance, and business systems, all being prepared.<br>
     This area is currently under construction. We are building dedicated resources for professionals including practitioner development pathways, clinical standards, compliance guidance, and business support systems.<br>
     Enter your email address below to be the first to know when this area launches.</p>
     <form class='email-list-form' id='emailListForm' method='POST' name='email-list'>
@@ -65,8 +70,7 @@
     </div>
   </section>
   <!-- ✅ SHARED FOOTER -->
-  <script src="footer.js"></script>
-  <!-- ✅ Form Submit Handler — sends to hello@belleandbeauaesthetic.com -->
+  <!-- ✅ Form Submit Handler - sends to hello@belleandbeauaesthetic.com -->
   <script>
     const form = document.getElementById('emailListForm');
     const status = document.getElementById('emailListStatus');
@@ -74,7 +78,7 @@
       form.addEventListener('submit', function(e){
         e.preventDefault();
         const formData = Object.fromEntries(new FormData(form));
-        formData._subject = 'New Professional Page — Coming Soon Subscription';
+        formData._subject = 'New Professional Page: Coming Soon Subscription';
         fetch('https://formsubmit.co/ajax/hello@belleandbeauaesthetic.com', {
           method: 'POST',
           headers: { 
@@ -92,5 +96,6 @@
       });
     }
   </script>
+<script src="footer.js?v=4"></script>
 </body>
 </html>

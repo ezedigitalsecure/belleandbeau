@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /portal.html
+Disallow: /Belle-Beau-Portal-Manual.pdf
+
+Sitemap: https://belleandbeauaesthetic.com/sitemap.xml

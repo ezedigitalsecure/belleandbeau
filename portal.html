@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Belle & Beau — Private Portal">
+  <meta name="description" content="Belle & Beau Private Portal">
   <title>Belle & Beau | Private Portal</title>
   <link rel="icon" href="assets/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
@@ -47,20 +48,15 @@
     .manual-note{font-size:11px;color:#7d756c;font-style:italic}
     .portal-note{font-size:11px;color:#7d756c;font-style:italic;margin-top:24px}
   </style>
+  <link rel="stylesheet" href="site.css?v=1">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <!-- ✅ BLACK TOP BAR -->
-  <nav class="top-nav">
-    <div></div>
-    <div><a href="index.html">Return to Homepage</a></div>
-  </nav>
-  <!-- ✅ CREAM LOGO BAR -->
-  <header class="logo-bar">
-    <div></div>
-    <a href="index.html" aria-label="Belle & Beau Home"><img class="logo" src="belle-beau-logo-new-transparent.png" alt="Belle & Beau Evolutionary Aesthetics"></a>
-    <div></div>
-  </header>
+<div class="bbt" role="region" aria-label="Latest from Belle &amp; Beau"><div class="bbt-label"><span class="bbt-dot" aria-hidden="true"></span><span class="txt">New</span></div><div class="bbt-stage"><a href="index.html#laser"><b>Now introducing</b><span class="msg">Laser hair removal at The Hideaway, Calne</span><span class="sm">Laser hair removal</span><span class="go">See prices →</span></a><a href="glow.html"><b>Free download</b><span class="msg">The Glow Ritual: small daily habits to feel more like you</span><span class="sm">The Glow Ritual</span><span class="go">Get yours →</span></a><a href="https://www.fresha.com/en-GB/a/the-hideaway-beauty-calne-uk-8-phelps-parade-bqr1c6o4/booking?offerItems=sv%3A30336251" target="_blank" rel="noopener"><b>Free consultation</b><span class="msg">Normally £25, complimentary for a limited time</span><span class="sm">Normally £25</span><span class="go">Book now →</span></a><a href="index.html#body-contouring"><b>Now at The Hideaway</b><span class="msg">Body contouring in Calne</span><span class="sm">Body contouring</span><span class="go">Find out more →</span></a></div></div>
+<header class="site-nav"><button class="site-menu" type="button" aria-expanded="false" aria-controls="siteLinks"><i></i>Menu</button><nav class="site-links" id="siteLinks" aria-label="Main menu"><a href="index.html">Home</a><a href="index.html#pricing">Treatments & Pricing</a><a href="index.html#laser">Laser Hair Removal</a><a href="index.html#body-contouring">Body Contouring</a><a href="index.html#owner">Meet Nicki</a><a href="academy.html">Academy</a><a href="boutique.html">Boutique</a><a href="glow.html" class="free">✦ Free Guide</a><a href="#contact">Contact</a></nav><a class="site-book" href="https://www.fresha.com/en-GB/a/the-hideaway-beauty-calne-uk-8-phelps-parade-bqr1c6o4/booking?offerItems=sv%3A30336251" target="_blank" rel="noopener">Book a consultation</a></header>
+
+  
+  
   <main id="main">
     <!-- 🔒 PASSWORD LOCK -->
     <div class="lock-screen" id="lockScreen">
@@ -69,7 +65,7 @@
       <input type="password" id="portalPassword" placeholder="Enter portal password">
       <br>
       <button onclick="checkPassword()">Unlock Portal</button>
-      <div class="error-msg" id="errorMsg">Incorrect password — please try again.</div>
+      <div class="error-msg" id="errorMsg">Incorrect password, please try again.</div>
     </div>
     <!-- ✅ PORTAL CONTENT -->
     <div class="portal-content" id="portalContent">
@@ -99,9 +95,7 @@
     </div>
   </main>
 
-  <!-- ✅ SHARED FOOTER — loaded from footer.js exactly like other pages -->
   <div id="footer-placeholder"></div>
-  <script src="footer.js"></script>
 
   <!-- 🔑 PASSWORD CHECKING -->
   <script>
@@ -120,5 +114,6 @@
       if(e.key === 'Enter') checkPassword();
     });
   </script>
+<script src="footer.js?v=4"></script>
 </body>
 </html>
