@@ -222,7 +222,13 @@ header,.nav,.navbar{height:auto;overflow:hidden}.logo{display:none !important} .
       .personal-care-grid{grid-template-columns:1fr !important}
       .personal-care-grid>div{border-right:none !important;border-bottom:1px solid rgba(58,47,38,.25) !important;padding:28px 0 !important}
       .personal-care-grid>div:last-child{border-bottom:none !important}
-  </style>
+  /* soft photo edges: fade the photo itself so no light strip shows */
+.owner-portrait:after,.about-portrait:after,.editorial-image:after{display:none!important}
+.owner-portrait,.about-portrait{-webkit-mask-image:linear-gradient(90deg,#000 78%,transparent 100%);mask-image:linear-gradient(90deg,#000 78%,transparent 100%)}
+.editorial-image{-webkit-mask-image:linear-gradient(270deg,#000 78%,transparent 100%);mask-image:linear-gradient(270deg,#000 78%,transparent 100%)}
+.about-portrait{background-position:center 6%!important}
+@media(max-width:900px){.owner-portrait,.about-portrait,.editorial-image{-webkit-mask-image:linear-gradient(180deg,#000 85%,transparent 100%);mask-image:linear-gradient(180deg,#000 85%,transparent 100%)}.about-portrait{background-position:60% 6%!important}}
+</style>
   <link rel="stylesheet" href="site.css?v=2">
 
   <script type="application/ld+json">
